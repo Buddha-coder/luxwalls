@@ -12,7 +12,7 @@ export function Header() {
         </Link>
         <nav className="hidden items-center space-x-8 text-sm font-medium md:flex">
           <Link
-            href="#"
+            href="/wallpapers"
             className="transition-colors hover:opacity-80 animate-shine bg-clip-text text-transparent bg-[length:200%_auto] bg-gradient-to-r from-champagne-gold via-executive-black to-champagne-gold"
           >
             Collection

@@ -5,9 +5,11 @@ import { motion, useTransform, useSpring, useMotionValue } from "framer-motion";
 import LuxuryButton from "@/components/ui/LuxuryButton";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { useRouter } from "next/navigation";
 
 export const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   const heroBgImage = PlaceHolderImages.find(p => p.id === 'hero-bg');
   const heroPreviewImage = PlaceHolderImages.find(p => p.id === 'hero-preview');
@@ -98,7 +100,7 @@ export const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
         >
-          <LuxuryButton text="Enter the Gallery" />
+          <LuxuryButton text="Enter the Gallery" onClick={() => router.push("/wallpapers")} />
         </motion.div>
       </div>
 
