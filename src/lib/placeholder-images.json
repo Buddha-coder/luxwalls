@@ -41,6 +41,18 @@
       "description": "A whimsical wallpaper depicting a celestial map of stars and constellations.",
       "imageUrl": "https://images.unsplash.com/photo-1689435210066-19ad40c54f4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjZWxlc3RpYWwlMjB3YWxscGFwZXJ8ZW58MHx8fHwxNzY5MTcyOTY3fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "celestial wallpaper"
+    },
+    {
+      "id": "hero-bg",
+      "description": "Luxury Abstract Background",
+      "imageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe",
+      "imageHint": "abstract background"
+    },
+    {
+      "id": "hero-preview",
+      "description": "Wallpaper Preview",
+      "imageUrl": "https://images.unsplash.com/photo-1614850523296-d8c1af93d400",
+      "imageHint": "wallpaper preview"
     }
   ]
 }
