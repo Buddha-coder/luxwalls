@@ -82,6 +82,8 @@
   }
   body {
     @apply bg-background text-foreground;
+    min-width: 1280px;
+    overflow-x: auto;
   }
 }
 

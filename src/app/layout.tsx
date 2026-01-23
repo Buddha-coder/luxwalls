@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from 'next';
+import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
@@ -20,11 +20,6 @@ const playfairDisplay = Playfair_Display({
 export const metadata: Metadata = {
   title: 'LuxWalls',
   description: 'Premium wallpapers for luxury interiors.',
-};
-
-export const viewport: Viewport = {
-  width: 1440,
-  userScalable: true,
 };
 
 export default function RootLayout({
