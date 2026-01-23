@@ -15,6 +15,15 @@ export default {
         code: ['monospace'],
       },
       colors: {
+        executive: {
+          black: "#0F0F12",
+        },
+        champagne: {
+          gold: "#C9A24D",
+        },
+        soft: {
+          ivory: "#F4F1EC",
+        },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -65,6 +74,9 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
+      },
+      backgroundImage: {
+        'gold-gradient': 'linear-gradient(to right, #C9A24D, #EED28B, #C9A24D)',
       },
       borderRadius: {
         lg: 'var(--radius)',
