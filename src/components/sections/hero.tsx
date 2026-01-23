@@ -24,9 +24,6 @@ export const Hero = () => {
   const smoothY = useSpring(mouseY, springConfig);
 
   // Define movement layers (Negative value = closer/faster, Positive = deeper/slower)
-  const layer1X = useTransform(smoothX, [-500, 500], [-20, 20]);
-  const layer1Y = useTransform(smoothY, [-500, 500], [-20, 20]);
-  
   const layer2X = useTransform(smoothX, [-500, 500], [-40, 40]);
   const layer2Y = useTransform(smoothY, [-500, 500], [-40, 40]);
 
@@ -46,9 +43,8 @@ export const Hero = () => {
       onMouseMove={handleMouseMove}
       className="relative h-[100vh] w-full overflow-hidden bg-executive-black flex items-center justify-center"
     >
-      {/* LAYER 1: Deep Background Image (Moves slowly) */}
-      <motion.div 
-        style={{ x: layer1X, y: layer1Y }}
+      {/* LAYER 1: Deep Background Image (Static) */}
+      <div 
         className="absolute inset-0 z-0 flex items-center justify-center opacity-40 scale-110"
       >
         {heroBgImage && (
@@ -61,7 +57,7 @@ export const Hero = () => {
             data-ai-hint={heroBgImage.imageHint}
             />
         )}
-      </motion.div>
+      </div>
 
       {/* LAYER 2: Floating Elements / Wallpaper Preview (Moves faster) */}
       <motion.div 
