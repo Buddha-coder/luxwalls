@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from 'next';
+import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
@@ -22,13 +22,6 @@ export const metadata: Metadata = {
   description: 'Premium wallpapers for luxury interiors.',
 };
 
-export const viewport: Viewport = {
-  width: 1280,
-  initialScale: 0.3,
-  maximumScale: 5,
-  userScalable: true,
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfairDisplay.variable}`}>
-      <body className="font-body antialiased overflow-x-hidden">
+      <body className="font-body antialiased">
         <div className="relative flex min-h-screen flex-col bg-background">
           <Header />
           <main className="flex-1">{children}</main>
