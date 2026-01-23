@@ -23,7 +23,9 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  width: 1440,
+  width: 1280,
+  initialScale: 0.3,
+  maximumScale: 5,
   userScalable: true,
 };
 
@@ -34,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfairDisplay.variable}`}>
-      <body className="font-body antialiased">
+      <body className="font-body antialiased overflow-x-hidden">
         <div className="relative flex min-h-screen flex-col bg-background">
           <Header />
           <main className="flex-1">{children}</main>
