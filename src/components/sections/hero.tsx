@@ -1,49 +1,39 @@
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ArrowRight } from 'lucide-react';
+"use client";
+import { motion } from "framer-motion";
+import LuxuryButton from "@/components/ui/LuxuryButton";
 
-export function Hero() {
-  const heroImage = PlaceHolderImages.find((p) => p.id === 'hero');
-
-  if (!heroImage) return null;
-
+export const Hero = () => {
   return (
-    <section className="relative h-screen w-full">
-      <Image
-        src={heroImage.imageUrl}
-        alt={heroImage.description}
-        fill
-        className="object-cover"
-        priority
-        data-ai-hint={heroImage.imageHint}
-      />
-      <div className="absolute inset-0 bg-black/60" />
-      <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
-        <div
-          className="animate-fade-in px-4"
-          style={{ animationDelay: '0.2s', animationFillMode: 'backwards' }}
-        >
-          <h1 className="font-headline text-5xl text-foreground md:text-7xl lg:text-8xl">Experience True Luxury</h1>
-        </div>
-        <div
-          className="animate-fade-in px-4"
-          style={{ animationDelay: '0.4s', animationFillMode: 'backwards' }}
-        >
-          <p className="mt-4 max-w-2xl text-lg text-foreground/80 md:text-xl">
-            Discover our exclusive collection of handcrafted wallpapers that transform any space into a work of art.
-          </p>
-        </div>
-        <div
-          className="animate-fade-in"
-          style={{ animationDelay: '0.6s', animationFillMode: 'backwards' }}
-        >
-          <Button size="lg" className="mt-8 bg-primary text-primary-foreground transition-transform duration-300 hover:scale-105 hover:bg-primary/90">
-            Explore Collection
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-        </div>
-      </div>
+    <section className="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+      {/* Background soft glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-champagne-gold/5 rounded-full blur-[120px]" />
+
+      <motion.span 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-champagne-gold tracking-[0.3em] uppercase text-sm mb-4"
+      >
+        Exquisite Aesthetics for your screens
+      </motion.span>
+
+      <motion.h1 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="text-5xl md:text-8xl font-light tracking-tighter text-soft-ivory mb-8"
+      >
+        Elevate Your <br /> 
+        <span className="italic font-headline text-champagne-gold">Digital Space</span>
+      </motion.h1>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        <LuxuryButton text="Explore Collection" />
+      </motion.div>
     </section>
   );
-}
+};
