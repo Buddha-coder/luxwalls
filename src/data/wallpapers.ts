@@ -28,6 +28,6 @@ export interface Wallpaper {
       id: 4,
       title: "Super Dark AMOLED",
       category: "amoled",
-      src: "/wallpapers/amoled/minimal-1.jpg",
+      src: "/wallpapers/minimal/minimal-1.jpg",
     }
   ];
