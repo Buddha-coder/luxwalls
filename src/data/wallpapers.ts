@@ -29,5 +29,11 @@ export interface Wallpaper {
       title: "Super beautiful wallpaper",
       category: "minimal",
       src: "/wallpapers/minimal/minimal-1.jpg",
-    }
+    },
+      {
+        id: 5,
+        title: "Minimal Gautam Buddha",
+        category: "minimal",
+        src: "/wallpapers/minimal/minimal-2.jpg",
+      },
   ];
