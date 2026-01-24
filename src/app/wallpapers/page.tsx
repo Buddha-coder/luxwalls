@@ -21,7 +21,7 @@ const WALLPAPERS = [
                     <main className="min-h-screen bg-executive-black text-soft-ivory selection:bg-champagne-gold selection:text-executive-black">
                           
                                 {/* 1. Header Section */}
-                                      <section className="pt-32 pb-16 px-6 max-w-7xl mx-auto text-center">
+                                      <section className="py-24 px-4 max-w-7xl mx-auto text-center">
                                               <motion.div
                                                         initial={{ opacity: 0, y: 20 }}
                                                                   animate={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ const WALLPAPERS = [
                                                                                                                                                       </section>
 
                                                                                                                                                             {/* 2. Gallery Grid */}
-                                                                                                                                                                  <section className="max-w-[1400px] mx-auto px-6 pb-20">
+                                                                                                                                                                  <section className="max-w-[1400px] mx-auto px-4 pb-20">
                                                                                                                                                                           <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
                                                                                                                                                                                     {WALLPAPERS.map((wp) => (
                                                                                                                                                                                                 <motion.div

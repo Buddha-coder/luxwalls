@@ -4,7 +4,7 @@ export default function ValueProposition() {
                 <div className="mx-auto max-w-4xl">
                         <div className="grid gap-8 text-center sm:grid-cols-3">
                                   <div>
-                                              <h3 className="mb-2 text-lg font-semibold">
+                                              <h3 className="mb-4 text-lg font-semibold">
                                                             Premium Quality
                                                                         </h3>
                                                                                     <p className="text-sm text-muted-foreground">
@@ -13,7 +13,7 @@ export default function ValueProposition() {
                                                                                                                         </div>
 
                                                                                                                                   <div>
-                                                                                                                                              <h3 className="mb-2 text-lg font-semibold">
+                                                                                                                                              <h3 className="mb-4 text-lg font-semibold">
                                                                                                                                                             Mobile-First Design
                                                                                                                                                                         </h3>
                                                                                                                                                                                     <p className="text-sm text-muted-foreground">
@@ -22,7 +22,7 @@ export default function ValueProposition() {
                                                                                                                                                                                                                         </div>
 
                                                                                                                                                                                                                                   <div>
-                                                                                                                                                                                                                                              <h3 className="mb-2 text-lg font-semibold">
+                                                                                                                                                                                                                                              <h3 className="mb-4 text-lg font-semibold">
                                                                                                                                                                                                                                                             Fast & Free
                                                                                                                                                                                                                                                                         </h3>
                                                                                                                                                                                                                                                                                     <p className="text-sm text-muted-foreground">
