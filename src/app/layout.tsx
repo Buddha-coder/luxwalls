@@ -25,9 +25,6 @@ export const metadata: Metadata = {
   description:
     "Download premium luxury wallpapers for free. Mobile-first, ultra-high quality, and optimized for every device.",
   metadataBase: new URL("https://luxwalls.vercel.app"), // placeholder
-  verification: {
-    google: "AHk0YKwgah_gHUL3WxFSIsZvvylxrNrr6MV2d-v9Va8",
-  },
   openGraph: {
     title: "LuxWalls – Premium Luxury Wallpapers",
     description:
