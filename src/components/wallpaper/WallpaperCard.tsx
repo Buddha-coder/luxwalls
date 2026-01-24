@@ -3,19 +3,19 @@
 import Image from "next/image";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { downloadImage } from "@/lib/download-image";
+import { Wallpaper } from "@/data/wallpapers";
 
 interface WallpaperCardProps {
-  src: string;
-  index: number;
+  wallpaper: Wallpaper;
 }
 
-export default function WallpaperCard({ src, index }: WallpaperCardProps) {
+export default function WallpaperCard({ wallpaper }: WallpaperCardProps) {
   return (
     <div className="group relative overflow-hidden rounded-2xl border border-border">
       <div className="relative aspect-[9/16] w-full">
         <Image
-          src={src}
-          alt="Luxury wallpaper"
+          src={wallpaper.src}
+          alt={wallpaper.title}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-105"
           sizes="(max-width: 640px) 50vw, 33vw"
@@ -27,7 +27,10 @@ export default function WallpaperCard({ src, index }: WallpaperCardProps) {
           <LuxuryButton
             size="sm"
             onClick={() =>
-              downloadImage(src, `luxwalls-wallpaper-${index + 1}.jpg`)
+              downloadImage(
+                wallpaper.src,
+                `luxwalls-wallpaper-${wallpaper.id}.jpg`
+              )
             }
           >
             Download

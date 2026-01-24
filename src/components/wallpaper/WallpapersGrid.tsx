@@ -1,7 +1,8 @@
+import { Wallpaper } from "@/data/wallpapers";
 import WallpaperCard from "./WallpaperCard";
 
 interface WallpapersGridProps {
-  wallpapers: string[];
+  wallpapers: Wallpaper[];
 }
 
 export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
@@ -17,8 +18,8 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
 
   return (
     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-      {wallpapers.map((src, index) => (
-        <WallpaperCard key={index} src={src} index={index} />
+      {wallpapers.map((wallpaper) => (
+        <WallpaperCard key={wallpaper.id} wallpaper={wallpaper} />
       ))}
     </div>
   );
