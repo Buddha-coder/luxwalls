@@ -1,6 +1,6 @@
 import WallpapersGrid from "@/components/wallpaper/WallpapersGrid";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-
+import { wallpapers } from "@/data/wallpapers";
 export const metadata = {
   title: "Wallpapers",
   description:
@@ -21,9 +21,7 @@ export default function WallpapersPage() {
           </p>
         </header>
 
-        <WallpapersGrid
-          wallpapers={PlaceHolderImages.map((p) => p.imageUrl)}
-        />
+        <WallpapersGrid wallpapers={wallpapers.map(w => w.src)} />
       </div>
     </main>
   );
