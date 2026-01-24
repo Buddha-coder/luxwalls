@@ -3,7 +3,6 @@ import { Inter, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
-import MagneticCursor from '@/components/ui/MagneticCursor';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -48,8 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfairDisplay.variable}`}>
-      <body className="font-body antialiased md:cursor-none">
-        <MagneticCursor />
+      <body className="font-body antialiased">
         <div className="relative flex min-h-screen flex-col bg-background">
           <Header />
           <main className="flex-1">{children}</main>
