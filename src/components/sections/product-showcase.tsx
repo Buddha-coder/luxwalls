@@ -61,6 +61,7 @@ export function ProductShowcase() {
                 key={product.id}
                 className="animate-fade-in"
                 style={{ animationDelay: `${0.1 * (index + 1)}s`, animationFillMode: 'backwards' }}
+                data-hover
               >
                 <Card className="group overflow-hidden border-border/60 bg-card transition-all duration-300 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10">
                   <div className="overflow-hidden">

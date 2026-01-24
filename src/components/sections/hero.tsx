@@ -63,6 +63,7 @@ export const Hero = () => {
       <motion.div 
         style={{ x: layer2X, y: layer2Y }}
         className="absolute z-10 w-[80%] h-[60%] border border-champagne-gold/10 rounded-lg overflow-hidden shadow-2xl"
+        data-hover
       >
          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-executive-black/80 z-20" />
          {heroPreviewImage && (
