@@ -15,8 +15,8 @@ export interface Wallpaper {
     {
       id: 2,
       title: "Pure Black Minimal",
-      category: "amoled",
-      src: "/wallpapers/amoled/amoled-2.jpg",
+      category: "abstract",
+      src: "/wallpapers/abstract/abstract-1.jpg",
     },
     {
       id: 3,
