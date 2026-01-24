@@ -4,6 +4,10 @@ import WallpaperShowcase from "@/components/sections/WallpaperShowcase";
 import ValueProposition from "@/components/sections/ValueProposition";
 import PrimaryCTA from "@/components/PrimaryCTA";
 
+export const metadata = {
+  title: "Home",
+};
+
 export default function HomePage() {
   return (
     <>
