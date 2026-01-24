@@ -1,5 +1,6 @@
 import WallpapersGrid from "@/components/wallpaper/WallpapersGrid";
 import { wallpapers } from "@/data/wallpapers";
+import CategoryTabs from "@/components/wallpaper/CategoryTabs";
 export const metadata = {
   title: "Wallpapers",
   description:
@@ -10,15 +11,15 @@ export default function WallpapersPage() {
   return (
     <main className="w-full px-4 py-20">
       <div className="mx-auto max-w-7xl">
-        <header className="mb-10">
-          <h1 className="mb-4 text-3xl font-semibold sm:text-4xl">
-            Premium Wallpapers
-          </h1>
-          <p className="text-muted-foreground">
-            Handpicked luxury wallpapers in ultra-high resolution. Free to
-            download, optimized for mobile and desktop.
-          </p>
-        </header>
+        <h1 className="mb-4 text-3xl font-semibold sm:text-4xl">
+          Premium Wallpapers
+        </h1>
+
+        <p className="mb-6 text-muted-foreground">
+          Browse high-quality luxury wallpapers by category.
+        </p>
+
+        <CategoryTabs />
 
         <WallpapersGrid wallpapers={wallpapers} />
       </div>
