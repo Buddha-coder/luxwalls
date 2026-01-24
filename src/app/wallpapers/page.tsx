@@ -20,7 +20,9 @@ export default function WallpapersPage() {
           </p>
         </header>
 
-        <WallpapersGrid wallpapers={wallpapers} />
+        <WallpapersGrid
+          wallpapers={wallpapers.map((w) => w.src)}
+          />
       </div>
     </main>
   );
