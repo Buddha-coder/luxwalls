@@ -10,7 +10,7 @@ export default function HeroSection() {
         <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
           Premium Luxury Wallpapers
           <span className="block text-muted-foreground">
-            Crafted for Mobile. Perfect Everywhere.
+            Crafted for every screen, every device 
           </span>
         </h1>
 

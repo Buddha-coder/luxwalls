@@ -8,7 +8,7 @@ import PrimaryCTA from "@/components/PrimaryCTA";
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "LuxWalls is a premium luxury wallpaper platform focused on mobile-first design and ultra-high-quality wallpapers.",
+    "LuxWalls is a premium luxury wallpaper platform which provides ultra high-quality wallpapes."
 };
 
 export default function HomePage() {

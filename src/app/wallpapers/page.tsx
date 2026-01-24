@@ -4,7 +4,7 @@ import CategoryTabs from "@/components/wallpaper/CategoryTabs";
 export const metadata = {
   title: "Wallpapers",
   description:
-    "Download premium luxury wallpapers for free. High-quality, mobile-first, and optimized for every device.",
+    "Download premium luxury wallpapers for free. High-quality, responsive and optimized for every device."
 };
 
 export default function WallpapersPage() {

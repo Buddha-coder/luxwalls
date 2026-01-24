@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | LuxWalls",
   },
   description:
-    "Download premium luxury wallpapers for free. Mobile-first, ultra-high quality, and optimized for every device.",
+    "Download premium luxury wallpapers for free. ultra-high quality, and optimized for every device",
 
   metadataBase: new URL("https://luxwalls.vercel.app"),
 
