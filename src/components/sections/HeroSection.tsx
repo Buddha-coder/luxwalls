@@ -13,7 +13,7 @@ export default function HeroSection() {
                                                               </span>
                                                                       </h1>
 
-                                                                              <p className="mb-10 text-base text-muted-foreground sm:text-lg">
+                                                                              <p className="mb-10 text-sm text-muted-foreground sm:text-base">
                                                                                         Download ultra-high-quality wallpapers for free. Designed to look
                                                                                                   stunning, load fast, and feel premium on every device.
                                                                                                           </p>

@@ -30,7 +30,7 @@ const WALLPAPERS = [
                                                                                               <span className="text-champagne-gold tracking-[0.5em] uppercase text-xs mb-4 block font-medium">
                                                                                                           The Gallery
                                                                                                                     </span>
-                                                                                                                              <h1 className="text-5xl md:text-7xl font-serif mb-6">Masterpieces</h1>
+                                                                                                                              <h1 className="text-4xl font-serif mb-6 sm:text-5xl md:text-6xl">Masterpieces</h1>
                                                                                                                                         <div className="h-[1px] w-24 bg-champagne-gold mx-auto opacity-50" />
                                                                                                                                                 </motion.div>
                                                                                                                                                       </section>
