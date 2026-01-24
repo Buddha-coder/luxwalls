@@ -19,8 +19,26 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'LuxWalls',
-  description: 'Premium wallpapers for luxury interiors.',
+  title: {
+    default: "LuxWalls – Premium Luxury Wallpapers",
+    template: "%s | LuxWalls",
+  },
+  description:
+    "Download premium luxury wallpapers for free. Mobile-first, ultra-high quality, and optimized for every device.",
+  metadataBase: new URL("https://luxwalls.vercel.app"), // placeholder
+  openGraph: {
+    title: "LuxWalls – Premium Luxury Wallpapers",
+    description:
+      "Free premium luxury wallpapers, designed for mobile and desktop.",
+    type: "website",
+    siteName: "LuxWalls",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LuxWalls – Premium Luxury Wallpapers",
+    description:
+      "Download premium luxury wallpapers for free.",
+  },
 };
 
 export default function RootLayout({
