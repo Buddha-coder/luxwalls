@@ -4,6 +4,9 @@ export interface Wallpaper {
   category: string;
   src: string;
 }
+// TODO (Phase 2):
+// Add per-wallpaper pages (/wallpaper/[id]) with individual SEO,
+// preview, and download analytics.
 
 export const wallpapers: Wallpaper[] = [
   {
