@@ -26,8 +26,8 @@ export interface Wallpaper {
     },
     {
       id: 4,
-      title: "Super Dark AMOLED",
-      category: "amoled",
+      title: "Super beautiful wallpaper",
+      category: "minimal",
       src: "/wallpapers/minimal/minimal-1.jpg",
     }
   ];
