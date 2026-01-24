@@ -1,21 +1,23 @@
-import { Footer } from "@/components/layout/footer";
+import type { Metadata } from "next";
+
 import HeroSection from "@/components/sections/HeroSection";
 import WallpaperShowcase from "@/components/sections/WallpaperShowcase";
 import ValueProposition from "@/components/sections/ValueProposition";
 import PrimaryCTA from "@/components/PrimaryCTA";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Home",
+  description:
+    "LuxWalls is a premium luxury wallpaper platform focused on mobile-first design and ultra-high-quality wallpapers.",
 };
 
-export default function Page() {
+export default function HomePage() {
   return (
-    <main>
+    <main className="w-full">
       <HeroSection />
-      <ValueProposition />
       <WallpaperShowcase />
+      <ValueProposition />
       <PrimaryCTA />
-      <Footer />
     </main>
   );
 }
