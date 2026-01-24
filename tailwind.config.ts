@@ -24,8 +24,8 @@ export default {
         soft: {
           ivory: "#F4F1EC",
         },
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
+        background: '#0A0A0A',
+        foreground: '#F5F5F5',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
@@ -35,16 +35,16 @@ export default {
           foreground: 'hsl(var(--popover-foreground))',
         },
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
+          DEFAULT: '#E5C07B',
+          foreground: '#0A0A0A',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
         },
         muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
+          DEFAULT: '#111111',
+          foreground: '#A1A1A1',
         },
         accent: {
           DEFAULT: 'hsl(var(--accent))',
@@ -54,7 +54,7 @@ export default {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
-        border: 'hsl(var(--border))',
+        border: '#1F1F1F',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         chart: {
