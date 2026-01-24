@@ -1,20 +1,23 @@
 "use client";
 
 import LuxuryButton from "@/components/ui/LuxuryButton";
+import Link from "next/link";
 
 export default function PrimaryCTA() {
   return (
-      <section className="w-full px-4 py-24">
-            <div className="mx-auto max-w-3xl text-center">
-                    <h2 className="mb-4 text-2xl font-semibold sm:text-3xl">
-                              Upgrade Your Screen Today
-                                      </h2>
-                                              <p className="mb-8 text-sm text-muted-foreground sm:text-base">
-                                                        Start downloading premium wallpapers for free.
-                                                                </p>
+    <section className="w-full px-4 py-24">
+      <div className="mx-auto max-w-3xl text-center">
+        <h2 className="mb-4 text-2xl font-semibold sm:text-3xl">
+          Upgrade Your Screen Today
+        </h2>
+        <p className="mb-8 text-sm text-muted-foreground sm:text-base">
+          Start downloading premium wallpapers for free.
+        </p>
 
-                                                                        <LuxuryButton text="Explore Wallpapers" />
-                                                                                                </div>
-                                                                                                    </section>
-                                                                                                      );
-                                                                                                      }
+        <Link href="/wallpapers">
+          <LuxuryButton text="Explore Wallpapers" />
+        </Link>
+      </div>
+    </section>
+  );
+}
