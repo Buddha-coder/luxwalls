@@ -19,6 +19,13 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/minimal/minimal-1.jpg",
   },
   {
+    id: 102,
+    title: "MINIMAL Gautam Buddha", 
+    category: "minimal",
+    src: "/wallpapers/minimal/minimal-2.jpg",
+
+  },
+  {
     id: 301,
     title: "ABSTRACT wallpaper",
     category: "abstract",
