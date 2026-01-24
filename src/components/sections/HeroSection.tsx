@@ -1,6 +1,6 @@
 "use client";
 
-import LuxuryButton from "@/components/ui/LuxuryButton";
+import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import Link from "next/link";
 
 export default function HeroSection() {
@@ -19,7 +19,7 @@ export default function HeroSection() {
           stunning, load fast, and feel premium on every device.
         </p>
         <Link href="/wallpapers">
-          <LuxuryButton text="Browse Wallpapers" />
+          <LuxuryButton size="lg">Browse Wallpapers</LuxuryButton>
         </Link>
       </div>
     </section>

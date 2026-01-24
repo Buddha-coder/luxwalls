@@ -1,6 +1,6 @@
 "use client";
 
-import LuxuryButton from "@/components/ui/LuxuryButton";
+import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import Link from "next/link";
 
 export default function PrimaryCTA() {
@@ -15,7 +15,7 @@ export default function PrimaryCTA() {
         </p>
 
         <Link href="/wallpapers">
-          <LuxuryButton text="Explore Wallpapers" />
+          <LuxuryButton size="lg">Explore Wallpapers</LuxuryButton>
         </Link>
       </div>
     </section>

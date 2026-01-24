@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import LuxuryButton from "@/components/ui/LuxuryButton";
+import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { downloadImage } from "@/lib/download-image";
 
 interface WallpaperCardProps {
@@ -25,11 +25,13 @@ export default function WallpaperCard({ src, index }: WallpaperCardProps) {
       <div className="absolute inset-0 flex items-end justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
         <div className="mb-4">
           <LuxuryButton
-            text="Download"
+            size="sm"
             onClick={() =>
               downloadImage(src, `luxwalls-wallpaper-${index + 1}.jpg`)
             }
-          />
+          >
+            Download
+          </LuxuryButton>
         </div>
       </div>
     </div>
