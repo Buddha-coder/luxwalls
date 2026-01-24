@@ -8,14 +8,14 @@ export const metadata = {
   title: "Home",
 };
 
-export default function HomePage() {
+export default function Page() {
   return (
-    <>
+    <main>
       <HeroSection />
-      <WallpaperShowcase />
       <ValueProposition />
+      <WallpaperShowcase />
       <PrimaryCTA />
       <Footer />
-    </>
+    </main>
   );
 }
