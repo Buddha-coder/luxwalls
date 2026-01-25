@@ -31,7 +31,7 @@ export const wallpapers: Wallpaper[] = [
     id: 3,
     title: "AMOLED wallpaper",
     category: "amoled",
-    src: "/wallpapers/amoled/amoled-3",
+    src: "/wallpapers/amoled/amoled-3.jpg",
   },
   {
     id: 4,
@@ -133,7 +133,7 @@ export const wallpapers: Wallpaper[] = [
   id: 103,
   title: "MINIMAL wallpaper",
   category: "minimal",
-  src: "/wallpapers/minimal/minima-103.jpg",
+  src: "/wallpapers/minimal/minimal-103.jpg",
 },
 {
   id: 104,
