@@ -49,7 +49,7 @@ export default function CategoryPage({
         </h1>
 
         <p className="mb-6 text-muted-foreground">
-          Premium {category} wallpapers, optimized for all devices.
+          Premium {category} wallpapers, looks beautiful on all devices
         </p>
 
         <CategoryTabs />

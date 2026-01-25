@@ -16,7 +16,7 @@ export default function ValueProposition() {
             <Smartphone className="mb-4 h-8 w-8 text-primary" />
             <h3 className="mb-4 text-lg font-semibold">Mobile-First Design</h3>
             <p className="text-sm text-muted-foreground">
-              Built for everyone, even the smallest of devices.
+              Built for mobile-friendly,also beautiful curated on desktop.
             </p>
           </div>
           <div className="flex flex-col items-center">
