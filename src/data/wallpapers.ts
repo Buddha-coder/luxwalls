@@ -1,8 +1,18 @@
+export type Orientation = "portrait" | "landscape";
+
 export interface Wallpaper {
   id: number;
   title: string;
   category: string;
+
+  // file
   src: string;
+
+  // metadata (new)
+  resolution?: string;        // e.g. "1080x2400", "4K"
+  orientation?: Orientation;  // portrait / landscape
+  tags?: string[];            // e.g. ["dark", "amoled", "minimal"]
+  createdAt?: string;         // e.g. "2025-01-12"
 }
 // TODO (Phase 2):
 // Add per-wallpaper pages (/wallpaper/[id]) with individual SEO,
@@ -58,6 +68,51 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-7.jpg",
   },
   {
+    id: 8,
+    title: "AMOLED wallpaper",
+    category: "amoled",
+    src: "/wallpapers/amoled/amoled-8.jpg",
+    orientation: "portrait",
+    tags: ["dark", "amoled", "minimal"],
+    createdAt: "2025-01-27",
+  },
+  {
+    id: 9,
+    title: "AMOLED wallpaper",
+    category: "amoled",
+    src: "/wallpapers/amoled/amoled-9.jpg",
+    orientation: "portrait",
+    tags: ["dark", "amoled"],
+    createdAt: "2025-01-27",
+  },
+  {
+    id: 10,
+    title: "AMOLED wallpaper",
+    category: "amoled",
+    src: "/wallpapers/amoled/amoled-10.jpg",
+    orientation: "portrait",
+    tags: ["dark", "amoled", "minimal"],
+    createdAt: "2025-01-27",
+  },
+  {
+    id: 11,
+    title: "AMOLED wallpaper",
+    category: "amoled",
+    src: "/wallpapers/amoled/amoled-11.jpg",
+    orientation: "portrait",
+    tags: ["dark", "amoled", "cars"],
+    createdAt: "2025-01-27",
+  },
+  {
+    id: 12,
+    title: "AMOLED wallpaper",
+    category: "amoled",
+    src: "/wallpapers/amoled/amoled-12.jpg",
+    orientation: "portrait",
+    tags: ["amoled"],
+    createdAt: "2025-01-27",
+  },
+  {
     id: 401,
     title: "CARS wallpaper",
     category: "cars",
@@ -98,6 +153,33 @@ export const wallpapers: Wallpaper[] = [
   title: "CARS wallpaper",
   category: "cars",
   src: "/wallpapers/cars/cars-407.jpg",
+},
+{
+  id: 408,
+  title: "CARS wallpaper",
+  category: "cars",
+  src: "/wallpapers/cars/cars-408.jpg",
+  orientation: "portrait",
+  tags: ["cars", "nature"],
+  createdAt: "2025-01-27",
+},
+{
+  id: 409,
+  title: "CARS wallpaper",
+  category: "cars",
+  src: "/wallpapers/cars/cars-409.jpg",
+  orientation: "portrait",
+  tags: ["cars", "minimal"],
+  createdAt: "2025-01-27",
+},
+{
+  id: 410,
+  title: "CARS wallpaper",
+  category: "cars",
+  src: "/wallpapers/cars/cars-410.jpg",
+  orientation: "portrait",
+  tags: ["cars", "minimal"],
+  createdAt: "2025-01-27",
 },
 {
   id: 501,
@@ -178,6 +260,42 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-110.jpg",
 },
 {
+  id: 111,
+  title: "Minimal wallpaper",
+  category: "minimal",
+  src: "/wallpapers/minimal/minimal-111.jpg",
+  orientation: "portrait",
+  tags: ["minimal", "illustration"],
+  createdAt: "2025-01-27",
+},
+{
+  id: 112,
+  title: "Minimal wallpaper",
+  category: "minimal",
+  src: "/wallpapers/minimal/minimal-112.jpg",
+  orientation: "portrait",
+  tags: ["minimal", "illustration"],
+  createdAt: "2025-01-27",
+},
+{
+  id: 113,
+  title: "Minimal wallpaper",
+  category: "minimal",
+  src: "/wallpapers/minimal/minimal-113.jpg",
+  orientation: "portrait",
+  tags: ["minimal", "illustration"],
+  createdAt: "2025-01-27",
+},
+{
+  id:114,
+  title: "Minimal wallpaper",
+  category: "minimal",
+  src: "/wallpapers/minimal/minimal-114.jpg",
+  orientation: "portrait",
+  tags: ["minimal", "illustration"],
+  createdAt: "2025-01-27",
+},
+{
   id: 301,
   title: "NATURE wallpaper",
   category: "nature",
@@ -188,6 +306,60 @@ export const wallpapers: Wallpaper[] = [
   title: "NATURE wallpaper",
   category: "nature",
   src: "/wallpapers/nature/nature-302.jpg",
+},
+{
+  id: 303,
+  title: "NATURE wallpaper",
+  category: "nature",
+  src: "/wallpapers/nature/nature-303.jpg",
+  orientation: "portrait",
+  tags: ["nature"],
+  createdAt: "2025-01-27",
+},
+{
+  id: 304,
+  title: "NATURE wallpaper",
+  category: "nature",
+  src: "/wallpapers/nature/nature-304.jpg",
+  orientation: "portrait",
+  tags: ["nature",],
+  createdAt: "2025-01-27",
+},
+{
+  id: 305,
+  title: "NATURE wallpaper",
+  category: "nature",
+  src: "/wallpapers/nature/nature-305.jpg",
+  orientation: "portrait",
+  tags: ["nature", "ocean"],
+  createdAt: "2025-01-27",
+},
+{
+  id: 306,
+  title: "NATURE wallpaper",
+  category: "nature",
+  src: "/wallpapers/nature/nature306.jpg",
+  orientation: "portrait",
+  tags: ["nature", "ocean"],
+  createdAt: "2025-01-27",
+},
+{
+  id: 307,
+  title: "NATURE wallpaper",
+  category: "nature",
+  src: "/wallpapers/nature/nature-307.jpg",
+  orientation: "portrait",
+  tags: ["nature", "ocean", "animals"],
+  createdAt: "2025-01-27",
+},
+{
+  id: 308,
+  title: "NATURE wallpaper",
+  category: "nature",
+  src: "/wallpapers/nature/nature-308.jpg",
+  orientation: "portrait",
+  tags: ["nature", "animals"],
+  createdAt: "2025-01-27",
 },
 ];
 
