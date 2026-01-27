@@ -296,6 +296,15 @@ export const wallpapers: Wallpaper[] = [
   createdAt: "2025-01-27",
 },
 {
+    id: 115,
+  title: "Minimal wallpaper",
+  category: "minimal",
+  src: "/wallpapers/minimal/minimal-115.jpg",
+  orientation: "portrait",
+  tags: ["minimal", "illustration"],
+  createdAt: "2025-01-",
+},
+{
   id: 301,
   title: "NATURE wallpaper",
   category: "nature",
