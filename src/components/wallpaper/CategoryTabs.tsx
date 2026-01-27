@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
-const categories = ["all", "amoled", "minimal", "nature", "cars", "illustration"]
+const categories = ["all", "amoled", "minimal", "nature", "cars", "anime", "illustration", "animals"]
 
 export default function CategoryTabs() {
   const pathname = usePathname();
