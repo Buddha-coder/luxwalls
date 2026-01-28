@@ -47,6 +47,14 @@ export const metadata: Metadata = {
       "Free premium luxury wallpapers, designed for mobile and desktop.",
     type: "website",
     siteName: "LuxWalls",
+    images: [
+      {
+        url: "/icon.png",
+        width: 512,
+        height: 512,
+        alt: "LuxWalls logo",
+      },
+    ],
   },
 
   twitter: {
@@ -54,6 +62,7 @@ export const metadata: Metadata = {
     title: "LuxWalls – Premium Luxury Wallpapers",
     description:
       "Download premium luxury wallpapers for free.",
+      images: ["/icon.png"],
   },
 };
 
