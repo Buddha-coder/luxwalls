@@ -26,9 +26,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-0.jpg",
     orientation: "portrait",
     tags: ["amoled", "dark", "mobile", "minimal"],
-    createdAt: "2025-01-28",
-
-    
+   createdAt: "2025-01-28",
   },
   {
     id: 1,
@@ -100,7 +98,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-8.jpg",
     orientation: "portrait",
     tags: ["dark", "amoled", "minimal", "space"],
-    createdAt: "2025-01-27",
+    createdAt: "2025-01-28",
   },
   {
     id: 9,
@@ -109,7 +107,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-9.jpg",
     orientation: "portrait",
     tags: ["dark", "amoled", "superhero"],
-    createdAt: "2025-01-27",
+    createdAt: "2025-01-28",
   },
   {
     id: 10,
@@ -118,7 +116,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-10.jpg",
     orientation: "portrait",
     tags: ["dark", "amoled", "cloud", "minimal", "lockscreen"],
-    createdAt: "2025-01-27",
+    createdAt: "2025-01-28",
   },
   {
     id: 11,
@@ -127,7 +125,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-11.jpg",
     orientation: "portrait",
     tags: ["dark", "amoled", "cars", "lockscreen"],
-    createdAt: "2025-01-27",
+    createdAt: "2025-01-28",
   },
   {
     id: 12,
@@ -136,7 +134,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-12.jpg",
     orientation: "portrait",
     tags: ["amoled", "superhero", "mobile"],
-    createdAt: "2025-01-27",
+    createdAt: "2025-01-28",
   },
   {
     id: 401,
@@ -209,7 +207,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/cars/cars-408.jpg",
   orientation: "portrait",
   tags: ["cars", "nature", "mobile", "racing car"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 409,
@@ -218,7 +216,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/cars/cars-409.jpg",
   orientation: "portrait",
   tags: ["cars", "minimal", "mobile", "sports car"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 410,
@@ -227,7 +225,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/cars/cars-410.jpg",
   orientation: "portrait",
   tags: ["cars", "minimal", "mobile", "sports car"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 501,
@@ -236,7 +234,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/illustration/illustration-501.jpg",
   orientation: "portrait",
   tags: ["minimal", "illustration", "character", "animals"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 502,
@@ -245,7 +243,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/illustration/illustration-502.jpg",
   orientation: "portrait",
   tags: ["minimal", "illustration", "character", "mobile"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 503,
@@ -254,7 +252,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/illustration/illustration-503.jpg",
   orientation: "portrait",
   tags: ["minimal", "illustration", "character", "anime"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 101,
@@ -331,9 +329,9 @@ export const wallpapers: Wallpaper[] = [
 },
 {
   id: 109,
-  title: "Illustration painting wallpper",
+  title: "Illustration painting wallpaper",
   category: "illustration",
-  src: "/wallpapers/minimal/minimal-109.jpg",
+  src: "/wallpapers/illustration/illustration-109.jpg",
   orientation: "portrait",
   tags: ["minimal", "illustration", "colourful", "flowers"],
   createdAt: "2025-01-28",
@@ -351,46 +349,46 @@ export const wallpapers: Wallpaper[] = [
   id: 111,
   title: "Pikachu wallpaper",
   category: "illustration",
-  src: "/wallpapers/minimal/minimal-111.jpg",
+  src: "/wallpapers/illustration/illustration-111.jpg",
   orientation: "portrait",
   tags: ["minimal", "illustration", "pokemon", "mobile"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 112,
   title: "Goku wallpaper",
   category: "illustration",
-  src: "/wallpapers/minimal/minimal-112.jpg",
+  src: "/wallpapers/illustration/illustration-112.jpg",
   orientation: "portrait",
   tags: ["minimal", "illustration", "character", "mobile"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 113,
   title: "Goku peeking wallpaper",
   category: "illustration",
-  src: "/wallpapers/minimal/minimal-113.jpg",
+  src: "/wallpapers/illustration/illustration-113.jpg",
   orientation: "portrait",
   tags: ["minimal", "illustration", "character", "mobile"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id:114,
   title: "Shinchan wallpaper",
   category: "illustration",
-  src: "/wallpapers/minimal/minimal-114.jpg",
+  src: "/wallpapers/illustration/illustration-114.jpg",
   orientation: "portrait",
   tags: ["minimal", "illustration", "character"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 115,
   title: "Doraemon wallpaper",
   category: "illustration",
-  src: "/wallpapers/minimal/minimal-115.jpg",
+  src: "/wallpapers/illustration/illustration-115.jpg",
   orientation: "portrait",
   tags: ["minimal", "illustration", "character", "mobile"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 301,
@@ -399,7 +397,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/nature/nature-301.jpg",
   orientation: "portrait",
   tags: ["nature", "leaf", "woods"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 302,
@@ -408,7 +406,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/nature/nature-302.jpg",
   orientation: "portrait",
   tags: ["nature", "sea", "stones"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 303,
@@ -417,7 +415,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/nature/nature-303.jpg",
   orientation: "portrait",
   tags: ["nature", "mountain", "sky",],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 304,
@@ -426,7 +424,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/nature/nature-304.jpg",
   orientation: "portrait",
   tags: ["nature","rocks", "mountain", "sky"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 305,
@@ -435,7 +433,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/nature/nature-305.jpg",
   orientation: "portrait",
   tags: ["nature", "ocean", "minimal"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 306,
@@ -444,7 +442,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/nature/nature-306.jpg",
   orientation: "portrait",
   tags: ["nature", "mountain", "rocks"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 307,
@@ -453,7 +451,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/nature/nature-307.jpg",
   orientation: "portrait",
   tags: ["nature", "ocean", "animals", "amoled"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 308,
@@ -462,7 +460,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/nature/nature-308.jpg",
   orientation: "portrait",
   tags: ["nature", "animals", "scenery"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 601,
@@ -471,7 +469,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/anime/anime-601.jpg",
   orientation: "portrait",
   tags: ["anime", "nature", "girl", "character", "moody"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 602,
@@ -480,7 +478,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/anime/anime-602.jpg",
   orientation: "portrait",
   tags: ["anime", "girl", "moody", "character",],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 603,
@@ -489,7 +487,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/anime/anime-603.jpg",
   orientation: "portrait",
   tags: ["anime", "girl", "moody", "character"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 604,
@@ -498,7 +496,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/anime/anime-604.jpg",
   orientation: "portrait",
   tags: ["anime", "girl", "character", "mobile"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 605,
@@ -507,7 +505,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/anime/anime-605.jpg",
   orientation: "portrait",
   tags: ["anime", "girl", "natute", "moody"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 {
   id: 606,
@@ -516,7 +514,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/anime/anime-606.jpg",
   orientation: "portrait",
   tags: ["anime", "girl", "minimal", "character"],
-  createdAt: "2025-01-27",
+  createdAt: "2025-01-28",
 },
 ];
 
