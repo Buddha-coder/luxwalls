@@ -3,8 +3,8 @@ export default function Footer() {
       <footer className="relative mt-24">
         
         {/* Animated Gradient Border */}
-        <div className="absolute inset-0 p-[1px] rounded-none 
-          bg-[linear-gradient(270deg,#D4AF37,#ffffff,#D4AF37)]
+        <div className="absolute inset-0 p-[0.5px] rounded-none 
+          bg-[linear-gradient(270deg,#D4AF37,#BFA24A,#D4AF37)]
           bg-[length:400%_400%]
           animate-[gradientBorder_14s_ease_infinite]"
         >
