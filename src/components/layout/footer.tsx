@@ -2,7 +2,7 @@ export default function Footer() {
     return (
       <footer className="relative mt-24 shadow-[0_-10px_40px_rgba(212,175,55,0.08)]">
         {/* Glass background */}
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-xl border-t border-white/10" />
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-2xl border-t border-white/10" />
   
         <div className="relative max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 text-gray-300">
   
