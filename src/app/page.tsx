@@ -7,8 +7,8 @@ export default function HomePage() {
   return (
     <main className="w-full">
       <HeroSection />
-      <WallpaperShowcase />
       <ValueProposition />
+      <WallpaperShowcase />
       <PrimaryCTA />
     </main>
   );
