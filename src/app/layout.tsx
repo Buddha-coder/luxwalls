@@ -8,7 +8,7 @@ import Footer from "@/components/layout/footer";
 const ptSans = PT_Sans({
   subsets: ["latin"],
   variable: "--font-pt-sans",
-  weight: ['400', '700'],
+  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -19,18 +19,24 @@ const playfairDisplay = Playfair_Display({
   style: ["normal", "italic"],
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://luxwalls.vercel.app";
+const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL || "https://luxwalls.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "LuxWalls – Premium 4K & HD Luxury Wallpapers for Mobile & Desktop",
+    default: "LuxWalls: Discover Exclusive Luxury Wallpapers for Your Screen",
     template: "%s | LuxWalls",
   },
   description:
-    "Download free premium luxury wallpapers in 4K and HD. LuxWalls offers a curated collection of high-quality, minimal, and AMOLED-friendly wallpapers for your mobile and desktop screens.",
+    "Elevate your device with LuxWalls. A curated collection of stunning, high-resolution luxury wallpapers designed for mobile and desktop. Free to download.",
   verification: {
     google: "AHk0YKwgah_gHUL3WxFSIsZvvylxrNrr6MV2d-v9Va8",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
   },
   icons: {
     apple: "/apple-touch-icon.png",
@@ -41,9 +47,9 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "LuxWalls – Premium Luxury Wallpapers",
+    title: "LuxWalls: Discover Exclusive Luxury Wallpapers",
     description:
-      "Free premium luxury wallpapers, designed for mobile and desktop.",
+      "Elevate your device with stunning, high-resolution luxury wallpapers. Free to download.",
     url: baseUrl,
     type: "website",
     siteName: "LuxWalls",
@@ -52,20 +58,20 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "LuxWalls - Premium Luxury Wallpapers",
+        alt: "LuxWalls - Exclusive Luxury Wallpapers",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "LuxWalls – Premium Luxury Wallpapers",
+    title: "LuxWalls: Discover Exclusive Luxury Wallpapers",
     description:
-      "Download premium luxury wallpapers for free. High-quality, minimal, and AMOLED-friendly.",
+      "Elevate your device with stunning, high-resolution luxury wallpapers. Free to download.",
     images: [`${baseUrl}/og-image.png`],
   },
   alternates: {
-    canonical: '/',
-  }
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
@@ -73,12 +79,24 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "LuxWalls",
+    url: baseUrl,
+  };
+
   return (
     <html
       lang="en"
       className={`${ptSans.variable} ${playfairDisplay.variable}`}
     >
       <body className="font-body antialiased bg-background text-foreground">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+          key="website-jsonld"
+        />
         <div className="relative flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">{children}</main>

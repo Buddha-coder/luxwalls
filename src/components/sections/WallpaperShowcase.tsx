@@ -10,7 +10,7 @@ export default function WallpaperShowcase() {
         </h2>
 
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-          {PlaceHolderImages.slice(1, 7).map((image, index) => (
+          {PlaceHolderImages.slice(1, 7).map((image) => (
             <div
               key={image.id}
               className="group relative aspect-[9/16] overflow-hidden rounded-xl shadow-lg transition-transform duration-300 hover:scale-105"
@@ -21,7 +21,6 @@ export default function WallpaperShowcase() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                 sizes="(max-width: 640px) 50vw, 33vw"
-                priority={index < 2}
                 data-ai-hint={image.imageHint}
               />
             </div>

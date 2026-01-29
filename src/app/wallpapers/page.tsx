@@ -4,12 +4,12 @@ import CategoryTabs from "@/components/wallpaper/CategoryTabs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "All Wallpapers - Premium 4K & HD Downloads",
+  title: "Explore All Wallpapers - LuxWalls Collection",
   description:
-    "Browse and download the full collection of premium luxury wallpapers from LuxWalls for free. High-quality, responsive and optimized for every device.",
+    "Browse the entire collection of premium luxury wallpapers from LuxWalls. Find the perfect high-resolution background for your mobile or desktop screen.",
   alternates: {
     canonical: "/wallpapers",
-  }
+  },
 };
 
 export default function WallpapersPage() {

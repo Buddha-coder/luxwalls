@@ -28,9 +28,9 @@ export function generateMetadata({ params }: CategoryPageProps): Metadata {
     };
   }
 
-  const title = `${capitalizedCategory} Wallpapers - 4K & HD Downloads`;
-  const description = `Download free premium ${category} wallpapers in 4K and HD. A curated collection for mobile and desktop, including abstract, AMOLED, and nature designs from LuxWalls.`;
-  
+  const title = `Discover ${capitalizedCategory} Wallpapers - LuxWalls`;
+  const description = `Explore a curated collection of premium ${category} wallpapers from LuxWalls. Download stunning, high-resolution designs for your mobile and desktop screens for free.`;
+
   return {
     title,
     description,
@@ -40,14 +40,10 @@ export function generateMetadata({ params }: CategoryPageProps): Metadata {
   };
 }
 
-export default function CategoryPage({
-  params,
-}: CategoryPageProps) {
+export default function CategoryPage({ params }: CategoryPageProps) {
   const category = decodeURIComponent(params.category);
 
-  const filteredWallpapers = wallpapers.filter(
-    (w) => w.category === category
-  );
+  const filteredWallpapers = wallpapers.filter((w) => w.category === category);
 
   if (filteredWallpapers.length === 0) {
     notFound();
@@ -61,7 +57,8 @@ export default function CategoryPage({
         </h1>
 
         <p className="mb-8 text-muted-foreground max-w-2xl">
-          Premium {category} wallpapers, curated to look beautiful on all your devices.
+          Premium {category} wallpapers, curated to look beautiful on all your
+          devices.
         </p>
 
         <CategoryTabs />
