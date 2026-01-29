@@ -36,8 +36,10 @@ export function usePwaInstall() {
   const install = async () => {
     if (!promptEvent) return;
     promptEvent.prompt();
+    // Wait for the user to respond to the prompt
     const { outcome } = await promptEvent.userChoice;
     
+    // We track acceptance or rejection here, after the user has made a choice.
     if (outcome === 'accepted') {
       track('luxwalls_pwa_install_accepted');
     } else {
@@ -48,6 +50,7 @@ export function usePwaInstall() {
   };
 
   const dismiss = () => {
+    // This tracks when the user dismisses our custom banner
     track("luxwalls_pwa_banner_dismissed");
     localStorage.setItem("luxwalls_install_dismissed", "true");
     setVisible(false);
