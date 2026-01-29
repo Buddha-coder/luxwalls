@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-      <footer className="hidden sm:block relative mt-24 shadow-[0_-10px_40px_rgba(212,175,55,0.08)]">
+      <footer className="relative mt-24 shadow-[0_-10px_40px_rgba(212,175,55,0.08)]">
         
         {/* Animated Gradient Border */}
         <div className="absolute top-0 left-0 right-0 h-[1.5px]
