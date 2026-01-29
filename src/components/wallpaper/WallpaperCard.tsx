@@ -11,13 +11,12 @@ interface WallpaperCardProps {
 
 export default function WallpaperCard({ wallpaper }: WallpaperCardProps) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-border bg-muted transition-transform duration-300 hover:-translate-y-1">
+    <div className="group relative aspect-[9/16] overflow-hidden rounded-2xl border border-border bg-muted transition-transform duration-300 hover:-translate-y-1">
       <Image
         src={wallpaper.src}
         alt={wallpaper.title}
-        width={1080}
-        height={1920}
-        className="transition-transform duration-500 group-hover:scale-110"
+        fill
+        className="object-cover transition-transform duration-500 group-hover:scale-110"
         sizes="(max-width: 640px) 50vw, 33vw"
         priority={false}
       />
