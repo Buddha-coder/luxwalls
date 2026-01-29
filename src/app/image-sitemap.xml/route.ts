@@ -1,6 +1,6 @@
-import { wallpapers } from '@/data/wallpapers';
+import { wallpapers, type Wallpaper } from '@/data/wallpapers';
 
-function generateImageSitemap(wallpapers: typeof import('@/data/wallpapers').wallpapers) {
+function generateImageSitemap(wallpapers: Wallpaper[]) {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://luxwalls.vercel.app';
     let xml = `<?xml version="1.0" encoding="UTF-8"?>`;
     xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">`;
