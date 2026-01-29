@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
     return (
       <footer className="relative mt-24 shadow-[0_-10px_40px_rgba(212,175,55,0.08)]">
@@ -12,28 +14,28 @@ export default function Footer() {
           <div className="h-full w-full bg-black/60 backdrop-blur-xl border-t border-white/10">
             
             {/* LW Watermark */}
-<div className="pointer-events-none absolute inset-0 flex items-center justify-center translate-y-6">
-  <span
-    className="
-      text-[120px] md:text-[220px]
-      font-serif
-      font-semibold
-      text-[#D4AF37]/5
-      blur-[2px]
-      select-none
-    "
-    style={{
-      textShadow: "0 0 60px rgba(212,175,55,0.35)",
-    }}
-  >
-    LW
-  </span>
-</div>
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center translate-y-6">
+              <span
+                className="
+                  text-[120px] md:text-[220px]
+                  font-serif
+                  font-semibold
+                  text-primary/5
+                  blur-[2px]
+                  select-none
+                "
+                style={{
+                  textShadow: "0 0 60px rgba(201,162,77,0.35)",
+                }}
+              >
+                LW
+              </span>
+            </div>
             <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 text-gray-300">
               
               {/* Brand */}
               <div>
-                <h2 className="text-2xl font-semibold text-white tracking-wide">
+                <h2 className="text-2xl font-semibold text-white tracking-wide font-headline">
                   LuxWalls
                 </h2>
                 <p className="mt-4 text-sm text-gray-400">
@@ -45,9 +47,9 @@ export default function Footer() {
               <div>
                 <h3 className="text-white font-medium mb-4">Explore</h3>
                 <ul className="space-y-3 text-sm">
-                  <li><a href="/" className="hover:text-white transition">Home</a></li>
-                  <li><a href="/wallpapers" className="hover:text-white transition">Wallpapers</a></li>
-                  <li><a href="/about" className="hover:text-white transition">About</a></li>
+                  <li><Link href="/" className="hover:text-white transition">Home</Link></li>
+                  <li><Link href="/wallpapers" className="hover:text-white transition">Wallpapers</Link></li>
+                  <li><Link href="/about" className="hover:text-white transition">About</Link></li>
                 </ul>
               </div>
   
@@ -55,8 +57,8 @@ export default function Footer() {
               <div>
                 <h3 className="text-white font-medium mb-4">Legal</h3>
                 <ul className="space-y-3 text-sm">
-                  <li><a href="/privacy-policy" className="hover:text-white transition">Privacy Policy</a></li>
-                  <li><a href="/terms" className="hover:text-white transition">Terms & Conditions</a></li>
+                  <li><Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
+                  <li><Link href="/terms" className="hover:text-white transition">Terms & Conditions</Link></li>
                 </ul>
               </div>
   
@@ -64,9 +66,9 @@ export default function Footer() {
               <div>
                 <h3 className="text-white font-medium mb-4">Connect</h3>
                 <ul className="space-y-3 text-sm">
-                  <li><a href="#" className="hover:text-white transition">GitHub</a></li>
-                  <li><a href="#" className="hover:text-white transition">X (Twitter)</a></li>
-                  <li><a href="#" className="hover:text-white transition">Instagram</a></li>
+                  <li><a href="#" className="hover:text-white transition" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                  <li><a href="#" className="hover:text-white transition" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
+                  <li><a href="#" className="hover:text-white transition" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                 </ul>
               </div>
   

@@ -1,4 +1,7 @@
-export const metadata = {
+import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
     title: "About LuxWalls",
     description:
       "LuxWalls is a premium wallpaper platform focused on minimal design, high-resolution visuals, and a refined mobile-first experience.",
@@ -6,18 +9,18 @@ export const metadata = {
   
   export default function AboutPage() {
     return (
-      <main className="relative min-h-screen bg-[#0E0E11] text-gray-300 overflow-hidden">
+      <main className="relative min-h-screen bg-background text-gray-300 overflow-hidden">
   
         {/* Subtle background glow */}
-        <div className="absolute -top-40 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-[#D4AF37]/10 blur-[120px]" />
+        <div className="absolute -top-40 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
   
-        <div className="relative max-w-4xl mx-auto px-6 py-24">
+        <div className="relative max-w-4xl mx-auto px-6 py-24 sm:py-32">
   
           {/* Glass container */}
           <div className="rounded-2xl border border-white/10 bg-black/50 backdrop-blur-xl shadow-[0_0_60px_rgba(0,0,0,0.6)] p-8 md:p-12">
   
             {/* Heading */}
-            <h1 className="text-4xl md:text-5xl font-semibold text-white mb-8">
+            <h1 className="text-4xl md:text-5xl font-headline text-white mb-8">
               About LuxWalls
             </h1>
   
@@ -38,8 +41,10 @@ export const metadata = {
               <p className="leading-relaxed text-gray-400">
                 We believe a screen is not merely a utility, but a personal visual
                 environment experienced throughout the day. LuxWalls exists to
-                elevate that experience through wallpapers that are minimal,
-                elegant, and intentional.
+                elevate that experience through{" "}
+                <Link href="/wallpapers" className="text-primary hover:underline">
+                  wallpapers that are minimal, elegant, and intentional.
+                </Link>
               </p>
               <p className="mt-4 leading-relaxed text-gray-400">
                 Our focus is on calm, consistency, and visual quality — without

@@ -2,14 +2,15 @@ import Link from 'next/link';
 
 export function Header() {
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 w-full">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-start px-4">
-        <Link
-          href="/"
-          className="font-headline text-3xl font-bold animate-shine bg-clip-text text-transparent bg-[length:200%_auto] bg-gradient-to-r from-champagne-gold via-executive-black to-champagne-gold"
-        >
+    <header className="absolute top-0 left-0 right-0 z-50 w-full bg-gradient-to-b from-black/70 to-transparent">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4">
+        <Link href="/" className="font-headline text-3xl font-bold text-champagne-gold transition-opacity hover:opacity-80">
           LuxWalls
         </Link>
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-soft-ivory/80">
+          <Link href="/wallpapers" className="transition-colors hover:text-white">Wallpapers</Link>
+          <Link href="/about" className="transition-colors hover:text-white">About</Link>
+        </nav>
       </div>
     </header>
   );

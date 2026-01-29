@@ -1,26 +1,37 @@
-"use client";
-
-import { LuxuryButton } from "@/components/ui/LuxuryButton";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
+import { LuxuryButton } from '@/components/ui/LuxuryButton';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function HeroSection() {
-  return (
-    <section className="relative flex w-full items-center justify-center bg-background px-4 py-24">
-      <div className="mx-auto max-w-2xl text-center">
-        <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          Premium Luxury Wallpapers
-          <span className="block text-muted-foreground">
-            Crafted for every screen, every device 
-          </span>
-        </h1>
+  const heroImage = PlaceHolderImages.find((img) => img.id === 'hero');
 
-        <p className="mb-10 text-sm text-muted-foreground sm:text-base">
-          Download ultra-high-quality wallpapers for free. Designed to look
-          stunning, load fast, and feel premium on every device.
+  return (
+    <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center text-center text-white px-4">
+      {heroImage ? (
+        <Image
+          src={heroImage.imageUrl}
+          alt={heroImage.description}
+          fill
+          priority
+          className="object-cover -z-10 brightness-[.4]"
+          data-ai-hint={heroImage.imageHint}
+        />
+      ) : (
+        <div className="absolute inset-0 bg-executive-black -z-10" />
+      )}
+      <div className="relative max-w-3xl">
+        <h1 className="text-4xl font-bold tracking-tight font-headline sm:text-5xl md:text-6xl">
+          Experience Luxury on Your Screen
+        </h1>
+        <p className="mt-6 text-lg leading-8 text-soft-ivory/90">
+          Discover a curated collection of premium, high-resolution wallpapers designed to bring sophistication and elegance to your devices.
         </p>
-        <Link href="/wallpapers">
-          <LuxuryButton size="lg">Browse Wallpapers</LuxuryButton>
-        </Link>
+        <div className="mt-10">
+          <Link href="/wallpapers">
+            <LuxuryButton size="lg">Browse Wallpapers</LuxuryButton>
+          </Link>
+        </div>
       </div>
     </section>
   );

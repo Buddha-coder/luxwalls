@@ -14,10 +14,10 @@ export default function WallpaperCard({ wallpaper }: WallpaperCardProps) {
     <div className="group relative aspect-[9/16] overflow-hidden rounded-2xl border border-border bg-muted transition-transform duration-300 hover:-translate-y-1">
       <Image
         src={wallpaper.src}
-        alt={wallpaper.title}
+        alt={`${wallpaper.title} - ${wallpaper.category} wallpaper by LuxWalls`}
         fill
         className="object-cover transition-transform duration-500 group-hover:scale-110"
-        sizes="(max-width: 640px) 50vw, 33vw"
+        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
         priority={false}
       />
 
@@ -28,7 +28,7 @@ export default function WallpaperCard({ wallpaper }: WallpaperCardProps) {
             onClick={() =>
               downloadImage(
                 wallpaper.src,
-                `luxwalls-wallpaper-${wallpaper.id}.jpg`
+                `luxwalls-${wallpaper.category}-${wallpaper.id}.jpg`
               )
             }
           >

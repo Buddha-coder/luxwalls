@@ -5,7 +5,7 @@ export default function WallpaperShowcase() {
   return (
     <section className="w-full px-4 py-20">
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-10 text-center text-2xl font-semibold sm:text-3xl">
+        <h2 className="mb-10 text-center text-3xl font-semibold font-headline sm:text-4xl">
           Handpicked. High-Resolution. Luxury.
         </h2>
 
@@ -17,11 +17,12 @@ export default function WallpaperShowcase() {
             >
               <Image
                 src={image.imageUrl}
-                alt={image.description}
+                alt={`${image.description} - LuxWalls Wallpaper Sample`}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                 sizes="(max-width: 640px) 50vw, 33vw"
                 priority={index < 2}
+                data-ai-hint={image.imageHint}
               />
             </div>
           ))}

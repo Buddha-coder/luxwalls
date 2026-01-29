@@ -1,20 +1,22 @@
-export const metadata = {
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
     title: "Privacy Policy | LuxWalls",
     description:
-      "Read LuxWalls privacy policy to understand how we handle data, user privacy, and platform security.",
+      "Read LuxWalls' privacy policy to understand how we handle data, user privacy, and platform security.",
   };
   
   export default function PrivacyPolicyPage() {
     return (
-      <main className="relative min-h-screen bg-[#0E0E11] text-gray-300 overflow-hidden">
+      <main className="relative min-h-screen bg-background text-gray-300 overflow-hidden">
   
         {/* Ambient glow */}
-        <div className="absolute -top-40 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-[#D4AF37]/10 blur-[120px]" />
+        <div className="absolute -top-40 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
   
-        <div className="relative max-w-4xl mx-auto px-6 py-24">
+        <div className="relative max-w-4xl mx-auto px-6 py-24 sm:py-32">
           <div className="rounded-2xl border border-white/10 bg-black/50 backdrop-blur-xl shadow-[0_0_60px_rgba(0,0,0,0.6)] p-8 md:p-12">
   
-            <h1 className="text-4xl md:text-5xl font-semibold text-white mb-8">
+            <h1 className="text-4xl md:text-5xl font-headline text-white mb-8">
               Privacy Policy
             </h1>
   
@@ -68,7 +70,7 @@ export const metadata = {
   
             <div className="border-t border-white/10 pt-6">
               <p className="text-sm text-gray-500">
-                Last updated: {new Date().getFullYear()}
+                Last updated: January 2024
               </p>
             </div>
   
