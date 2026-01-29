@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Header } from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import PwaInstallPrompt from "@/components/PwaInstallPrompt";
 
 const ptSans = PT_Sans({
   subsets: ["latin"],
@@ -104,6 +105,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <Toaster />
+        <PwaInstallPrompt />
       </body>
     </html>
   );

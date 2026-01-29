@@ -1,0 +1,41 @@
+"use client";
+
+import { usePwaInstall } from "@/hooks/usePwaInstall";
+
+export default function PwaInstallPrompt() {
+  const { visible, install, dismiss } = usePwaInstall();
+
+  if (!visible) return null;
+
+  return (
+    <div className="fixed bottom-4 left-1/2 z-40 w-[92%] max-w-md -translate-x-1/2 rounded-xl border border-white/10 bg-black/70 backdrop-blur-xl shadow-lg">
+      <div className="flex items-center justify-between px-4 py-3">
+        
+        <div>
+          <p className="text-sm font-medium text-white">
+            Install LuxWalls
+          </p>
+          <p className="text-xs text-gray-400">
+            Get a faster, app-like experience
+          </p>
+        </div>
+
+        <div className="flex gap-2">
+          <button
+            onClick={dismiss}
+            className="text-xs text-gray-400 hover:text-white transition"
+          >
+            Not now
+          </button>
+          <button
+            onClick={install}
+            className="rounded-md bg-white px-3 py-1 text-xs font-medium text-black hover:bg-gray-200 transition"
+          >
+            Install
+          </button>
+        </div>
+
+      </div>
+    </div>
+  );
+}
