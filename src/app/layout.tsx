@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import PwaInstallPrompt from "@/components/PwaInstallPrompt";
 import IosInstallHint from "@/components/IosInstallHint";
+import RegisterSW from "@/components/RegisterSW";
 
 const ptSans = PT_Sans({
   subsets: ["latin"],
@@ -108,6 +109,7 @@ export default function RootLayout({
         <Toaster />
         <PwaInstallPrompt />
         <IosInstallHint />
+        <RegisterSW />
       </body>
     </html>
   );
