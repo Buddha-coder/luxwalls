@@ -3,6 +3,7 @@ import WallpapersGrid from "@/components/wallpaper/WallpapersGrid";
 import CategoryTabs from "@/components/wallpaper/CategoryTabs";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { categoryIntros } from "@/lib/category-intros";
 
 interface CategoryPageProps {
   params: {
@@ -43,6 +44,10 @@ export function generateMetadata({ params }: CategoryPageProps): Metadata {
 export default function CategoryPage({ params }: CategoryPageProps) {
   const category = decodeURIComponent(params.category);
 
+  const introText =
+    categoryIntros[category] ||
+    `Premium ${category} wallpapers, curated to look beautiful on all your devices.`;
+
   const filteredWallpapers = wallpapers.filter((w) => w.category === category);
 
   if (filteredWallpapers.length === 0) {
@@ -57,8 +62,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         </h1>
 
         <p className="mb-8 text-muted-foreground max-w-2xl">
-          Premium {category} wallpapers, curated to look beautiful on all your
-          devices.
+          {introText}
         </p>
 
         <CategoryTabs />

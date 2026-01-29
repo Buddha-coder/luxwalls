@@ -20,8 +20,10 @@ export default function WallpapersPage() {
           All Premium Wallpapers
         </h1>
 
-        <p className="mb-8 text-muted-foreground">
-          Browse high-quality luxury wallpapers by category.
+        <p className="mb-8 text-muted-foreground max-w-2xl">
+          Discover the perfect backdrop for your device from our complete
+          collection. Browse all categories to find a high-resolution wallpaper
+          that matches your style.
         </p>
 
         <CategoryTabs />
