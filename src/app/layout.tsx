@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   },
   description:
     "Elevate your device with LuxWalls. A curated collection of stunning, high-resolution luxury wallpapers designed for mobile and desktop. Free to download.",
+  themeColor: "#C9A24D",
   verification: {
     google: "AHk0YKwgah_gHUL3WxFSIsZvvylxrNrr6MV2d-v9Va8",
   },

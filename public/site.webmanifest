@@ -1,1 +1,21 @@
-{"name":"","short_name":"","icons":[{"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],"theme_color":"#ffffff","background_color":"#ffffff","display":"standalone"}
+{
+  "name": "LuxWalls",
+  "short_name": "LuxWalls",
+  "description": "Elevate your device with LuxWalls. A curated collection of stunning, high-resolution luxury wallpapers designed for mobile and desktop. Free to download.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F0F12",
+  "theme_color": "#C9A24D",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
