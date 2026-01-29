@@ -8,16 +8,17 @@ export default function PwaInstallPrompt() {
   if (!visible) return null;
 
   return (
-    <div className="
-  fixed bottom-4 left-1/2 z-40
-  w-[92%] max-w-md -translate-x-1/2
-  rounded-xl border border-white/10
-  bg-black/70 backdrop-blur-xl
-  shadow-[0_0_20px_rgba(212,175,55,0.15)]
-  md:hidden
-">
+    <div
+      className="
+        fixed bottom-4 left-1/2 z-40
+        w-[92%] max-w-md -translate-x-1/2
+        rounded-xl border border-white/10
+        bg-black/70 backdrop-blur-xl
+        shadow-[0_0_20px_rgba(212,175,55,0.15)]
+        md:hidden
+      "
+    >
       <div className="flex items-center justify-between px-4 py-3">
-        
         <div>
           <p className="text-sm font-medium text-white">
             Install LuxWalls
@@ -41,7 +42,6 @@ export default function PwaInstallPrompt() {
             Install
           </button>
         </div>
-
       </div>
     </div>
   );
