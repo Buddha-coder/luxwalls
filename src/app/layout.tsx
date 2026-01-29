@@ -3,7 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import Footer from "@/components/layout/footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,11 +20,11 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "LuxWalls – Premium Luxury Wallpapers",
+    default: "LuxWalls – Premium 4K Wallpapers",
     template: "%s | LuxWalls",
   },
   description:
-    "Download premium luxury wallpapers for free. ultra-high quality, and optimized for every device",
+    "LuxWalls is a premium luxury wallpaper platform offering high-quality 4K and AMOLED wallpapers.",
 
   metadataBase: new URL("https://luxwalls.vercel.app"),
 
