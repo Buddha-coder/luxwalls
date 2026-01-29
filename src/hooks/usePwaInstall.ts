@@ -70,7 +70,7 @@ export function usePwaInstall() {
 
     // 🎉 Trigger micro-celebration
     localStorage.setItem("luxwalls_install_success", "true");
-
+    localStorage.setItem("luxwalls_installed", "true");
     setVisible(false);
   };
 

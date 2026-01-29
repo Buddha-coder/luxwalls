@@ -8,6 +8,7 @@ import PwaInstallPrompt from "@/components/PwaInstallPrompt";
 import IosInstallHint from "@/components/IosInstallHint";
 import RegisterSW from "@/components/RegisterSW";
 import InstallSuccess from "@/components/InstallSuccess";
+import PostInstallWelcome from "@/components/PostInstallWelcome";
 
 const ptSans = PT_Sans({
   subsets: ["latin"],
@@ -112,6 +113,7 @@ export default function RootLayout({
         <IosInstallHint />
         <RegisterSW />
         <InstallSuccess />
+        <PostInstallWelcome />
       </body>
     </html>
   );
