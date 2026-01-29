@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-      <footer className="relative mt-24">
+      <footer className="hidden sm:block relative mt-24 shadow-[0_-10px_40px_rgba(212,175,55,0.08)]">
         
         {/* Animated Gradient Border */}
         <div className="absolute top-0 left-0 right-0 h-[1.5px]
@@ -12,18 +12,18 @@ export default function Footer() {
           <div className="h-full w-full bg-black/60 backdrop-blur-xl border-t border-white/10">
             
             {/* LW Watermark */}
-<div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+<div className="pointer-events-none absolute inset-0 flex items-center justify-center translate-y-6">
   <span
     className="
-      text-[160px] md:text-[220px]
+      text-[120px] md:text-[220px]
       font-serif
       font-semibold
       text-[#D4AF37]/5
-      blur-sm
+      blur-[2px]
       select-none
     "
     style={{
-      textShadow: "0 0 40px rgba(212,175,55,0.25)",
+      textShadow: "0 0 60px rgba(212,175,55,0.35)",
     }}
   >
     LW
