@@ -13,14 +13,13 @@ export default function WallpaperShowcase() {
           {PlaceHolderImages.slice(1, 7).map((image, index) => (
             <div
               key={image.id}
-              className="overflow-hidden rounded-xl shadow-lg transition-transform duration-300 hover:scale-105"
+              className="group relative aspect-[9/16] overflow-hidden rounded-xl shadow-lg transition-transform duration-300 hover:scale-105"
             >
               <Image
                 src={image.imageUrl}
                 alt={image.description}
-                width={1080}
-                height={1920}
-                className="h-auto w-full object-cover"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
                 sizes="(max-width: 640px) 50vw, 33vw"
                 priority={index < 2}
               />

@@ -17,7 +17,7 @@ export default function WallpaperCard({ wallpaper }: WallpaperCardProps) {
         alt={wallpaper.title}
         width={1080}
         height={1920}
-        className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-110"
+        className="transition-transform duration-500 group-hover:scale-110"
         sizes="(max-width: 640px) 50vw, 33vw"
         priority={false}
       />
