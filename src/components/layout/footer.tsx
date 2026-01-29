@@ -1,6 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function Footer() {
+    const [year, setYear] = useState<number | null>(null);
+
+    useEffect(() => {
+        setYear(new Date().getFullYear());
+    }, []);
+
     return (
       <footer className="relative mt-24 shadow-[0_-10px_40px_rgba(212,175,55,0.08)]">
         
@@ -76,7 +85,7 @@ export default function Footer() {
   
             {/* Bottom bar */}
             <div className="text-center py-5 text-sm text-gray-500 border-t border-white/10">
-              © {new Date().getFullYear()} LuxWalls. All rights reserved.
+              © {year} LuxWalls. All rights reserved.
             </div>
   
           </div>
