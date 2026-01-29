@@ -63,9 +63,14 @@ export function usePwaInstall() {
 
   const install = async () => {
     if (!promptEvent) return;
+
     track("luxwalls_install_accepted");
     promptEvent.prompt();
     await promptEvent.userChoice;
+
+    // 🎉 Trigger micro-celebration
+    localStorage.setItem("luxwalls_install_success", "true");
+
     setVisible(false);
   };
 
