@@ -3,14 +3,32 @@ export default function Footer() {
       <footer className="relative mt-24">
         
         {/* Animated Gradient Border */}
-        <div className="absolute inset-0 p-[0.5px] rounded-none 
-          bg-[linear-gradient(270deg,#D4AF37,#BFA24A,#D4AF37)]
-          bg-[length:400%_400%]
-          animate-[gradientBorder_14s_ease_infinite]"
-        >
+        <div className="absolute top-0 left-0 right-0 h-[1.5px]
+          bg-[linear-gradient(270deg,#D4AF37,#ffffff,#D4AF37)]
+           bg-[length:400%_400%]
+           animate-[gradientBorder_10s_ease_infinite]" 
+         >
           {/* Glass Layer */}
           <div className="h-full w-full bg-black/60 backdrop-blur-xl border-t border-white/10">
             
+            {/* LW Watermark */}
+<div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+  <span
+    className="
+      text-[160px] md:text-[220px]
+      font-serif
+      font-semibold
+      text-[#D4AF37]/5
+      blur-sm
+      select-none
+    "
+    style={{
+      textShadow: "0 0 40px rgba(212,175,55,0.25)",
+    }}
+  >
+    LW
+  </span>
+</div>
             <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 text-gray-300">
               
               {/* Brand */}

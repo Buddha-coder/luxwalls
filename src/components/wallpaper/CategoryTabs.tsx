@@ -3,8 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { wallpapers } from "@/data/wallpapers";
 
-const categories = ["all", "amoled", "minimal", "nature", "cars", "anime", "illustration", "animals"]
+// Dynamically generate categories from the wallpapers data
+const allCategories = wallpapers.map((w) => w.category);
+const uniqueCategories = [...new Set(allCategories)];
+const categories = ["all", ...uniqueCategories.sort()];
 
 export default function CategoryTabs() {
   const pathname = usePathname();
