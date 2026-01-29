@@ -1,12 +1,14 @@
-import { wallpapers, type Wallpaper } from '@/data/wallpapers';
+import { wallpapers } from "@/data/wallpapers";
+import type { Wallpaper } from "@/data/wallpapers";
 
 function generateImageSitemap(wallpapers: Wallpaper[]) {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://luxwalls.vercel.app';
-    let xml = `<?xml version="1.0" encoding="UTF-8"?>`;
-    xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">`;
+  const baseUrl =
+    process.env.NEXT_PUBLIC_BASE_URL || "https://luxwalls.vercel.app";
+  let xml = `<?xml version="1.0" encoding="UTF-8"?>`;
+  xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">`;
 
-    wallpapers.forEach(wallpaper => {
-        xml += `
+  wallpapers.forEach((wallpaper) => {
+    xml += `
         <url>
             <loc>${baseUrl}/wallpapers/${wallpaper.category}</loc>
             <image:image>
@@ -15,19 +17,19 @@ function generateImageSitemap(wallpapers: Wallpaper[]) {
                 <image:caption>${`Download the '${wallpaper.title}' wallpaper from the ${wallpaper.category} collection. High-resolution luxury wallpaper for your device.`}</image:caption>
             </image:image>
         </url>`;
-    });
+  });
 
-    xml += `</urlset>`;
-    return xml;
+  xml += `</urlset>`;
+  return xml;
 }
 
 export async function GET() {
-    const body = generateImageSitemap(wallpapers);
+  const body = generateImageSitemap(wallpapers);
 
-    return new Response(body, {
-        status: 200,
-        headers: {
-            'Content-Type': 'application/xml',
-        },
-    });
+  return new Response(body, {
+    status: 200,
+    headers: {
+      "Content-Type": "application/xml",
+    },
+  });
 }
