@@ -22,12 +22,13 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-executive-black -z-10" />
       )}
       <div className="relative max-w-3xl animate-fade-in">
-        <h1 className="text-4xl font-bold tracking-tight font-headline sm:text-5xl md:text-6xl text-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
-          The Art of Atmosphere
-        </h1>
-        <p className="mt-6 text-lg leading-8 text-soft-ivory/90 text-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
-          Elevate your screen with exclusive, high-resolution wallpapers. Each one is carefully selected to bring a sense of calm and sophistication to your digital space.
-        </p>
+      <h1 className="text-4xl font-bold tracking-tight font-headline sm:text-5xl md:text-6xl text-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+  LuxWalls – Premium Luxury Wallpapers
+</h1>
+
+<p className="mt-4 text-xl font-medium text-soft-ivory/95">
+  The Art of Atmosphere
+</p>
         <div className="mt-10 flex justify-center">
           <Link href="/wallpapers">
             <LuxuryButton size="lg" className="group">

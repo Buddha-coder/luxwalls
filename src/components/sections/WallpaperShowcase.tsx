@@ -1,8 +1,5 @@
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { LuxuryButton } from "../ui/LuxuryButton";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 export default function WallpaperShowcase() {
   return (
@@ -35,15 +32,6 @@ export default function WallpaperShowcase() {
                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             </div>
           ))}
-        </div>
-        
-        <div className="text-center mt-16">
-            <Link href="/wallpapers">
-                <LuxuryButton size="lg" className="group">
-                    Browse All Wallpapers
-                    <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
-                </LuxuryButton>
-            </Link>
         </div>
       </div>
     </section>
