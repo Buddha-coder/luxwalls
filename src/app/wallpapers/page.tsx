@@ -2,6 +2,7 @@ import WallpapersGrid from "@/components/wallpaper/WallpapersGrid";
 import { wallpapers } from "@/data/wallpapers";
 import CategoryTabs from "@/components/wallpaper/CategoryTabs";
 import { Metadata } from "next";
+import { Container } from "@/components/layout/container";
 
 export const metadata: Metadata = {
   title: "Explore All Wallpapers - LuxWalls Collection",
@@ -33,12 +34,12 @@ export default function WallpapersPage() {
   }));
 
   return (
-    <main className="w-full px-4 py-24 sm:py-32">
+    <main className="w-full py-24 sm:py-32">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(imageObjectLd) }}
       />
-      <div className="mx-auto max-w-7xl">
+      <Container>
         <div className="mb-8 space-y-4">
           <h1 className="text-3xl font-headline font-semibold sm:text-4xl">
             All Premium Wallpapers
@@ -54,7 +55,7 @@ export default function WallpapersPage() {
         <CategoryTabs />
 
         <WallpapersGrid wallpapers={wallpapers} />
-      </div>
+      </Container>
     </main>
   );
 }

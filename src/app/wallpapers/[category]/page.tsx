@@ -4,6 +4,7 @@ import CategoryTabs from "@/components/wallpaper/CategoryTabs";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { categoryIntros } from "@/lib/category-intros";
+import { Container } from "@/components/layout/container";
 
 interface CategoryPageProps {
   params: {
@@ -74,12 +75,12 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   }));
 
   return (
-    <main className="w-full px-4 py-24 sm:py-32">
+    <main className="w-full py-24 sm:py-32">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(imageObjectLd) }}
       />
-      <div className="mx-auto max-w-7xl">
+      <Container>
         <div className="mb-8 space-y-4">
           <h1 className="text-3xl font-headline font-semibold capitalize sm:text-4xl">
             {category} Wallpapers
@@ -91,7 +92,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         <CategoryTabs />
 
         <WallpapersGrid wallpapers={filteredWallpapers} />
-      </div>
+      </Container>
     </main>
   );
 }

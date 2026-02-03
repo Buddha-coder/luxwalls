@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/hero-images";
+import { Container } from "@/components/layout/container";
 
 export default function WallpaperShowcase() {
   return (
-    <section className="w-full bg-executive-black px-4 py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl">
+    <section className="w-full bg-executive-black py-24 sm:py-32">
+      <Container>
         <div className="space-y-4 text-center">
             <h2 className="text-3xl font-semibold font-headline sm:text-4xl">
               Featured Collections
@@ -33,7 +34,7 @@ export default function WallpaperShowcase() {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

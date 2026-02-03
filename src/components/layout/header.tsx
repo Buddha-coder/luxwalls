@@ -1,17 +1,20 @@
 import Link from 'next/link';
+import { Container } from './container';
 
 export function Header() {
   return (
     <header className="absolute top-0 left-0 right-0 z-50 w-full bg-gradient-to-b from-black/70 to-transparent">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4">
-        <Link href="/" className="font-headline text-3xl font-bold text-champagne-gold transition-opacity hover:opacity-80">
-          LuxWalls
-        </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-soft-ivory/80">
-          <Link href="/wallpapers" className="transition-colors hover:text-white">Wallpapers</Link>
-          <Link href="/about" className="transition-colors hover:text-white">About</Link>
-        </nav>
-      </div>
+      <Container>
+        <div className="flex h-20 items-center justify-between">
+          <Link href="/" className="font-headline text-3xl font-bold text-champagne-gold transition-opacity hover:opacity-80">
+            LuxWalls
+          </Link>
+          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-soft-ivory/80">
+            <Link href="/wallpapers" className="transition-colors hover:text-white">Wallpapers</Link>
+            <Link href="/about" className="transition-colors hover:text-white">About</Link>
+          </nav>
+        </div>
+      </Container>
     </header>
   );
 }

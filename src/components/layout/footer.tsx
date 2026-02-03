@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { Container } from "./container";
 
 export default function Footer() {
     const [year, setYear] = useState<number | null>(null);
@@ -40,48 +41,50 @@ export default function Footer() {
                 LW
               </span>
             </div>
-            <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 text-gray-300">
-              
-              {/* Brand */}
-              <div>
-                <h2 className="text-2xl font-semibold text-white tracking-wide font-headline">
-                  LuxWalls
-                </h2>
-                <p className="mt-4 text-sm text-gray-400">
-                  Premium luxury wallpapers crafted for high-resolution and AMOLED displays.
-                </p>
+            <Container>
+              <div className="py-16 grid grid-cols-1 md:grid-cols-4 gap-12 text-gray-300">
+                
+                {/* Brand */}
+                <div>
+                  <h2 className="text-2xl font-semibold text-white tracking-wide font-headline">
+                    LuxWalls
+                  </h2>
+                  <p className="mt-4 text-sm text-gray-400">
+                    Premium luxury wallpapers crafted for high-resolution and AMOLED displays.
+                  </p>
+                </div>
+    
+                {/* Explore */}
+                <div>
+                  <h3 className="text-white font-medium mb-4">Explore</h3>
+                  <ul className="space-y-3 text-sm">
+                    <li><Link href="/" className="hover:text-white transition">Home</Link></li>
+                    <li><Link href="/wallpapers" className="hover:text-white transition">Wallpapers</Link></li>
+                    <li><Link href="/about" className="hover:text-white transition">About</Link></li>
+                  </ul>
+                </div>
+    
+                {/* Legal */}
+                <div>
+                  <h3 className="text-white font-medium mb-4">Legal</h3>
+                  <ul className="space-y-3 text-sm">
+                    <li><Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
+                    <li><Link href="/terms" className="hover:text-white transition">Terms & Conditions</Link></li>
+                  </ul>
+                </div>
+    
+                {/* Social */}
+                <div>
+                  <h3 className="text-white font-medium mb-4">Connect</h3>
+                  <ul className="space-y-3 text-sm">
+                    <li><a href="#" className="hover:text-white transition" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    <li><a href="#" className="hover:text-white transition" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
+                    <li><a href="#" className="hover:text-white transition" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                  </ul>
+                </div>
+    
               </div>
-  
-              {/* Explore */}
-              <div>
-                <h3 className="text-white font-medium mb-4">Explore</h3>
-                <ul className="space-y-3 text-sm">
-                  <li><Link href="/" className="hover:text-white transition">Home</Link></li>
-                  <li><Link href="/wallpapers" className="hover:text-white transition">Wallpapers</Link></li>
-                  <li><Link href="/about" className="hover:text-white transition">About</Link></li>
-                </ul>
-              </div>
-  
-              {/* Legal */}
-              <div>
-                <h3 className="text-white font-medium mb-4">Legal</h3>
-                <ul className="space-y-3 text-sm">
-                  <li><Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
-                  <li><Link href="/terms" className="hover:text-white transition">Terms & Conditions</Link></li>
-                </ul>
-              </div>
-  
-              {/* Social */}
-              <div>
-                <h3 className="text-white font-medium mb-4">Connect</h3>
-                <ul className="space-y-3 text-sm">
-                  <li><a href="#" className="hover:text-white transition" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                  <li><a href="#" className="hover:text-white transition" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
-                  <li><a href="#" className="hover:text-white transition" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                </ul>
-              </div>
-  
-            </div>
+            </Container>
   
             {/* Bottom bar */}
             <div className="text-center py-5 text-sm text-gray-500 border-t border-white/10">
