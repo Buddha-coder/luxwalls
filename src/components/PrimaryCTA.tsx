@@ -9,7 +9,7 @@ export default function PrimaryCTA() {
           <h2 className="text-3xl font-semibold font-headline sm:text-4xl text-primary">
             Your New Wallpaper Awaits
           </h2>
-          <p className="max-w-2xl mx-auto text-base text-muted-foreground sm:text-lg">
+          <p className="max-w-prose mx-auto text-base text-muted-foreground sm:text-lg">
             The entire collection is free to download. Find the perfect background that reflects your style and elevates your everyday.
           </p>
         </div>

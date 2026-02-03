@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="relative min-h-screen bg-background text-gray-300 overflow-hidden">
+    <main className="relative min-h-screen bg-background text-foreground overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute -top-40 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
 
@@ -21,7 +21,7 @@ export default function AboutPage() {
             <h1 className="text-4xl md:text-5xl font-headline text-white">
               About LuxWalls
             </h1>
-            <p className="text-lg text-gray-400 leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-prose">
               LuxWalls is a premium wallpaper platform created for individuals who
               appreciate refined aesthetics, clarity, and visual balance. Our
               collection is carefully curated to deliver high-resolution visuals
@@ -36,8 +36,8 @@ export default function AboutPage() {
               <h2 className="text-2xl font-medium text-white">
                 Our Vision
               </h2>
-              <div className="space-y-4 text-gray-400">
-                <p className="leading-relaxed">
+              <div className="space-y-4 text-muted-foreground">
+                <p className="leading-relaxed max-w-prose">
                   We believe a screen is not merely a utility, but a personal visual
                   environment experienced throughout the day. LuxWalls exists to
                   elevate that experience through{" "}
@@ -45,7 +45,7 @@ export default function AboutPage() {
                     wallpapers that are minimal, elegant, and intentional.
                   </Link>
                 </p>
-                <p className="leading-relaxed">
+                <p className="leading-relaxed max-w-prose">
                   Our focus is on calm, consistency, and visual quality — without
                   distraction.
                 </p>
@@ -57,7 +57,7 @@ export default function AboutPage() {
               <h2 className="text-2xl font-medium text-white">
                 What Defines LuxWalls
               </h2>
-              <ul className="space-y-3 text-gray-400 list-disc list-inside">
+              <ul className="space-y-3 text-muted-foreground list-disc list-inside max-w-prose">
                 <li>Curated premium wallpapers with a focus on quality</li>
                 <li>Mobile-first experience optimized for modern devices</li>
                 <li>High-resolution assets with precise detail and clarity</li>
@@ -70,13 +70,13 @@ export default function AboutPage() {
               <h2 className="text-2xl font-medium text-white">
                 Designed With Purpose
               </h2>
-              <div className="space-y-4 text-gray-400">
-                <p className="leading-relaxed">
+              <div className="space-y-4 text-muted-foreground">
+                <p className="leading-relaxed max-w-prose">
                   LuxWalls is intentionally lightweight and fast. From discovery to
                   download, the experience is designed to be seamless, intuitive,
                   and free of unnecessary steps.
                 </p>
-                <p className="leading-relaxed">
+                <p className="leading-relaxed max-w-prose">
                   There are no accounts, no intrusive monetization, and no friction
                   between users and content.
                 </p>
@@ -88,13 +88,13 @@ export default function AboutPage() {
               <h2 className="text-2xl font-medium text-white">
                 Respect for Users
               </h2>
-              <div className="space-y-4 text-gray-400">
-                <p className="leading-relaxed">
+              <div className="space-y-4 text-muted-foreground">
+                <p className="leading-relaxed max-w-prose">
                   LuxWalls prioritizes user privacy and attention. We avoid
                   aggressive tracking, forced registrations, and manipulative
                   design practices.
                 </p>
-                <p className="leading-relaxed">
+                <p className="leading-relaxed max-w-prose">
                   The platform is transparent by design — focused solely on
                   delivering value through content.
                 </p>
@@ -106,7 +106,7 @@ export default function AboutPage() {
               <h2 className="text-2xl font-medium text-white">
                 Looking Ahead
               </h2>
-              <p className="leading-relaxed text-gray-400">
+              <p className="leading-relaxed text-muted-foreground max-w-prose">
                 LuxWalls continues to evolve with thoughtful improvements,
                 refined curation, and performance enhancements. Our objective is
                 to become a trusted destination for premium wallpapers.
@@ -116,7 +116,7 @@ export default function AboutPage() {
 
           {/* Closing */}
           <div className="border-t border-white/10 pt-8 mt-14">
-            <p className="text-lg text-white font-medium">
+            <p className="text-lg text-white font-medium max-w-prose">
               LuxWalls represents the intersection of minimal design and
               luxury-grade visuals.
             </p>

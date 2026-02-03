@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="relative min-h-screen bg-background text-gray-300 overflow-hidden">
+    <main className="relative min-h-screen bg-background text-foreground overflow-hidden">
       {/* Ambient glow */}
       <div className="absolute -top-40 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
 
@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
             <h1 className="text-4xl md:text-5xl font-headline text-white">
               Privacy Policy
             </h1>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed max-w-prose">
               LuxWalls respects your privacy and is committed to protecting it.
               This policy outlines how information is handled when you use our
               platform.
@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-2xl text-white font-medium">
                 Information We Collect
               </h2>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed max-w-prose">
                 LuxWalls does not require account creation and does not collect
                 personally identifiable information. Basic, anonymous usage data
                 may be collected for performance and improvement purposes.
@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-2xl text-white font-medium">
                 Cookies & Analytics
               </h2>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed max-w-prose">
                 Cookies may be used to improve user experience and understand
                 general traffic patterns. No data is used to identify individual
                 users.
@@ -52,7 +52,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-2xl text-white font-medium">
                 Third-Party Services
               </h2>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed max-w-prose">
                 LuxWalls may use third-party services for hosting and analytics.
                 These services operate under their own privacy policies.
               </p>
@@ -62,7 +62,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-2xl text-white font-medium">
                 Policy Updates
               </h2>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed max-w-prose">
                 This privacy policy may be updated periodically. Continued use of
                 LuxWalls indicates acceptance of any changes.
               </p>
