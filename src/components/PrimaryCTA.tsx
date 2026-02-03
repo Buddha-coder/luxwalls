@@ -3,7 +3,7 @@ import { ChevronRight } from 'lucide-react';
 
 export default function PrimaryCTA() {
   return (
-    <section className="w-full px-4 py-24 sm:py-32">
+    <section className="w-full px-4 py-24 sm:py-32 border-t border-border">
       <div className="mx-auto max-w-4xl text-center">
         <div className="space-y-4">
           <h2 className="text-3xl font-semibold font-headline sm:text-4xl text-primary">
