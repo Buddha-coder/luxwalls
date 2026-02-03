@@ -26,7 +26,7 @@ export default function CategoryTabs() {
             key={cat}
             href={href}
             className={clsx(
-              "whitespace-nowrap rounded-full border px-4 py-2 text-sm capitalize transition-colors duration-200",
+              "whitespace-nowrap rounded-full border px-4 py-3 text-sm capitalize transition-colors duration-200",
               isActive
                 ? "border-primary bg-primary text-primary-foreground"
                 : "border-border text-muted-foreground hover:text-foreground"

@@ -58,9 +58,9 @@ export default function Footer() {
                 <div>
                   <h3 className="text-white font-medium mb-4">Explore</h3>
                   <ul className="space-y-3 text-sm">
-                    <li><Link href="/" className="hover:text-white transition">Home</Link></li>
-                    <li><Link href="/wallpapers" className="hover:text-white transition">Wallpapers</Link></li>
-                    <li><Link href="/about" className="hover:text-white transition">About</Link></li>
+                    <li><Link href="/" className="inline-block py-2 hover:text-white transition">Home</Link></li>
+                    <li><Link href="/wallpapers" className="inline-block py-2 hover:text-white transition">Wallpapers</Link></li>
+                    <li><Link href="/about" className="inline-block py-2 hover:text-white transition">About</Link></li>
                   </ul>
                 </div>
     
@@ -68,8 +68,8 @@ export default function Footer() {
                 <div>
                   <h3 className="text-white font-medium mb-4">Legal</h3>
                   <ul className="space-y-3 text-sm">
-                    <li><Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
-                    <li><Link href="/terms" className="hover:text-white transition">Terms & Conditions</Link></li>
+                    <li><Link href="/privacy-policy" className="inline-block py-2 hover:text-white transition">Privacy Policy</Link></li>
+                    <li><Link href="/terms" className="inline-block py-2 hover:text-white transition">Terms & Conditions</Link></li>
                   </ul>
                 </div>
     
@@ -77,9 +77,9 @@ export default function Footer() {
                 <div>
                   <h3 className="text-white font-medium mb-4">Connect</h3>
                   <ul className="space-y-3 text-sm">
-                    <li><a href="#" className="hover:text-white transition" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                    <li><a href="#" className="hover:text-white transition" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
-                    <li><a href="#" className="hover:text-white transition" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="#" className="inline-block py-2 hover:text-white transition" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    <li><a href="#" className="inline-block py-2 hover:text-white transition" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
+                    <li><a href="#" className="inline-block py-2 hover:text-white transition" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                   </ul>
                 </div>
     

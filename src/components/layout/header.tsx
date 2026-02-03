@@ -10,8 +10,8 @@ export function Header() {
             LuxWalls
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-soft-ivory/80">
-            <Link href="/wallpapers" className="transition-all hover:text-white hover:-translate-y-px">Wallpapers</Link>
-            <Link href="/about" className="transition-all hover:text-white hover:-translate-y-px">About</Link>
+            <Link href="/wallpapers" className="py-3 transition-all hover:text-white hover:-translate-y-px">Wallpapers</Link>
+            <Link href="/about" className="py-3 transition-all hover:text-white hover:-translate-y-px">About</Link>
           </nav>
         </div>
       </Container>
