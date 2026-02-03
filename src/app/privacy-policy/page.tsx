@@ -14,59 +14,62 @@ export default function PrivacyPolicyPage() {
 
       <div className="relative max-w-4xl mx-auto px-6 py-24 sm:py-32">
         <div className="rounded-2xl border border-white/10 bg-black/50 backdrop-blur-xl shadow-[0_0_60px_rgba(0,0,0,0.6)] p-8 md:p-12">
-          <h1 className="text-4xl md:text-5xl font-headline text-white mb-8">
-            Privacy Policy
-          </h1>
-
-          <p className="text-gray-400 leading-relaxed mb-10">
-            LuxWalls respects your privacy and is committed to protecting it.
-            This policy outlines how information is handled when you use our
-            platform.
-          </p>
-
-          <section className="mb-8">
-            <h2 className="text-2xl text-white font-medium mb-4">
-              Information We Collect
-            </h2>
+          <div className="space-y-4">
+            <h1 className="text-4xl md:text-5xl font-headline text-white">
+              Privacy Policy
+            </h1>
             <p className="text-gray-400 leading-relaxed">
-              LuxWalls does not require account creation and does not collect
-              personally identifiable information. Basic, anonymous usage data
-              may be collected for performance and improvement purposes.
+              LuxWalls respects your privacy and is committed to protecting it.
+              This policy outlines how information is handled when you use our
+              platform.
             </p>
-          </section>
+          </div>
 
-          <section className="mb-8">
-            <h2 className="text-2xl text-white font-medium mb-4">
-              Cookies & Analytics
-            </h2>
-            <p className="text-gray-400 leading-relaxed">
-              Cookies may be used to improve user experience and understand
-              general traffic patterns. No data is used to identify individual
-              users.
-            </p>
-          </section>
+          <div className="mt-12 space-y-8">
+            <section className="space-y-4">
+              <h2 className="text-2xl text-white font-medium">
+                Information We Collect
+              </h2>
+              <p className="text-gray-400 leading-relaxed">
+                LuxWalls does not require account creation and does not collect
+                personally identifiable information. Basic, anonymous usage data
+                may be collected for performance and improvement purposes.
+              </p>
+            </section>
 
-          <section className="mb-8">
-            <h2 className="text-2xl text-white font-medium mb-4">
-              Third-Party Services
-            </h2>
-            <p className="text-gray-400 leading-relaxed">
-              LuxWalls may use third-party services for hosting and analytics.
-              These services operate under their own privacy policies.
-            </p>
-          </section>
+            <section className="space-y-4">
+              <h2 className="text-2xl text-white font-medium">
+                Cookies & Analytics
+              </h2>
+              <p className="text-gray-400 leading-relaxed">
+                Cookies may be used to improve user experience and understand
+                general traffic patterns. No data is used to identify individual
+                users.
+              </p>
+            </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl text-white font-medium mb-4">
-              Policy Updates
-            </h2>
-            <p className="text-gray-400 leading-relaxed">
-              This privacy policy may be updated periodically. Continued use of
-              LuxWalls indicates acceptance of any changes.
-            </p>
-          </section>
+            <section className="space-y-4">
+              <h2 className="text-2xl text-white font-medium">
+                Third-Party Services
+              </h2>
+              <p className="text-gray-400 leading-relaxed">
+                LuxWalls may use third-party services for hosting and analytics.
+                These services operate under their own privacy policies.
+              </p>
+            </section>
 
-          <div className="border-t border-white/10 pt-6">
+            <section className="space-y-4">
+              <h2 className="text-2xl text-white font-medium">
+                Policy Updates
+              </h2>
+              <p className="text-gray-400 leading-relaxed">
+                This privacy policy may be updated periodically. Continued use of
+                LuxWalls indicates acceptance of any changes.
+              </p>
+            </section>
+          </div>
+
+          <div className="border-t border-white/10 pt-6 mt-12">
             <p className="text-sm text-gray-500">
               Last updated: January 2024
             </p>

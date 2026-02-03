@@ -39,15 +39,17 @@ export default function WallpapersPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(imageObjectLd) }}
       />
       <div className="mx-auto max-w-7xl">
-        <h1 className="mb-4 text-3xl font-headline font-semibold sm:text-4xl">
-          All Premium Wallpapers
-        </h1>
+        <div className="mb-8 space-y-4">
+          <h1 className="text-3xl font-headline font-semibold sm:text-4xl">
+            All Premium Wallpapers
+          </h1>
 
-        <p className="mb-8 text-muted-foreground max-w-2xl">
-          Discover the perfect backdrop for your device from our complete
-          collection. Browse all categories to find a high-resolution wallpaper
-          that matches your style.
-        </p>
+          <p className="max-w-2xl text-muted-foreground">
+            Discover the perfect backdrop for your device from our complete
+            collection. Browse all categories to find a high-resolution wallpaper
+            that matches your style.
+          </p>
+        </div>
 
         <CategoryTabs />
 

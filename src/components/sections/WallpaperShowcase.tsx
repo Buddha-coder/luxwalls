@@ -5,8 +5,8 @@ export default function WallpaperShowcase() {
   return (
     <section className="w-full bg-executive-black px-4 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-            <h2 className="mb-4 text-3xl font-semibold font-headline sm:text-4xl">
+        <div className="space-y-4 text-center">
+            <h2 className="text-3xl font-semibold font-headline sm:text-4xl">
               Featured Collections
             </h2>
             <p className="max-w-2xl mx-auto text-muted-foreground">
@@ -14,7 +14,7 @@ export default function WallpaperShowcase() {
             </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+        <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
           {PlaceHolderImages.slice(1, 7).map((image, index) => (
             <div
               key={image.id}

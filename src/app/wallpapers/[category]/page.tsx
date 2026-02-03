@@ -80,11 +80,13 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(imageObjectLd) }}
       />
       <div className="mx-auto max-w-7xl">
-        <h1 className="mb-4 text-3xl font-headline font-semibold capitalize sm:text-4xl">
-          {category} Wallpapers
-        </h1>
+        <div className="mb-8 space-y-4">
+          <h1 className="text-3xl font-headline font-semibold capitalize sm:text-4xl">
+            {category} Wallpapers
+          </h1>
 
-        <p className="mb-8 text-muted-foreground max-w-2xl">{introText}</p>
+          <p className="max-w-2xl text-muted-foreground">{introText}</p>
+        </div>
 
         <CategoryTabs />
 
