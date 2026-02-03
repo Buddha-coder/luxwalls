@@ -44,16 +44,17 @@ export function generateMetadata({ params }: CategoryPageProps): Metadata {
 
 export default function CategoryPage({ params }: CategoryPageProps) {
   const category = decodeURIComponent(params.category);
+  
+  const allCategories = [...new Set(wallpapers.map((w) => w.category))];
+  if (!allCategories.includes(category)) {
+    notFound();
+  }
 
   const introText =
     categoryIntros[category] ||
     `Premium ${category} wallpapers, curated to look beautiful on all your devices.`;
 
   const filteredWallpapers = wallpapers.filter((w) => w.category === category);
-
-  if (filteredWallpapers.length === 0) {
-    notFound();
-  }
 
   const baseUrl =
     process.env.NEXT_PUBLIC_BASE_URL || "https://luxwalls.vercel.app";

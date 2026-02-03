@@ -1,5 +1,6 @@
 import { Wallpaper } from "@/data/wallpapers";
 import WallpaperCard from "./WallpaperCard";
+import { EmptyState } from "@/components/ui/empty-state";
 
 interface WallpapersGridProps {
   wallpapers: Wallpaper[];
@@ -8,11 +9,10 @@ interface WallpapersGridProps {
 export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
   if (!wallpapers || wallpapers.length === 0) {
     return (
-      <div className="py-24 text-center">
-        <p className="text-muted-foreground">
-          No wallpapers available right now.
-        </p>
-      </div>
+      <EmptyState
+        title="No Wallpapers Found"
+        desc="It seems there are no wallpapers to display right now."
+      />
     );
   }
 
