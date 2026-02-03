@@ -15,7 +15,7 @@ export default function AboutPage() {
 
       <div className="relative max-w-4xl mx-auto px-6 py-24 sm:py-32">
         {/* Glass container */}
-        <div className="rounded-2xl border border-white/10 bg-black/50 backdrop-blur-xl shadow-[0_0_60px_rgba(0,0,0,0.6)] p-8 md:p-12">
+        <div className="rounded-2xl border border-white/10 bg-black/50 backdrop-blur-xl shadow-[0_0_60px_rgba(0,0,0,0.6)] p-5 md:p-6">
           {/* Page Header */}
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl font-headline text-white">

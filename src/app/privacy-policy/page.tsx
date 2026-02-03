@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
       <div className="absolute -top-40 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
 
       <div className="relative max-w-4xl mx-auto px-6 py-24 sm:py-32">
-        <div className="rounded-2xl border border-white/10 bg-black/50 backdrop-blur-xl shadow-[0_0_60px_rgba(0,0,0,0.6)] p-8 md:p-12">
+        <div className="rounded-2xl border border-white/10 bg-black/50 backdrop-blur-xl shadow-[0_0_60px_rgba(0,0,0,0.6)] p-5 md:p-6">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl font-headline text-white">
               Privacy Policy
