@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { LuxuryButton } from '@/components/ui/LuxuryButton';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { PlaceHolderImages } from '@/lib/hero-images';
 import { ChevronRight } from 'lucide-react';
 
 export default function HeroSection() {
