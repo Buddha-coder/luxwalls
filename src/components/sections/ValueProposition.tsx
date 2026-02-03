@@ -9,8 +9,8 @@ export default function ValueProposition() {
             <div className="flex items-center justify-center h-16 w-16 mb-6 rounded-full bg-primary/10 border border-primary/20">
               <Gem className="h-8 w-8 text-primary" />
             </div>
-            <h3 className="mb-2 text-xl font-semibold font-headline">Curated for Quality</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <h3 className="mb-2 text-lg md:text-xl font-semibold font-headline">Curated for Quality</h3>
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
               Every wallpaper is handpicked to ensure flawless detail and perfect clarity on high-resolution screens.
             </p>
           </div>
@@ -18,8 +18,8 @@ export default function ValueProposition() {
             <div className="flex items-center justify-center h-16 w-16 mb-6 rounded-full bg-primary/10 border border-primary/20">
               <Smartphone className="h-8 w-8 text-primary" />
             </div>
-            <h3 className="mb-2 text-xl font-semibold font-headline">Designed for Devices</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <h3 className="mb-2 text-lg md:text-xl font-semibold font-headline">Designed for Devices</h3>
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
               A mobile-first experience that is equally stunning on tablets and desktops. Your screens, elevated.
             </p>
           </div>
@@ -27,8 +27,8 @@ export default function ValueProposition() {
             <div className="flex items-center justify-center h-16 w-16 mb-6 rounded-full bg-primary/10 border border-primary/20">
                 <Zap className="h-8 w-8 text-primary" />
             </div>
-            <h3 className="mb-2 text-xl font-semibold font-headline">Effortless & Free</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <h3 className="mb-2 text-lg md:text-xl font-semibold font-headline">Effortless & Free</h3>
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
               No accounts, no ads, no friction. Just a fast, seamless journey from discovery to download.
             </p>
           </div>

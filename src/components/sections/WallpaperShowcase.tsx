@@ -10,7 +10,7 @@ export default function WallpaperShowcase() {
             <h2 className="text-3xl font-semibold font-headline sm:text-4xl">
               Featured Collections
             </h2>
-            <p className="max-w-2xl mx-auto text-muted-foreground">
+            <p className="max-w-2xl mx-auto text-muted-foreground text-base md:text-lg">
                 A glimpse into our curated world of premium wallpapers. Discover designs that transform your device.
             </p>
         </div>

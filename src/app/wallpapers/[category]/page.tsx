@@ -87,7 +87,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
             {category} Wallpapers
           </h1>
 
-          <p className="max-w-prose text-muted-foreground">{introText}</p>
+          <p className="max-w-prose text-muted-foreground text-base md:text-lg">{introText}</p>
         </div>
 
         <CategoryTabs />

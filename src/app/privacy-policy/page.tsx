@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
             <h1 className="text-4xl md:text-5xl font-headline text-white">
               Privacy Policy
             </h1>
-            <p className="text-muted-foreground leading-relaxed max-w-prose">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-prose">
               LuxWalls respects your privacy and is committed to protecting it.
               This policy outlines how information is handled when you use our
               platform.
@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
 
           <div className="mt-12 space-y-8">
             <section className="space-y-4">
-              <h2 className="text-2xl text-white font-medium">
+              <h2 className="text-2xl sm:text-3xl text-white font-medium">
                 Information We Collect
               </h2>
               <p className="text-muted-foreground leading-relaxed max-w-prose">
@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl text-white font-medium">
+              <h2 className="text-2xl sm:text-3xl text-white font-medium">
                 Cookies & Analytics
               </h2>
               <p className="text-muted-foreground leading-relaxed max-w-prose">
@@ -49,7 +49,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl text-white font-medium">
+              <h2 className="text-2xl sm:text-3xl text-white font-medium">
                 Third-Party Services
               </h2>
               <p className="text-muted-foreground leading-relaxed max-w-prose">
@@ -59,7 +59,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl text-white font-medium">
+              <h2 className="text-2xl sm:text-3xl text-white font-medium">
                 Policy Updates
               </h2>
               <p className="text-muted-foreground leading-relaxed max-w-prose">

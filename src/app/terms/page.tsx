@@ -18,7 +18,7 @@ export default function TermsPage() {
             <h1 className="text-4xl md:text-5xl font-headline text-white">
               Terms & Conditions
             </h1>
-            <p className="text-muted-foreground leading-relaxed max-w-prose">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-prose">
               By accessing or using LuxWalls, you agree to the following terms and
               conditions. Please read them carefully.
             </p>
@@ -26,7 +26,7 @@ export default function TermsPage() {
 
           <div className="mt-12 space-y-8">
             <section className="space-y-4">
-              <h2 className="text-2xl text-white font-medium">
+              <h2 className="text-2xl sm:text-3xl text-white font-medium">
                 Use of Content
               </h2>
               <p className="text-muted-foreground leading-relaxed max-w-prose">
@@ -37,7 +37,7 @@ export default function TermsPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl text-white font-medium">
+              <h2 className="text-2xl sm:text-3xl text-white font-medium">
                 Intellectual Property
               </h2>
               <p className="text-muted-foreground leading-relaxed max-w-prose">
@@ -48,7 +48,7 @@ export default function TermsPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl text-white font-medium">
+              <h2 className="text-2xl sm:text-3xl text-white font-medium">
                 Disclaimer of Warranties
               </h2>
               <p className="text-muted-foreground leading-relaxed max-w-prose">
@@ -59,7 +59,7 @@ export default function TermsPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl text-white font-medium">
+              <h2 className="text-2xl sm:text-3xl text-white font-medium">
                 Changes to Terms
               </h2>
               <p className="text-muted-foreground leading-relaxed max-w-prose">

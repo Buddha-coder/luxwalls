@@ -26,7 +26,7 @@ export default function HeroSection() {
   LuxWalls – Premium Luxury Wallpapers
 </h1>
 
-<p className="mt-4 text-xl font-medium text-soft-ivory/95">
+<p className="mt-4 text-lg md:text-xl font-medium text-soft-ivory/95">
   The Art of Atmosphere
 </p>
         <div className="mt-10 flex justify-center">
