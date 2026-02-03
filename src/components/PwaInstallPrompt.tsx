@@ -31,13 +31,13 @@ export default function PwaInstallPrompt() {
         <div className="flex gap-2">
           <button
             onClick={dismiss}
-            className="text-xs text-gray-400 hover:text-white transition"
+            className="rounded-sm text-xs text-gray-400 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-background"
           >
             Not now
           </button>
           <button
             onClick={install}
-            className="rounded-md bg-white px-3 py-1 text-xs font-medium text-black hover:bg-gray-200 transition"
+            className="rounded-md bg-white px-3 py-1 text-xs font-medium text-black transition hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             Install
           </button>

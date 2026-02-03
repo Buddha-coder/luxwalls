@@ -25,7 +25,7 @@ export default function OfflinePage() {
         {/* Retry */}
         <button
           onClick={() => window.location.reload()}
-          className="rounded-md border border-white/10 bg-white/90 px-4 py-2 text-sm font-medium text-black transition-all duration-200 hover:bg-white hover:scale-105"
+          className="rounded-md border border-white/10 bg-white/90 px-4 py-2 text-sm font-medium text-black transition-all duration-200 hover:bg-white hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           Retry
         </button>

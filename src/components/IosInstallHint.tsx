@@ -29,7 +29,7 @@ export default function IosInstallHint() {
 
         <button
           onClick={dismiss}
-          className="mt-2 text-xs text-gray-400 hover:text-white transition"
+          className="mt-2 rounded-sm text-xs text-gray-400 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-black/70"
         >
           Got it
         </button>
