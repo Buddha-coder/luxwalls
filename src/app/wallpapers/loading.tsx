@@ -1,6 +1,6 @@
 export default function WallpapersLoading() {
   return (
-    <main className="w-full px-4 py-20">
+    <main className="w-full px-4 py-16 md:py-24">
       <div className="mx-auto max-w-7xl">
         <h1 className="mb-6 text-3xl font-semibold sm:text-4xl">
           Premium Wallpapers

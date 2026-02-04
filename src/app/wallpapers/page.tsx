@@ -34,7 +34,7 @@ export default function WallpapersPage() {
   }));
 
   return (
-    <main className="w-full py-24 sm:py-32">
+    <main className="w-full py-16 md:py-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(imageObjectLd) }}

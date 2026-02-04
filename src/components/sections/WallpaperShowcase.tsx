@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/container";
 
 export default function WallpaperShowcase() {
   return (
-    <section className="w-full bg-executive-black py-24 sm:py-32 border-t border-border">
+    <section className="w-full bg-executive-black py-16 md:py-24 border-t border-border">
       <Container>
         <div className="space-y-4 text-center">
             <h2 className="text-3xl sm:text-4xl font-semibold font-headline leading-tight">

@@ -42,7 +42,7 @@ export default function Footer() {
               </span>
             </div>
             <Container>
-              <div className="py-16 grid grid-cols-1 md:grid-cols-4 gap-12 text-gray-300">
+              <div className="py-12 md:py-16 grid grid-cols-1 md:grid-cols-4 gap-12 text-gray-300">
                 
                 {/* Brand */}
                 <div>

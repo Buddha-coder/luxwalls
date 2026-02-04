@@ -2,7 +2,7 @@ import { Gem, Smartphone, Zap } from "lucide-react";
 
 export default function ValueProposition() {
   return (
-    <section className="w-full bg-background px-4 py-24 sm:py-32 border-t border-border">
+    <section className="w-full bg-background px-4 py-16 md:py-24 border-t border-border">
       <div className="mx-auto max-w-5xl">
         <div className="grid gap-12 text-center sm:grid-cols-3">
           <div className="flex flex-col items-center animate-fade-in [animation-delay:200ms]">
