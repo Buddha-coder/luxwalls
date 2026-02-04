@@ -16,8 +16,8 @@ export default function OfflinePage() {
         </div>
 
         {/* Message */}
-        <h1 className="text-xl font-medium text-white mb-2">You’re offline</h1>
-        <p className="text-sm text-gray-400 mb-6">
+        <h1 className="text-lg md:text-xl font-medium text-white mb-2 leading-tight">You’re offline</h1>
+        <p className="text-sm text-gray-400 mb-6 leading-relaxed">
           No internet connection detected. Please reconnect to continue
           exploring wallpapers.
         </p>

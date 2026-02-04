@@ -22,11 +22,11 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-executive-black -z-10" />
       )}
       <div className="relative max-w-3xl animate-fade-in">
-      <h1 className="text-4xl font-bold tracking-tight font-headline sm:text-5xl md:text-6xl text-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight font-headline leading-tight text-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
   LuxWalls – Premium Luxury Wallpapers
 </h1>
 
-<p className="mt-4 text-lg md:text-xl font-medium text-soft-ivory/95">
+<p className="mt-4 text-base md:text-lg font-medium text-soft-ivory/95 leading-relaxed">
   The Art of Atmosphere
 </p>
         <div className="mt-10 flex justify-center">

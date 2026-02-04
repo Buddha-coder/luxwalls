@@ -18,10 +18,10 @@ export default function AboutPage() {
         <div className="rounded-2xl border border-white/10 bg-black/50 backdrop-blur-xl shadow-[0_0_60px_rgba(0,0,0,0.6)] p-5 md:p-6">
           {/* Page Header */}
           <div className="space-y-4">
-            <h1 className="text-4xl md:text-5xl font-headline text-white">
+            <h1 className="text-3xl md:text-4xl font-headline text-white leading-tight">
               About LuxWalls
             </h1>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-prose">
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
               LuxWalls is a premium wallpaper platform created for individuals who
               appreciate refined aesthetics, clarity, and visual balance. Our
               collection is carefully curated to deliver high-resolution visuals
@@ -33,10 +33,10 @@ export default function AboutPage() {
           <div className="mt-12 space-y-10">
             {/* Vision */}
             <section className="space-y-4">
-              <h2 className="text-2xl sm:text-3xl font-medium text-white">
+              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight">
                 Our Vision
               </h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-4 text-sm md:text-base text-muted-foreground">
                 <p className="leading-relaxed max-w-prose">
                   We believe a screen is not merely a utility, but a personal visual
                   environment experienced throughout the day. LuxWalls exists to
@@ -54,10 +54,10 @@ export default function AboutPage() {
 
             {/* Differentiation */}
             <section className="space-y-4">
-              <h2 className="text-2xl sm:text-3xl font-medium text-white">
+              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight">
                 What Defines LuxWalls
               </h2>
-              <ul className="space-y-3 text-muted-foreground list-disc list-inside max-w-prose">
+              <ul className="space-y-3 text-sm md:text-base text-muted-foreground list-disc list-inside max-w-prose">
                 <li>Curated premium wallpapers with a focus on quality</li>
                 <li>Mobile-first experience optimized for modern devices</li>
                 <li>High-resolution assets with precise detail and clarity</li>
@@ -67,10 +67,10 @@ export default function AboutPage() {
 
             {/* Purpose */}
             <section className="space-y-4">
-              <h2 className="text-2xl sm:text-3xl font-medium text-white">
+              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight">
                 Designed With Purpose
               </h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-4 text-sm md:text-base text-muted-foreground">
                 <p className="leading-relaxed max-w-prose">
                   LuxWalls is intentionally lightweight and fast. From discovery to
                   download, the experience is designed to be seamless, intuitive,
@@ -85,10 +85,10 @@ export default function AboutPage() {
 
             {/* Respect */}
             <section className="space-y-4">
-              <h2 className="text-2xl sm:text-3xl font-medium text-white">
+              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight">
                 Respect for Users
               </h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-4 text-sm md:text-base text-muted-foreground">
                 <p className="leading-relaxed max-w-prose">
                   LuxWalls prioritizes user privacy and attention. We avoid
                   aggressive tracking, forced registrations, and manipulative
@@ -103,10 +103,10 @@ export default function AboutPage() {
 
             {/* Future */}
             <section className="space-y-4">
-              <h2 className="text-2xl sm:text-3xl font-medium text-white">
+              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight">
                 Looking Ahead
               </h2>
-              <p className="leading-relaxed text-muted-foreground max-w-prose">
+              <p className="leading-relaxed text-sm md:text-base text-muted-foreground max-w-prose">
                 LuxWalls continues to evolve with thoughtful improvements,
                 refined curation, and performance enhancements. Our objective is
                 to become a trusted destination for premium wallpapers.
@@ -116,7 +116,7 @@ export default function AboutPage() {
 
           {/* Closing */}
           <div className="border-t border-white/10 pt-8 mt-14">
-            <p className="text-base md:text-lg text-white font-medium max-w-prose">
+            <p className="text-sm md:text-base text-white font-medium max-w-prose">
               LuxWalls represents the intersection of minimal design and
               luxury-grade visuals.
             </p>

@@ -41,11 +41,11 @@ export default function WallpapersPage() {
       />
       <Container>
         <div className="mb-8 space-y-4">
-          <h1 className="text-3xl font-headline font-semibold sm:text-4xl">
+          <h1 className="text-3xl sm:text-4xl font-headline font-semibold leading-tight">
             All Premium Wallpapers
           </h1>
 
-          <p className="max-w-prose text-muted-foreground text-base md:text-lg">
+          <p className="max-w-prose text-muted-foreground text-sm md:text-base leading-relaxed">
             Discover the perfect backdrop for your device from our complete
             collection. Browse all categories to find a high-resolution wallpaper
             that matches your style.

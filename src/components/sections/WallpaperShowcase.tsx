@@ -7,10 +7,10 @@ export default function WallpaperShowcase() {
     <section className="w-full bg-executive-black py-24 sm:py-32 border-t border-border">
       <Container>
         <div className="space-y-4 text-center">
-            <h2 className="text-3xl font-semibold font-headline sm:text-4xl">
+            <h2 className="text-3xl sm:text-4xl font-semibold font-headline leading-tight">
               Featured Collections
             </h2>
-            <p className="max-w-2xl mx-auto text-muted-foreground text-base md:text-lg">
+            <p className="max-w-2xl mx-auto text-muted-foreground text-sm md:text-base leading-relaxed">
                 A glimpse into our curated world of premium wallpapers. Discover designs that transform your device.
             </p>
         </div>

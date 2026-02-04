@@ -15,10 +15,10 @@ export default function TermsPage() {
       <div className="relative max-w-4xl mx-auto px-6 py-24 sm:py-32">
         <div className="rounded-2xl border border-white/10 bg-black/50 backdrop-blur-xl shadow-[0_0_60px_rgba(0,0,0,0.6)] p-5 md:p-6">
           <div className="space-y-4">
-            <h1 className="text-4xl md:text-5xl font-headline text-white">
+            <h1 className="text-3xl md:text-4xl font-headline text-white leading-tight">
               Terms & Conditions
             </h1>
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-prose">
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
               By accessing or using LuxWalls, you agree to the following terms and
               conditions. Please read them carefully.
             </p>
@@ -26,10 +26,10 @@ export default function TermsPage() {
 
           <div className="mt-12 space-y-8">
             <section className="space-y-4">
-              <h2 className="text-2xl sm:text-3xl text-white font-medium">
+              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight">
                 Use of Content
               </h2>
-              <p className="text-muted-foreground leading-relaxed max-w-prose">
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
                 Wallpapers provided on LuxWalls are for personal, non-commercial
                 use only. Redistribution, resale, or commercial use without
                 explicit permission is prohibited.
@@ -37,10 +37,10 @@ export default function TermsPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl sm:text-3xl text-white font-medium">
+              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight">
                 Intellectual Property
               </h2>
-              <p className="text-muted-foreground leading-relaxed max-w-prose">
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
                 All content, branding, and design elements on LuxWalls are owned
                 by or licensed to the platform unless stated otherwise. All rights
                 are reserved.
@@ -48,10 +48,10 @@ export default function TermsPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl sm:text-3xl text-white font-medium">
+              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight">
                 Disclaimer of Warranties
               </h2>
-              <p className="text-muted-foreground leading-relaxed max-w-prose">
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
                 The service is provided on an “as is” and “as available” basis.
                 LuxWalls makes no warranty that the service will be uninterrupted,
                 timely, secure, or error-free.
@@ -59,10 +59,10 @@ export default function TermsPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl sm:text-3xl text-white font-medium">
+              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight">
                 Changes to Terms
               </h2>
-              <p className="text-muted-foreground leading-relaxed max-w-prose">
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
                 These terms may be updated at any time. Continued use of LuxWalls
                 constitutes acceptance of the revised terms.
               </p>
