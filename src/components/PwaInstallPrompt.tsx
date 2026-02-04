@@ -18,7 +18,7 @@ export default function PwaInstallPrompt() {
         md:hidden
       "
     >
-      <div className="flex items-center justify-between px-4 py-3">
+      <div className="flex flex-col items-center gap-4 px-4 py-3 text-center sm:flex-row sm:justify-between sm:text-left">
         <div>
           <p className="text-sm font-medium text-white">
             Install LuxWalls
@@ -28,7 +28,7 @@ export default function PwaInstallPrompt() {
           </p>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex flex-shrink-0 gap-2">
           <button
             onClick={dismiss}
             className="rounded-sm px-3 py-2 text-xs text-gray-400 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-background"
