@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { PT_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
@@ -35,7 +35,6 @@ export const metadata: Metadata = {
   },
   description:
     "Elevate your device with LuxWalls. A curated collection of stunning, high-resolution luxury wallpapers designed for mobile and desktop. Free to download.",
-  themeColor: "#C9A24D",
   verification: {
     google: "AHk0YKwgah_gHUL3WxFSIsZvvylxrNrr6MV2d-v9Va8",
   },
@@ -78,6 +77,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#C9A24D",
 };
 
 export default function RootLayout({
