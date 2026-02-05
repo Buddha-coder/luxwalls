@@ -17,7 +17,7 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4">
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
       {wallpapers.map((wallpaper) => (
         <WallpaperCard key={wallpaper.id} wallpaper={wallpaper} />
       ))}

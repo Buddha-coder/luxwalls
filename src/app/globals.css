@@ -141,8 +141,15 @@
 .animate-welcome-in {
   animation: welcomeIn 1s ease-out;
 }
+/* ===== Liquid Glass UI ===== */
 .glass {
   background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
   border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(20px) saturate(180%);
 }

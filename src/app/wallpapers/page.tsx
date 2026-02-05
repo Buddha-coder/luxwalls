@@ -40,7 +40,8 @@ export default function WallpapersPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(imageObjectLd) }}
       />
       <Container>
-        <div className="mb-8 space-y-4">
+        <AnimateIn>
+        <div className="glass rounded-2xl overflow-hidden">
           <h1 className="text-3xl sm:text-4xl font-headline font-semibold leading-tight">
             All Premium Wallpapers
           </h1>
@@ -51,7 +52,7 @@ export default function WallpapersPage() {
             that matches your style.
           </p>
         </div>
-
+        </AnimateIn>
         <CategoryTabs />
 
         <WallpapersGrid wallpapers={wallpapers} />
