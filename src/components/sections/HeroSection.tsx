@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { LuxuryButton } from '@/components/ui/LuxuryButton';
@@ -8,7 +9,7 @@ export default function HeroSection() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero');
 
   return (
-    <section className="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center text-center text-white px-4">
+    <section className="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center text-center text-white px-4 -mt-20">
       {heroImage ? (
         <Image
           src={heroImage.imageUrl}
