@@ -1,116 +1,116 @@
 
-      import { Toaster } from "@/components/ui/toaster";
-      import { baseUrl } from "@/lib/utils";
-      import { Analytics } from "@vercel/analytics/react";
-      import { SpeedInsights } from "@vercel/speed-insights/next";
-      import type { Metadata, Viewport } from "next";
-      import { PT_Sans, Playfair_Display } from "next/font/google";
-      import Footer from "@/components/layout/footer";
-      import { Header } from "@/components/layout/header";
-      import IosInstallHint from "@/components/IosInstallHint";
-      import InstallSuccess from "@/components/InstallSuccess";
-      import PostInstallWelcome from "@/components/PostInstallWelcome";
-      import PwaInstallPrompt from "@/components/PwaInstallPrompt";
-      import RegisterSW from "@/components/RegisterSW";
-      import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata, Viewport } from "next";
+import { PT_Sans, Playfair_Display } from "next/font/google";
+import Footer from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
+import IosInstallHint from "@/components/IosInstallHint";
+import InstallSuccess from "@/components/InstallSuccess";
+import PostInstallWelcome from "@/components/PostInstallWelcome";
+import PwaInstallPrompt from "@/components/PwaInstallPrompt";
+import RegisterSW from "@/components/RegisterSW";
+import "./globals.css";
 
-      const ptSans = PT_Sans({
-        subsets: ["latin"],
-        display: "swap",
-        variable: "--font-pt-sans",
-        weight: ["400", "700"],
-      });
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://luxwalls.vercel.app";
 
-      const playfairDisplay = Playfair_Display({
-        subsets: ["latin"],
-        display: "swap",
-        variable: "--font-playfair-display",
-      });
+const ptSans = PT_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-pt-sans",
+  weight: ["400", "700"],
+});
 
-      export const metadata: Metadata = {
-        metadataBase: new URL(baseUrl),
-        title: {
-          default: "LuxWalls - The Art of Atmosphere",
-          template: "%s | LuxWalls",
-        },
-        description:
-          "LuxWalls is your source for stunning, high-resolution wallpapers and atmospheric digital art. Explore our curated collection and transform your screens.",
-        openGraph: {
-          title: "LuxWalls - The Art of Atmosphere",
-          description:
-            "LuxWalls is your source for stunning, high-resolution wallpapers and atmospheric digital art. Explore our curated collection and transform your screens.",
-          images: [
-            {
-              url: "/og-image.png",
-              width: 1200,
-              height: 630,
-              alt: "LuxWalls - The Art of Atmosphere",
-            },
-          ],
-          type: "website",
-          url: baseUrl,
-        },
-        twitter: {
-          card: "summary_large_image",
-          title: "LuxWalls - The Art of Atmosphere",
-          description:
-            "LuxWalls is your source for stunning, high-resolution wallpapers and atmospheric digital art. Explore our curated collection and transform your screens.",
-          images: [`${baseUrl}/og-image.png`],
-        },
-        // PWA
-        manifest: "/manifest.json",
-        appleWebApp: {
-          capable: true,
-          statusBarStyle: "default",
-          title: "LuxWalls",
-        },
-        // ...
-      };
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair-display",
+});
 
-      export const viewport: Viewport = {
-        themeColor: "#C9A24D",
-      };
+export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: "LuxWalls - The Art of Atmosphere",
+    template: "%s | LuxWalls",
+  },
+  description:
+    "LuxWalls is your source for stunning, high-resolution wallpapers and atmospheric digital art. Explore our curated collection and transform your screens.",
+  openGraph: {
+    title: "LuxWalls - The Art of Atmosphere",
+    description:
+      "LuxWalls is your source for stunning, high-resolution wallpapers and atmospheric digital art. Explore our curated collection and transform your screens.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "LuxWalls - The Art of Atmosphere",
+      },
+    ],
+    type: "website",
+    url: baseUrl,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LuxWalls - The Art of Atmosphere",
+    description:
+      "LuxWalls is your source for stunning, high-resolution wallpapers and atmospheric digital art. Explore our curated collection and transform your screens.",
+    images: [`${baseUrl}/og-image.png`],
+  },
+  // PWA
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "LuxWalls",
+  },
+  // ...
+};
 
-      export default function RootLayout({
-        children,
-      }: {
-        children: React.ReactNode;
-      }) {
-        const websiteJsonLd = {
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          name: "LuxWalls",
-          url: baseUrl,
-        };
+export const viewport: Viewport = {
+  themeColor: "#C9A24D",
+};
 
-        return (
-          <html
-            lang="en"
-            className={`${ptSans.variable} ${playfairDisplay.variable}`}
-          >
-            <body className="font-body antialiased bg-background text-foreground">
-              <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-                key="website-jsonld"
-              />
-              <div className="relative flex min-h-screen flex-col">
-                <Header />
-                <main className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 pb-24">
-                {children}
-                </main>
-                <Footer />
-              </div>
-              <Toaster />
-              <PwaInstallPrompt />
-              <IosInstallHint />
-              <RegisterSW />
-              <InstallSuccess />
-              <PostInstallWelcome />
-              <Analytics />
-              <SpeedInsights />
-            </body>
-          </html>
-        );
-      }
-      
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "LuxWalls",
+    url: baseUrl,
+  };
+
+  return (
+    <html
+      lang="en"
+      className={`${ptSans.variable} ${playfairDisplay.variable}`}
+    >
+      <body className="font-body antialiased bg-background text-foreground">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+          key="website-jsonld"
+        />
+        <div className="relative flex min-h-screen flex-col">
+          <Header />
+          <main className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 pb-24">
+          {children}
+          </main>
+          <Footer />
+        </div>
+        <Toaster />
+        <PwaInstallPrompt />
+        <IosInstallHint />
+        <RegisterSW />
+        <InstallSuccess />
+        <PostInstallWelcome />
+        <Analytics />
+        <SpeedInsights />
+      </body>
+    </html>
+  );
+}

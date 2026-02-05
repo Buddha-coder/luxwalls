@@ -4,7 +4,7 @@ import Image from "next/image";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { downloadImage } from "@/lib/download-image";
 import { Wallpaper } from "@/data/wallpapers";
-import { AnimateIn } from "../layout/AnimateIn";
+import { AnimateIn } from "@/components/ui/animate-in";
 
 interface WallpaperCardProps {
   wallpaper: Wallpaper;
