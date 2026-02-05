@@ -1,4 +1,4 @@
-export function EmptyState({ title, desc }) {
+export function EmptyState({ title, desc }: { title: string, desc: string }) {
     return (
       <div className="text-center py-12 md:py-20 space-y-2">
         <h3 className="text-base font-medium">{title}</h3>
