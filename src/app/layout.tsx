@@ -5,13 +5,13 @@
       import { SpeedInsights } from "@vercel/speed-insights/next";
       import type { Metadata, Viewport } from "next";
       import { PT_Sans, Playfair_Display } from "next/font/google";
-      import { Footer } from "../components/layout/footer";
-      import { Header } from "../components/layout/header";
-      import { IosInstallHint } from "../components/pwa/ios-install-hint";
-      import { InstallSuccess } from "../components/pwa/install-success-toast";
-      import { PostInstallWelcome } from "../components/pwa/post-install-welcome";
-      import { PwaInstallPrompt } from "../components/pwa/pwa-install-prompt";
-      import { RegisterSW } from "../components/pwa/register-sw";
+      import Footer from "@/components/layout/footer";
+      import { Header } from "@/components/layout/header";
+      import IosInstallHint from "@/components/IosInstallHint";
+      import InstallSuccess from "@/components/InstallSuccess";
+      import PostInstallWelcome from "@/components/PostInstallWelcome";
+      import PwaInstallPrompt from "@/components/PwaInstallPrompt";
+      import RegisterSW from "@/components/RegisterSW";
       import "./globals.css";
 
       const ptSans = PT_Sans({
