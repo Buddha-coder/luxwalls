@@ -141,3 +141,8 @@
 .animate-welcome-in {
   animation: welcomeIn 1s ease-out;
 }
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
