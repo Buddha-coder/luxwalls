@@ -516,6 +516,24 @@ export const wallpapers: Wallpaper[] = [
   tags: ["anime", "girl", "minimal", "character"],
   createdAt: "2025-01-26",
 },
+{
+  id: 10001,
+  title: " Beautiful Hinata Hyuga with gorgeous look",
+  category: "anime",
+  src: "/wallpapers/anime/anime-10001.webp",
+  orientation: "portrait",
+  tags: ["anime", "girl", "character", "girl", "hinata hyuga"],
+  createdAt: "2025-02-27",
+},
+{
+  id: 10002,
+  title: "Warrior Hinata Hyuga Cold Gaze",
+  category: "anime",
+  src: "/wallpapers/anime/anime-10002.webp",
+  orientation: "portrait",
+  tags: ["anime", "character", "girl", "warrior", "hinata hyuga"],
+  createdAt: "2025-02-27",
+},
 ];
 
 // ---- COPY FROM HERE ----
