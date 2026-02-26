@@ -1,4 +1,4 @@
-'''
+
 import { categoryIntros } from '@/lib/category-intros';
 
 export function CategoryIntros() {
@@ -16,4 +16,3 @@ export function CategoryIntros() {
     </div>
   );
 }
-'''

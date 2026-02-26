@@ -22,7 +22,7 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
       {wallpapers.map((wallpaper) => (
         <div key={wallpaper.id} className="relative aspect-[9/16] rounded-2xl overflow-hidden group">
           <Image
-            src={wallpaper.image}
+            src={wallpaper.src}
             alt={wallpaper.title}
             fill
             className="object-cover"

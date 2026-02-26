@@ -26,7 +26,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-0.jpg",
     orientation: "portrait",
     tags: ["amoled", "dark", "mobile", "minimal"],
-   createdAt: "2025-01-28",
+   createdAt: "2025-01-28"
   },
   {
     id: 1,
@@ -35,7 +35,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-1.jpg",
     orientation: "portrait",
     tags: ["amoled", "dark", "flowers", "lockscreen"],
-    createdAt: "2025-01-28",
+    createdAt: "2025-01-28"
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-2.jpg",
     orientation: "portrait",
     tags: ["amoled", "dark", "flowers", "mobile"],
-    createdAt: "2025-01-28",
+    createdAt: "2025-01-28"
   },
   {
     id: 3,
@@ -53,7 +53,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-3.jpg",
     orientation: "portrait",
     tags: ["amoled", "rocks", "dark", "mobile"],
-    createdAt: "2025-01-28",
+    createdAt: "2025-01-28"
   },
   {
     id: 4,
@@ -62,7 +62,7 @@ export const wallpapers: Wallpaper[] = [
     src:"/wallpapers/amoled/amoled-4.jpg",
     orientation: "portrait",
     tags: ["amoled", "dark", "animals", "minimal"],
-    createdAt: "2025-01-28",
+    createdAt: "2025-01-28"
   },
   {
     id: 5,
@@ -71,7 +71,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-5.jpg",
     orientation: "portrait",
     tags: ["amoled", "nature", "dark"],
-    createdAt: "2025-01-28",
+    createdAt: "2025-01-28"
   },
   {
     id: 6,
@@ -98,7 +98,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-8.jpg",
     orientation: "portrait",
     tags: ["dark", "amoled", "minimal", "space"],
-    createdAt: "2025-01-28",
+    createdAt: "2025-01-28"
   },
   {
     id: 9,
@@ -107,7 +107,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-9.jpg",
     orientation: "portrait",
     tags: ["dark", "amoled", "superhero"],
-    createdAt: "2025-01-28",
+    createdAt: "2025-01-28"
   },
   {
     id: 10,
@@ -116,7 +116,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-10.jpg",
     orientation: "portrait",
     tags: ["dark", "amoled", "cloud", "minimal", "lockscreen"],
-    createdAt: "2025-01-28",
+    createdAt: "2025-01-28"
   },
   {
     id: 11,
@@ -125,7 +125,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-11.jpg",
     orientation: "portrait",
     tags: ["dark", "amoled", "cars", "lockscreen"],
-    createdAt: "2025-01-28",
+    createdAt: "2025-01-28"
   },
   {
     id: 12,
@@ -134,7 +134,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/amoled/amoled-12.jpg",
     orientation: "portrait",
     tags: ["amoled", "superhero", "mobile"],
-    createdAt: "2025-01-28",
+    createdAt: "2025-01-28"
   },
   {
     id: 401,
@@ -143,7 +143,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/cars/cars-401.jpg",
     orientation: "portrait",
     tags: ["cars", "lockscreen", "sports car"],
-    createdAt: "2025-01-28",
+    createdAt: "2025-01-28"
   },
   {
     id: 402,
@@ -152,7 +152,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/cars/cars-402.jpg",
     orientation: "portrait",
     tags: ["cars", "lockscreen", "sports car"],
-    createdAt: "2025-01-28",
+    createdAt: "2025-01-28"
   },
   {
     id: 403,
@@ -161,7 +161,7 @@ export const wallpapers: Wallpaper[] = [
     src: "/wallpapers/cars/cars-403.jpg",
     orientation: "portrait",
     tags: ["cars", "nature", "SUV", "mobile"],
-    createdAt: "2025-01-28",
+    createdAt: "2025-01-28"
   },
   {
   id: 404,
@@ -170,7 +170,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/cars/cars-404.jpg",
   orientation: "portrait",
   tags: ["cars", "lockscreen", "sports car"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 405,
@@ -179,7 +179,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/cars/cars-405.jpg",
   orientation: "portrait",
   tags: ["cars", "mobile", "racing car", "minimal"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 406,
@@ -188,7 +188,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/cars/cars-406.jpg",
   orientation: "portrait",
   tags: ["cars", "mobile", "minimal", "racing car"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
   
 },
 {
@@ -198,7 +198,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/cars/cars-407.jpg",
   orientation: "portrait",
   tags: ["cars", "lockscreen", "sports car"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 408,
@@ -207,7 +207,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/cars/cars-408.jpg",
   orientation: "portrait",
   tags: ["cars", "nature", "mobile", "racing car"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 409,
@@ -216,7 +216,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/cars/cars-409.jpg",
   orientation: "portrait",
   tags: ["cars", "minimal", "mobile", "sports car"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 410,
@@ -225,7 +225,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/cars/cars-410.jpg",
   orientation: "portrait",
   tags: ["cars", "minimal", "mobile", "sports car"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 501,
@@ -234,7 +234,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/illustration/illustration-501.jpg",
   orientation: "portrait",
   tags: ["minimal", "illustration", "character", "animals"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 502,
@@ -243,7 +243,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/illustration/illustration-502.jpg",
   orientation: "portrait",
   tags: ["minimal", "illustration", "character", "mobile"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 503,
@@ -252,7 +252,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/illustration/illustration-503.jpg",
   orientation: "portrait",
   tags: ["minimal", "illustration", "character", "anime"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 101,
@@ -261,7 +261,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-101.jpg",
   orientation: "portrait",
   tags: ["minimal", "birds", "nature", "colorful"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 102,
@@ -270,7 +270,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-102.jpg",
   orientation: "portrait",
   tags: ["minimal", "nature"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 103,
@@ -279,7 +279,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-103.jpg",
   orientation: "portrait",
   tags: ["minimal", "nature", "mobile"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 104,
@@ -288,7 +288,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-104.jpg",
   orientation: "portrait",
   tags: ["minimal", "abstract", "mobile", "amoled"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 105,
@@ -297,7 +297,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-105.jpg",
   orientation: "portrait",
   tags: ["minimal", "abstract", "mobile", "colorful"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 106,
@@ -306,7 +306,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-106.jpg",
   orientation: "portrait",
   tags: ["minimal", "abstract", "mobile", "texture"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 107,
@@ -315,7 +315,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-107.jpg",
   orientation: "portrait",
   tags: ["minimal", "nature", "sky", "tree"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 
 },
 {
@@ -325,7 +325,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-108.jpg",
   orientation: "portrait",
   tags: ["minimal", "flower", "sky", "colourful"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 109,
@@ -334,7 +334,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-109.jpg",
   orientation: "portrait",
   tags: ["illustration", "colourful", "flowers"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 110,
@@ -343,7 +343,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-110.jpg",
   orientation: "portrait",
   tags: ["minimal", "nature", "sports", "mobile"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 111,
@@ -352,7 +352,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-111.jpg",
   orientation: "portrait",
   tags: ["illustration", "pokemon", "mobile"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 112,
@@ -361,7 +361,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-112.jpg",
   orientation: "portrait",
   tags: ["illustration", "character", "mobile"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 113,
@@ -370,7 +370,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-113.jpg",
   orientation: "portrait",
   tags: ["illustration", "character", "mobile"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id:114,
@@ -379,7 +379,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-114.jpg",
   orientation: "portrait",
   tags: ["illustration", "character"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 115,
@@ -388,7 +388,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/minimal/minimal-115.jpg",
   orientation: "portrait",
   tags: ["illustration", "character", "mobile"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 301,
@@ -397,7 +397,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/nature/nature-301.jpg",
   orientation: "portrait",
   tags: ["nature", "leaf", "woods"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 302,
@@ -406,7 +406,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/nature/nature-302.jpg",
   orientation: "portrait",
   tags: ["nature", "sea", "stones"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 303,
@@ -414,8 +414,8 @@ export const wallpapers: Wallpaper[] = [
   category: "nature",
   src: "/wallpapers/nature/nature-303.jpg",
   orientation: "portrait",
-  tags: ["nature", "mountain", "sky",],
-  createdAt: "2025-01-28",
+  tags: ["nature", "mountain", "sky"],
+  createdAt: "2025-01-28"
 },
 {
   id: 304,
@@ -424,7 +424,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/nature/nature-304.jpg",
   orientation: "portrait",
   tags: ["nature","rocks", "mountain", "sky"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 305,
@@ -433,7 +433,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/nature/nature-305.jpg",
   orientation: "portrait",
   tags: ["nature", "ocean", "minimal"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 306,
@@ -442,7 +442,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/nature/nature-306.jpg",
   orientation: "portrait",
   tags: ["nature", "mountain", "rocks"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 307,
@@ -451,7 +451,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/nature/nature-307.jpg",
   orientation: "portrait",
   tags: ["nature", "ocean", "animals", "amoled"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 308,
@@ -460,7 +460,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/nature/nature-308.jpg",
   orientation: "portrait",
   tags: ["nature", "animals", "scenery"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 601,
@@ -469,7 +469,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/anime/anime-601.jpg",
   orientation: "portrait",
   tags: ["anime", "nature", "girl", "character", "moody"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 602,
@@ -477,8 +477,8 @@ export const wallpapers: Wallpaper[] = [
   category: "anime",
   src: "/wallpapers/anime/anime-602.jpg",
   orientation: "portrait",
-  tags: ["anime", "girl", "moody", "character",],
-  createdAt: "2025-01-28",
+  tags: ["anime", "girl", "moody", "character"],
+  createdAt: "2025-01-28"
 },
 {
   id: 603,
@@ -487,7 +487,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/anime/anime-603.jpg",
   orientation: "portrait",
   tags: ["anime", "girl", "moody", "character"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 604,
@@ -496,7 +496,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/anime/anime-604.jpg",
   orientation: "portrait",
   tags: ["anime", "girl", "character", "mobile"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-28"
 },
 {
   id: 605,
@@ -505,7 +505,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/anime/anime-605.jpg",
   orientation: "portrait",
   tags: ["anime", "girl", "natute", "moody"],
-  createdAt: "2025-01-26",
+  createdAt: "2025-01-26"
 },
 {
   id: 606,
@@ -514,7 +514,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/anime/anime-606.jpg",
   orientation: "portrait",
   tags: ["anime", "girl", "minimal", "character"],
-  createdAt: "2025-01-26",
+  createdAt: "2025-01-26"
 },
 {
   id: 10001,
@@ -522,8 +522,8 @@ export const wallpapers: Wallpaper[] = [
   category: "anime",
   src: "/wallpapers/anime/anime-10001.webp",
   orientation: "portrait",
-  tags: ["anime", "girl", "character", "girl", "hinata hyuga"],
-  createdAt: "2025-02-27",
+  tags: ["anime", "girl", "character", "hinata hyuga"],
+  createdAt: "2025-02-27"
 },
 {
   id: 10002,
@@ -532,8 +532,8 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/anime/anime-10002.webp",
   orientation: "portrait",
   tags: ["anime", "character", "girl", "warrior", "hinata hyuga"],
-  createdAt: "2025-02-27",
-},
+  createdAt: "2025-02-27"
+}
 ];
 
 // ---- COPY FROM HERE ----
