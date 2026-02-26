@@ -331,7 +331,7 @@ export const wallpapers: Wallpaper[] = [
   id: 109,
   title: "Illustration painting wallpaper",
   category: "illustration",
-  src: "/wallpapers/illustration/illustration-109.jpg",
+  src: "/wallpapers/minimal/minimal-109.jpg",
   orientation: "portrait",
   tags: ["illustration", "colourful", "flowers"],
   createdAt: "2025-01-28",
@@ -505,7 +505,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/anime/anime-605.jpg",
   orientation: "portrait",
   tags: ["anime", "girl", "natute", "moody"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-26",
 },
 {
   id: 606,
@@ -514,7 +514,7 @@ export const wallpapers: Wallpaper[] = [
   src: "/wallpapers/anime/anime-606.jpg",
   orientation: "portrait",
   tags: ["anime", "girl", "minimal", "character"],
-  createdAt: "2025-01-28",
+  createdAt: "2025-01-26",
 },
 ];
 

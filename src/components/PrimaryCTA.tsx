@@ -16,7 +16,17 @@ export default function PrimaryCTA() {
         <div className="mt-8">
           <Link
             href="/wallpapers"
-            className="group inline-flex items-center justify-center rounded-xl border-2 border-primary bg-transparent px-8 py-4 text-base font-medium text-primary transition-all duration-300 hover:bg-primary/10 hover:shadow-[0_0_20px_rgba(201,162,77,0.5)]"
+            className="
+              group
+              glass-strong
+              w-full
+              min-h-12
+              rounded-2xl
+              text-base
+              inline-flex
+              items-center
+              justify-center
+            "
           >
             Start Exploring
             <ChevronRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />

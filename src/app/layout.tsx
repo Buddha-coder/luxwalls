@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -29,43 +28,33 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
+  metadataBase: new URL("https://luxwalls.vercel.app"),
+
   title: {
-    default: "LuxWalls - The Art of Atmosphere",
-    template: "%s | LuxWalls",
+    default: "LuxWalls",
+    template: "%s | LuxWalls"
   },
+
   description:
-    "LuxWalls is your source for stunning, high-resolution wallpapers and atmospheric digital art. Explore our curated collection and transform your screens.",
+    "Discover exclusive luxury wallpapers for mobile and desktop. High-resolution, premium aesthetic backgrounds. 100% free download.",
+
+  applicationName: "LuxWalls",
+
   openGraph: {
-    title: "LuxWalls - The Art of Atmosphere",
-    description:
-      "LuxWalls is your source for stunning, high-resolution wallpapers and atmospheric digital art. Explore our curated collection and transform your screens.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "LuxWalls - The Art of Atmosphere",
-      },
-    ],
     type: "website",
-    url: baseUrl,
+    url: "https://luxwalls.vercel.app",
+    siteName: "LuxWalls",
+    title: "LuxWalls",
+    description:
+      "Discover exclusive luxury wallpapers for mobile and desktop. High-resolution, premium aesthetic backgrounds. 100% free download.",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "LuxWalls - The Art of Atmosphere",
-    description:
-      "LuxWalls is your source for stunning, high-resolution wallpapers and atmospheric digital art. Explore our curated collection and transform your screens.",
-    images: [`${baseUrl}/og-image.png`],
-  },
-  // PWA
-  manifest: "/manifest.json",
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
     title: "LuxWalls",
-  },
-  // ...
+    description:
+      "Discover exclusive luxury wallpapers for mobile and desktop. High-resolution, premium aesthetic backgrounds. 100% free download.",
+  }
 };
 
 export const viewport: Viewport = {
@@ -81,6 +70,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "LuxWalls",
+    alternateName: "LuxWalls Primium Wallpaers",
     url: baseUrl,
   };
 

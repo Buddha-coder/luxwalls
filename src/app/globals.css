@@ -141,7 +141,19 @@
 .animate-welcome-in {
   animation: welcomeIn 1s ease-out;
 }
-/* ===== Liquid Glass UI ===== */
+/* ===== UI Polish Base ===== */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Kill horizontal scroll issues */
+body {
+  overflow-x: hidden;
+}
+
+/* Liquid glass utility */
 .glass {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px) saturate(150%);
