@@ -165,3 +165,7 @@ body {
   background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(20px) saturate(180%);
 }
+
+img {
+  -webkit-touch-callout: none;
+}

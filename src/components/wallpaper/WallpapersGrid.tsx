@@ -1,3 +1,4 @@
+'use client';
 
 import Image from "next/image";
 import { Wallpaper } from "@/data/wallpapers";
@@ -18,23 +19,30 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-      {wallpapers.map((wallpaper) => (
-        <div key={wallpaper.id} className="relative aspect-[9/16] rounded-2xl overflow-hidden group">
-          <Image
-            src={wallpaper.src}
-            alt={wallpaper.title}
-            fill
-            className="object-cover"
-            sizes="(max-width: 640px) 100vw,
-                   (max-width: 1024px) 50vw,
-                   33vw"
-            quality={85}
-            placeholder="blur"
-            blurDataURL="/blur-placeholder.png"
-          />
-        </div>
-      ))}
+    <div
+      className="relative select-none"
+      onContextMenu={(e) => e.preventDefault()}
+      onDragStart={(e) => e.preventDefault()}
+    >
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+        {wallpapers.map((wallpaper) => (
+          <div key={wallpaper.id} className="relative aspect-[9/16] rounded-2xl overflow-hidden group">
+            <Image
+              src={wallpaper.src}
+              alt={wallpaper.title}
+              fill
+              className="object-cover pointer-events-none"
+               sizes="(max-width: 640px) 100vw,
+                      (max-width: 1024px) 50vw,
+                       33vw"
+              quality={85}
+              draggable={false}
+              placeholder="blur"
+              blurDataURL="/blur-placeholder.png"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
