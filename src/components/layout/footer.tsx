@@ -79,7 +79,7 @@ export default function Footer() {
                   <ul className="space-y-3 text-sm">
                     <li><a href="#" className="inline-block py-2 hover:text-white transition" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                     <li><a href="#" className="inline-block py-2 hover:text-white transition" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
-                    <li><a href="#" className="inline-block py-2 hover:text-white transition" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.instagram.com/the_buddha_369/?hl=en" className="inline-block py-2 hover:text-white transition" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                   </ul>
                 </div>
     
