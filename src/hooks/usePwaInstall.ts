@@ -2,13 +2,25 @@
 
 import { useEffect, useState } from "react";
 
+// Define the interface for the BeforeInstallPromptEvent
+interface BeforeInstallPromptEvent extends Event {
+  readonly platforms: ReadonlyArray<string>;
+  readonly userChoice: Promise<{
+    outcome: "accepted" | "dismissed";
+    platform: string;
+  }>;
+  prompt(): Promise<void>;
+}
+
 const track = (key: string) => {
   const count = Number(localStorage.getItem(key) || 0);
   localStorage.setItem(key, String(count + 1));
 };
 
 export function usePwaInstall() {
-  const [promptEvent, setPromptEvent] = useState<any>(null);
+  const [promptEvent, setPromptEvent] = useState<BeforeInstallPromptEvent | null>(
+    null
+  );
   const [visible, setVisible] = useState(false);
   const [scrolledEnough, setScrolledEnough] = useState(false);
 
@@ -35,9 +47,9 @@ export function usePwaInstall() {
     window.addEventListener("scroll", onScroll);
 
     // 🔹 Install prompt handler
-    const handler = (e: any) => {
+    const handler = (e: Event) => {
       e.preventDefault();
-      setPromptEvent(e);
+      setPromptEvent(e as BeforeInstallPromptEvent);
 
       const dismissed = localStorage.getItem(
         "luxwalls_install_dismissed"

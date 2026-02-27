@@ -2,13 +2,19 @@
 
 import { useEffect, useState } from "react";
 
+// Since MSStream is a non-standard property, we need to extend the Window interface
+interface CustomWindow extends Window {
+  MSStream?: unknown;
+}
+
 export function useIosInstallHint() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    const customWindow = window as CustomWindow;
+
     const isIos =
-      /iphone|ipad|ipod/i.test(navigator.userAgent) &&
-      !(window as any).MSStream;
+      /iphone|ipad|ipod/i.test(navigator.userAgent) && !customWindow.MSStream;
 
     const isSafari =
       /^((?!chrome|android).)*safari/i.test(navigator.userAgent);

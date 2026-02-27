@@ -4,7 +4,6 @@ import CategoryTabs from "@/components/wallpaper/CategoryTabs";
 import { Metadata } from "next";
 import { Container } from "@/components/layout/container";
 import { AnimateIn } from "@/components/ui/animate-in";
-import { motion } from "framer-motion";
 
 export const metadata: Metadata = {
   title: "Explore All Wallpapers - LuxWalls Collection",

@@ -85,21 +85,21 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
           key="website-jsonld"
         />
-        <div className="relative flex min-h-screen flex-col">
-          <Header />
-          <main className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 pb-24 pt-20">
-          {children}
-          </main>
-          <Footer />
-        </div>
-        <Toaster />
-        <PwaInstallPrompt />
-        <IosInstallHint />
-        <RegisterSW />
-        <InstallSuccess />
-        <PostInstallWelcome />
-        <Analytics />
-        <SpeedInsights />
+          <div className="relative flex min-h-screen flex-col">
+            <Header />
+            <main className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 pb-24 pt-20">
+            {children}
+            </main>
+            <Footer />
+          </div>
+          <Toaster />
+          <PwaInstallPrompt />
+          <IosInstallHint />
+          <RegisterSW />
+          <InstallSuccess />
+          <PostInstallWelcome />
+          <Analytics />
+          <SpeedInsights />
       </body>
     </html>
   );
