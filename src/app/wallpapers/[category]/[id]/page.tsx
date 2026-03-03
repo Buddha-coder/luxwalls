@@ -2,12 +2,11 @@ import { wallpapers } from "@/data/wallpapers";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, Download, Eye, Calendar, HardDrive, Palette, CheckCircle2, TrendingUp } from "lucide-react";
+import { ChevronLeft, Download, Eye, Calendar, HardDrive, Palette, TrendingUp } from "lucide-react";
 import { Container } from "@/components/layout/container";
-import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { Badge } from "@/components/ui/badge";
-import { downloadImage } from "@/lib/download-image";
 import WallpapersGrid from "@/components/wallpaper/WallpapersGrid";
+import SmartDownloadModule from "@/components/wallpaper/SmartDownloadModule";
 import type { Metadata } from "next";
 
 interface WallpaperPageProps {
@@ -114,46 +113,29 @@ export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
           <div className="lg:col-span-8 space-y-10">
             <div className="glass rounded-3xl p-6 md:p-10 shadow-2xl border border-white/5 space-y-6">
               <div className="space-y-4">
-                <Link href={`/wallpapers/${wallpaper.category}`} className="inline-flex items-center text-primary text-sm font-medium hover:underline mb-2">
+                <Link href={`/wallpapers/${wallpaper.category}`} className="inline-flex items-center text-primary text-xs md:text-sm font-medium hover:underline mb-2">
                   <ChevronLeft className="w-4 h-4 mr-1" />
                   {wallpaper.category.toUpperCase()} COLLECTION
                 </Link>
-                <h1 className="text-3xl md:text-5xl font-headline font-bold leading-tight">
+                <h1 className="text-2xl md:text-4xl font-headline font-bold leading-tight">
                   {wallpaper.title}
                 </h1>
                 <div className="flex flex-wrap gap-2 pt-2">
                   {wallpaper.tags?.map(tag => (
-                    <Badge key={tag} className="glass text-xs font-normal px-3 py-1 rounded-full border-white/10">
+                    <Badge key={tag} className="glass text-[10px] md:text-xs font-normal px-3 py-1 rounded-full border-white/10">
                       #{tag}
                     </Badge>
                   ))}
                 </div>
               </div>
 
-              {/* Smart Download Module */}
-              <div className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="space-y-1 text-center md:text-left">
-                  <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider">Recommended For You</p>
-                  <p className="text-xl font-semibold">Mobile Portrait (Optimized)</p>
-                  <p className="text-xs text-primary flex items-center justify-center md:justify-start">
-                    <CheckCircle2 className="w-3 h-3 mr-1" /> Verified Safe Download
-                  </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-                  <LuxuryButton 
-                    className="w-full sm:w-auto px-10 py-4 flex items-center justify-center"
-                    onClick={() => downloadImage(wallpaper.src, `luxwalls-${wallpaper.id}.jpg`)}
-                  >
-                    <Download className="w-5 h-5 mr-2" />
-                    Download Free
-                  </LuxuryButton>
-                </div>
-              </div>
+              {/* Smart Download Module (Client Component) */}
+              <SmartDownloadModule src={wallpaper.src} id={wallpaper.id} />
 
               {/* Description Block */}
               <div className="space-y-4 pt-4 border-t border-white/5">
-                <h2 className="text-xl font-headline font-semibold">Atmosphere & Style</h2>
-                <p className="text-muted-foreground leading-relaxed">
+                <h2 className="text-lg md:text-xl font-headline font-semibold">Atmosphere & Style</h2>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {wallpaper.description || `Enhance your digital environment with this premium ${wallpaper.category} wallpaper. Selected for its exceptional clarity and atmospheric balance, this asset is optimized for modern displays to provide a seamless visual experience.`}
                 </p>
               </div>
@@ -179,7 +161,7 @@ export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
                 {(wallpaper.colors || ["#000000", "#333333", "#C9A24D", "#FFFFFF"]).map(color => (
                   <div 
                     key={color} 
-                    className="h-10 w-10 rounded-full border border-white/10 transition-transform hover:scale-110" 
+                    className="h-8 w-8 md:h-10 md:w-10 rounded-full border border-white/10 transition-transform hover:scale-110" 
                     style={{ backgroundColor: color }}
                     title={color}
                   />
@@ -190,10 +172,10 @@ export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
 
             {/* Best For */}
             <div className="glass rounded-3xl p-6 border border-white/5 space-y-4">
-              <h3 className="text-sm font-semibold">Recommended Usage</h3>
+              <h3 className="text-sm font-semibold text-white">Recommended Usage</h3>
               <div className="space-y-2">
                 {(wallpaper.bestFor || ["Lock Screen", "Minimal Setup", "AMOLED Screen"]).map(use => (
-                  <div key={use} className="flex items-center text-sm text-muted-foreground">
+                  <div key={use} className="flex items-center text-xs md:text-sm text-muted-foreground">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary mr-3" />
                     {use}
                   </div>
@@ -203,11 +185,11 @@ export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
 
             {/* Gamification Indicator */}
             <div className="bg-primary/10 rounded-2xl p-4 border border-primary/20 flex items-center justify-between">
-              <div className="flex items-center text-primary font-medium text-sm">
+              <div className="flex items-center text-primary font-medium text-xs md:text-sm">
                 <TrendingUp className="w-4 h-4 mr-2" /> 
                 Trending this week
               </div>
-              <Badge className="bg-primary text-black font-bold">TOP 10</Badge>
+              <Badge className="bg-primary text-black font-bold text-[10px]">TOP 10</Badge>
             </div>
           </aside>
         </div>
@@ -215,8 +197,8 @@ export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
         {/* Related Wallpapers */}
         <section className="mt-20 space-y-8">
           <div className="flex items-center justify-between border-b border-white/5 pb-4">
-            <h2 className="text-2xl md:text-3xl font-headline font-semibold">Similar Aesthetics</h2>
-            <Link href="/wallpapers" className="text-sm text-muted-foreground hover:text-primary transition">View All</Link>
+            <h2 className="text-xl md:text-3xl font-headline font-semibold">Similar Aesthetics</h2>
+            <Link href="/wallpapers" className="text-xs md:text-sm text-muted-foreground hover:text-primary transition">View All</Link>
           </div>
           <WallpapersGrid wallpapers={related} />
         </section>
@@ -230,7 +212,7 @@ function InfoCard({ icon, label, value }: { icon: React.ReactNode, label: string
     <div className="glass rounded-2xl p-4 border border-white/5 flex flex-col items-center text-center space-y-1">
       <div className="text-primary mb-1">{icon}</div>
       <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">{label}</p>
-      <p className="text-sm font-medium">{value}</p>
+      <p className="text-xs md:text-sm font-medium">{value}</p>
     </div>
   );
 }
