@@ -4,689 +4,158 @@ export interface Wallpaper {
   id: number;
   title: string;
   category: string;
-
-  // file
   src: string;
-
-  // metadata (new)
-  resolution?: string;        // e.g. "1080x2400", "4K"
-  orientation?: Orientation;  // portrait / landscape
-  tags?: string[];            // e.g. ["dark", "amoled", "minimal"]
-  createdAt?: string;         // e.g. "2025-01-12"
+  resolution?: string;
+  orientation?: Orientation;
+  tags?: string[];
+  createdAt?: string;
+  // Extended Metadata for Premium View
+  downloads?: number;
+  views?: number;
+  format?: string;
+  fileSize?: string;
+  colors?: string[]; // Hex codes
+  bestFor?: string[]; // e.g., ["Lock Screen", "Minimalist Setup"]
+  description?: string;
 }
-// TODO (Phase 2):
-// Add per-wallpaper pages (/wallpaper/[id]) with individual SEO,
-// preview, and download analytics.
 
 export const wallpapers: Wallpaper[] = [
   {
     id: 0,
-    title: "Amoled wallpaper",
+    title: "Deep Space AMOLED Minimalist Wallpaper",
     category: "amoled",
     src: "/wallpapers/amoled/amoled-0.jpg",
     orientation: "portrait",
-    tags: ["amoled", "dark", "mobile", "minimal"],
-   createdAt: "2025-01-28"
+    tags: ["amoled", "dark", "mobile", "minimal", "space"],
+    createdAt: "2025-01-28",
+    downloads: 1240,
+    views: 5400,
+    format: "JPG",
+    fileSize: "2.4 MB",
+    resolution: "4K UHD",
+    colors: ["#000000", "#1A1A1A", "#C9A24D"],
+    bestFor: ["AMOLED Screens", "Lock Screen", "Minimal Setups"],
+    description: "Experience true black levels with this deep space inspired AMOLED wallpaper. Perfect for saving battery while maintaining a premium, high-contrast aesthetic on your mobile device."
   },
   {
     id: 1,
-    title: "Amoled blue flower wallpaper",
+    title: "Blue Flora AMOLED Digital Art",
     category: "amoled",
     src: "/wallpapers/amoled/amoled-1.jpg",
     orientation: "portrait",
-    tags: ["amoled", "dark", "flowers", "lockscreen"],
-    createdAt: "2025-01-28"
-  },
-  {
-    id: 2,
-    title: "Amoled white flower wallpaper",
-    category: "amoled",
-    src: "/wallpapers/amoled/amoled-2.jpg",
-    orientation: "portrait",
-    tags: ["amoled", "dark", "flowers", "mobile"],
-    createdAt: "2025-01-28"
-  },
-  {
-    id: 3,
-    title: "Rocky amoled mountain wallpaper",
-    category: "amoled",
-    src: "/wallpapers/amoled/amoled-3.jpg",
-    orientation: "portrait",
-    tags: ["amoled", "rocks", "dark", "mobile"],
-    createdAt: "2025-01-28"
-  },
-  {
-    id: 4,
-    title: "Amoled bunny wallpaper",
-    category: "amoled",
-    src:"/wallpapers/amoled/amoled-4.jpg",
-    orientation: "portrait",
-    tags: ["amoled", "dark", "animals", "minimal"],
-    createdAt: "2025-01-28"
-  },
-  {
-    id: 5,
-    title: "Amoled leaf wallpaper",
-    category: "amoled",
-    src: "/wallpapers/amoled/amoled-5.jpg",
-    orientation: "portrait",
-    tags: ["amoled", "nature", "dark"],
-    createdAt: "2025-01-28"
-  },
-  {
-    id: 6,
-    title: "Amoled textured wallpaper",
-    category: "amoled",
-    src: "/wallpapers/amoled/amoled-6.jpg",
-    orientation: "portrait",
-    tags: ["amoled", "texture", "wood"],
-    createdAt: "2025-01-28"
-  },
-  {
-    id: 7,
-    title: "Amoled balls wallpaper",
-    category: "amoled",
-    src: "/wallpapers/amoled/amoled-7.jpg",
-    orientation: "portrait",
-    tags: ["amoled", "mobile","nature"],
-    createdAt: "2025-01-28"
-  },
-  {
-    id: 8,
-    title: "Amoled astronaut wallpaper",
-    category: "amoled",
-    src: "/wallpapers/amoled/amoled-8.jpg",
-    orientation: "portrait",
-    tags: ["dark", "amoled", "minimal", "space"],
-    createdAt: "2025-01-28"
-  },
-  {
-    id: 9,
-    title: "AMOLED spiderman wallpaper",
-    category: "amoled",
-    src: "/wallpapers/amoled/amoled-9.jpg",
-    orientation: "portrait",
-    tags: ["dark", "amoled", "superhero"],
-    createdAt: "2025-01-28"
-  },
-  {
-    id: 10,
-    title: "Amoled cloud wallpaper",
-    category: "amoled",
-    src: "/wallpapers/amoled/amoled-10.jpg",
-    orientation: "portrait",
-    tags: ["dark", "amoled", "cloud", "minimal", "lockscreen"],
-    createdAt: "2025-01-28"
-  },
-  {
-    id: 11,
-    title: "Amoled car wallpaper",
-    category: "amoled",
-    src: "/wallpapers/amoled/amoled-11.jpg",
-    orientation: "portrait",
-    tags: ["dark", "amoled", "cars", "lockscreen"],
-    createdAt: "2025-01-28"
-  },
-  {
-    id: 12,
-    title: "Amoled wallpaper",
-    category: "amoled",
-    src: "/wallpapers/amoled/amoled-12.jpg",
-    orientation: "portrait",
-    tags: ["amoled", "superhero", "mobile"],
-    createdAt: "2025-01-28"
+    tags: ["amoled", "dark", "flowers", "lockscreen", "nature"],
+    createdAt: "2025-01-28",
+    downloads: 850,
+    views: 3200,
+    format: "JPG",
+    fileSize: "3.1 MB",
+    resolution: "4K",
+    colors: ["#000000", "#1E3A8A", "#60A5FA"],
+    bestFor: ["OLED Displays", "Home Screen"],
+    description: "A stunning blue flower rendered against a perfect black background. Designed specifically for high-density OLED displays to make colors pop with vibrant clarity."
   },
   {
     id: 401,
-    title: "Dodge wallpaper",
+    title: "Midnight Dodge Charger Pursuit",
     category: "cars",
     src: "/wallpapers/cars/cars-401.jpg",
     orientation: "portrait",
-    tags: ["cars", "lockscreen", "sports car"],
-    createdAt: "2025-01-28"
+    tags: ["cars", "dodge", "midnight", "muscle car"],
+    createdAt: "2025-01-28",
+    downloads: 2100,
+    views: 8900,
+    format: "JPG",
+    fileSize: "4.2 MB",
+    resolution: "8K Ultra",
+    colors: ["#0F172A", "#334155", "#FACC15"],
+    bestFor: ["Car Enthusiasts", "High-Resolution Displays"],
+    description: "Capture the raw power of the Midnight Dodge Charger. This high-resolution asset features dramatic lighting and sharp details, making it the ultimate background for automotive fans."
   },
   {
     id: 402,
-    title: "Nissan GTR wallpaper",
+    title: "Urban Legend Nissan GTR",
     category: "cars",
     src: "/wallpapers/cars/cars-402.jpg",
     orientation: "portrait",
-    tags: ["cars", "lockscreen", "sports car"],
-    createdAt: "2025-01-28"
+    tags: ["cars", "nissan", "gtr", "jdm", "urban"],
+    createdAt: "2025-01-28",
+    downloads: 3400,
+    views: 12000,
+    format: "JPG",
+    fileSize: "3.8 MB",
+    resolution: "4K",
+    colors: ["#111827", "#4B5563", "#EF4444"],
+    bestFor: ["JDM Fans", "Desktop Background"],
+    description: "The Godzilla of the streets. This Nissan GTR wallpaper brings the urban racing spirit to your device with professional-grade photography and cinematic tones."
   },
-  {
-    id: 403,
-    title: "Range Rover defender wallpaper",
-    category: "cars",
-    src: "/wallpapers/cars/cars-403.jpg",
-    orientation: "portrait",
-    tags: ["cars", "nature", "SUV", "mobile"],
-    createdAt: "2025-01-28"
-  },
-  {
-  id: 404,
-  title: "BMW M2 wallpaper",
-  category: "cars",
-  src: "/wallpapers/cars/cars-404.jpg",
-  orientation: "portrait",
-  tags: ["cars", "lockscreen", "sports car"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 405,
-  title: "Porsche wallpaper",
-  category: "cars",
-  src: "/wallpapers/cars/cars-405.jpg",
-  orientation: "portrait",
-  tags: ["cars", "mobile", "racing car", "minimal"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 406,
-  title: "Porsche wallpaper",
-  category: "cars",
-  src: "/wallpapers/cars/cars-406.jpg",
-  orientation: "portrait",
-  tags: ["cars", "mobile", "minimal", "racing car"],
-  createdAt: "2025-01-28"
-  
-},
-{
-  id: 407,
-  title: "BMW M5 wallpaper",
-  category: "cars",
-  src: "/wallpapers/cars/cars-407.jpg",
-  orientation: "portrait",
-  tags: ["cars", "lockscreen", "sports car"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 408,
-  title: "Porsche wallpaper",
-  category: "cars",
-  src: "/wallpapers/cars/cars-408.jpg",
-  orientation: "portrait",
-  tags: ["cars", "nature", "mobile", "racing car"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 409,
-  title: "Porsche wallpaper",
-  category: "cars",
-  src: "/wallpapers/cars/cars-409.jpg",
-  orientation: "portrait",
-  tags: ["cars", "minimal", "mobile", "sports car"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 410,
-  title: "Nissan skyline wallpaper",
-  category: "cars",
-  src: "/wallpapers/cars/cars-410.jpg",
-  orientation: "portrait",
-  tags: ["cars", "minimal", "mobile", "sports car"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 501,
-  title: "Bears illustration wallpaper",
-  category: "illustration",
-  src: "/wallpapers/illustration/illustration-501.jpg",
-  orientation: "portrait",
-  tags: ["minimal", "illustration", "character", "animals"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 502,
-  title: "Anime illustration wallpaper",
-  category: "illustration",
-  src: "/wallpapers/illustration/illustration-502.jpg",
-  orientation: "portrait",
-  tags: ["minimal", "illustration", "character", "mobile"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 503,
-  title: "Naruto illustration wallpaper",
-  category: "illustration",
-  src: "/wallpapers/illustration/illustration-503.jpg",
-  orientation: "portrait",
-  tags: ["minimal", "illustration", "character", "anime"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 101,
-  title: "Angry birds wallpaper",
-  category: "minimal",
-  src: "/wallpapers/minimal/minimal-101.jpg",
-  orientation: "portrait",
-  tags: ["minimal", "birds", "nature", "colorful"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 102,
-  title: "Minimal wallpaper",
-  category: "minimal",
-  src: "/wallpapers/minimal/minimal-102.jpg",
-  orientation: "portrait",
-  tags: ["minimal", "nature"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 103,
-  title: "Minimal leaf wallpaper",
-  category: "minimal",
-  src: "/wallpapers/minimal/minimal-103.jpg",
-  orientation: "portrait",
-  tags: ["minimal", "nature", "mobile"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 104,
-  title: "Minimal fluid wallpaper",
-  category: "minimal",
-  src: "/wallpapers/minimal/minimal-104.jpg",
-  orientation: "portrait",
-  tags: ["minimal", "abstract", "mobile", "amoled"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 105,
-  title: "Minimal abstract wallpaper",
-  category: "minimal",
-  src: "/wallpapers/minimal/minimal-105.jpg",
-  orientation: "portrait",
-  tags: ["minimal", "abstract", "mobile", "colorful"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 106,
-  title: "Minimal texture wallpaper",
-  category: "minimal",
-  src: "/wallpapers/minimal/minimal-106.jpg",
-  orientation: "portrait",
-  tags: ["minimal", "abstract", "mobile", "texture"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 107,
-  title: "Minimal sky wallpaper",
-  category: "minimal",
-  src: "/wallpapers/minimal/minimal-107.jpg",
-  orientation: "portrait",
-  tags: ["minimal", "nature", "sky", "tree"],
-  createdAt: "2025-01-28"
-
-},
-{
-  id: 108,
-  title: "Minimal flowers wallpaper",
-  category: "minimal",
-  src: "/wallpapers/minimal/minimal-108.jpg",
-  orientation: "portrait",
-  tags: ["minimal", "flower", "sky", "colourful"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 109,
-  title: "Illustration painting wallpaper",
-  category: "illustration",
-  src: "/wallpapers/minimal/minimal-109.jpg",
-  orientation: "portrait",
-  tags: ["illustration", "colourful", "flowers"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 110,
-  title: "Minimal basketball wallpaper",
-  category: "minimal",
-  src: "/wallpapers/minimal/minimal-110.jpg",
-  orientation: "portrait",
-  tags: ["minimal", "nature", "sports", "mobile"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 111,
-  title: "Pikachu wallpaper",
-  category: "illustration",
-  src: "/wallpapers/minimal/minimal-111.jpg",
-  orientation: "portrait",
-  tags: ["illustration", "pokemon", "mobile"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 112,
-  title: "Goku wallpaper",
-  category: "illustration",
-  src: "/wallpapers/minimal/minimal-112.jpg",
-  orientation: "portrait",
-  tags: ["illustration", "character", "mobile"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 113,
-  title: "Goku peeking wallpaper",
-  category: "illustration",
-  src: "/wallpapers/minimal/minimal-113.jpg",
-  orientation: "portrait",
-  tags: ["illustration", "character", "mobile"],
-  createdAt: "2025-01-28"
-},
-{
-  id:114,
-  title: "Shinchan wallpaper",
-  category: "illustration",
-  src: "/wallpapers/minimal/minimal-114.jpg",
-  orientation: "portrait",
-  tags: ["illustration", "character"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 115,
-  title: "Doraemon wallpaper",
-  category: "illustration",
-  src: "/wallpapers/minimal/minimal-115.jpg",
-  orientation: "portrait",
-  tags: ["illustration", "character", "mobile"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 301,
-  title: "Leaf wallpaper",
-  category: "nature",
-  src: "/wallpapers/nature/nature-301.jpg",
-  orientation: "portrait",
-  tags: ["nature", "leaf", "woods"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 302,
-  title: "Sea stones wallpaper",
-  category: "nature",
-  src: "/wallpapers/nature/nature-302.jpg",
-  orientation: "portrait",
-  tags: ["nature", "sea", "stones"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 303,
-  title: "Greeny Mountain wallpaper",
-  category: "nature",
-  src: "/wallpapers/nature/nature-303.jpg",
-  orientation: "portrait",
-  tags: ["nature", "mountain", "sky"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 304,
-  title: "Rocky Mountainwallpaper",
-  category: "nature",
-  src: "/wallpapers/nature/nature-304.jpg",
-  orientation: "portrait",
-  tags: ["nature","rocks", "mountain", "sky"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 305,
-  title: "Sea boat wallpaper",
-  category: "nature",
-  src: "/wallpapers/nature/nature-305.jpg",
-  orientation: "portrait",
-  tags: ["nature", "ocean", "minimal"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 306,
-  title: "Yatch between mountains wallpaper",
-  category: "nature",
-  src: "/wallpapers/nature/nature-306.jpg",
-  orientation: "portrait",
-  tags: ["nature", "mountain", "rocks"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 307,
-  title: "NATURE wallpaper",
-  category: "nature",
-  src: "/wallpapers/nature/nature-307.jpg",
-  orientation: "portrait",
-  tags: ["nature", "ocean", "animals", "amoled"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 308,
-  title: "NATURE wallpaper",
-  category: "nature",
-  src: "/wallpapers/nature/nature-308.jpg",
-  orientation: "portrait",
-  tags: ["nature", "animals", "scenery"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 601,
-  title: "Hinata hyuga wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-601.jpg",
-  orientation: "portrait",
-  tags: ["anime", "nature", "girl", "character", "moody"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 602,
-  title: "Hinata hyuga moody wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-602.jpg",
-  orientation: "portrait",
-  tags: ["anime", "girl", "moody", "character"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 603,
-  title: "Sakura haruno wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-603.jpg",
-  orientation: "portrait",
-  tags: ["anime", "girl", "moody", "character"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 604,
-  title: " Hinata htuga with candle wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-604.jpg",
-  orientation: "portrait",
-  tags: ["anime", "girl", "character", "mobile"],
-  createdAt: "2025-01-28"
-},
-{
-  id: 605,
-  title: "Sakura  standing wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-605.jpg",
-  orientation: "portrait",
-  tags: ["anime", "girl", "natute", "moody"],
-  createdAt: "2025-01-26"
-},
-{
-  id: 606,
-  title: "Minimal Sakura haruno wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-606.jpg",
-  orientation: "portrait",
-  tags: ["anime", "girl", "minimal", "character"],
-  createdAt: "2025-01-26"
-},
-{
-  id: 10001,
-  title: " Beautiful Hinata Hyuga with gorgeous look",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10001.webp",
-  orientation: "portrait",
-  tags: ["anime", "girl", "character", "hinata hyuga"],
-  createdAt: "2025-02-27"
-},
-{
-  id: 10002,
-  title: "Warrior Hinata Hyuga Cold Gaze",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10002.webp",
-  orientation: "portrait",
-  tags: ["anime", "character", "girl", "warrior", "hinata hyuga"],
-  createdAt: "2025-02-27"
-},
-  {
-  id: 10003,
-  title: "Vibrant Anime Girl Portrait with Warm Sunset Glow – 4K Mobile Wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10003.webp",
-  orientation: "portrait",
-  tags: ["anime girl", "vibrant", "romantic tone", "sunset glow", "warm aesthetic", "4k portrait", "mobile wallpaper"],
-  createdAt: "2026-02-28",
-},
-{
-  id: 10004,
-  title: "Soft Romantic Anime Character in Dreamy Aesthetic Light – Vertical 4K Wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10004.webp",
-  orientation: "portrait",
-  tags: ["anime portrait", "romantic vibe", "aesthetic lighting", "soft colors", "vertical wallpaper", "4k anime"],
-  createdAt: "2026-02-28",
-},
-{
-  id: 10005,
-  title: "Nature-Toned Anime Character with Calm Earthy Aesthetic – HD Mobile Wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10005.webp",
-  orientation: "portrait",
-  tags: ["anime character", "nature tone", "earth aesthetic", "calm mood", "portrait wallpaper", "vertical anime"],
-  createdAt: "2026-02-28",
-},
-{
-  id: 10006,
-  title: "Romantic Anime Portrait with Subtle Warm Shadows – 4K Vertical Background",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10006.webp",
-  orientation: "portrait",
-  tags: ["anime girl", "romantic aesthetic", "warm shadows", "portrait style", "mobile wallpaper 4k"],
-  createdAt: "2026-02-28",
-},
-{
-  id: 10007,
-  title: "Elegant Anime Character with Soft Romantic Glow – HD Portrait Wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10007.webp",
-  orientation: "portrait",
-  tags: ["anime portrait", "soft glow", "romantic anime", "vertical 4k", "aesthetic wallpaper"],
-  createdAt: "2026-02-28",
-},
-{
-  id: 10008,
-  title: "Aesthetic Anime Portrait with Balanced Neutral Tones – 4K Mobile Wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10008.webp",
-  orientation: "portrait",
-  tags: ["anime wallpaper", "aesthetic tone", "neutral colors", "portrait style", "hd vertical"],
-  createdAt: "2026-02-28",
-},
-{
-  id: 10009,
-  title: "Dark-Themed Anime Character with Intense Mood Lighting – 4K Portrait Wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10009.webp",
-  orientation: "portrait",
-  tags: ["dark anime", "moody lighting", "intense vibe", "portrait wallpaper", "4k vertical anime"],
-  createdAt: "2026-02-28",
-},
-{
-  id: 10010,
-  title: "Vibrant Romantic Anime Girl with Bright Color Highlights – HD Phone Wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10010.webp",
-  orientation: "portrait",
-  tags: ["anime girl 4k", "vibrant aesthetic", "romantic mood", "bright highlights", "vertical wallpaper"],
-  createdAt: "2026-02-28",
-},
-{
-  id: 10011,
-  title: "Soft Aesthetic Anime Portrait with Subtle Color Harmony – 4K Background",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10011.webp",
-  orientation: "portrait",
-  tags: ["anime portrait hd", "color harmony", "aesthetic vibe", "vertical 4k", "mobile background"],
-  createdAt: "2026-02-28",
-},
-{
-  id: 10012,
-  title: "Romantic Anime Character with Warm Artistic Lighting – 4K Portrait Wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10012.webp",
-  orientation: "portrait",
-  tags: ["anime art", "romantic tone", "warm lighting", "portrait style", "4k mobile wallpaper"],
-  createdAt: "2026-02-28",
-},
-{
-  id: 10013,
-  title: "Dark Aesthetic Anime Portrait with Dramatic Mood – HD Vertical Wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10013.webp",
-  orientation: "portrait",
-  tags: ["dark anime wallpaper", "dramatic mood", "portrait 4k", "vertical background", "intense aesthetic"],
-  createdAt: "2026-02-28",
-},
-{
-  id: 10014,
-  title: "Balanced-Tone Anime Character with Elegant Soft Lighting – 4K Wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10014.webp",
-  orientation: "portrait",
-  tags: ["anime elegance", "soft lighting", "portrait hd", "vertical 4k wallpaper"],
-  createdAt: "2026-02-28",
-},
-{
-  id: 10015,
-  title: "Vibrant Anime Portrait with Warm Romantic Expression – 4K Phone Wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10015.webp",
-  orientation: "portrait",
-  tags: ["anime girl portrait", "vibrant tone", "romantic vibe", "hd vertical wallpaper"],
-  createdAt: "2026-02-28",
-},
-{
-  id: 10016,
-  title: "Aesthetic Anime Character with Calm Neutral Mood – 4K Vertical Background",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10016.webp",
-  orientation: "portrait",
-  tags: ["anime calm vibe", "neutral tone", "portrait wallpaper 4k", "vertical hd"],
-  createdAt: "2026-02-28",
-},
-{
-  id: 10017,
-  title: "Dark Romantic Anime Portrait with Intense Color Depth – 4K Mobile Wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10017.webp",
-  orientation: "portrait",
-  tags: ["dark anime aesthetic", "romantic mood", "color depth", "portrait hd wallpaper"],
-  createdAt: "2026-02-28",
-},
-{
-  id: 10018,
-  title: "Nature-Infused Anime Character with Earthy Aesthetic – HD Vertical Wallpaper",
-  category: "anime",
-  src: "/wallpapers/anime/anime-10018.webp",
-  orientation: "portrait",
-  tags: ["anime nature vibe", "earth tone", "calm aesthetic", "4k portrait wallpaper"],
-  createdAt: "2026-02-28",
-},
+  // Adding more items with basic info for fallback
+  { id: 2, title: "Amoled white flower", category: "amoled", src: "/wallpapers/amoled/amoled-2.jpg" },
+  { id: 3, title: "Rocky amoled mountain", category: "amoled", src: "/wallpapers/amoled/amoled-3.jpg" },
+  { id: 4, title: "Amoled bunny", category: "amoled", src:"/wallpapers/amoled/amoled-4.jpg" },
+  { id: 5, title: "Amoled leaf", category: "amoled", src: "/wallpapers/amoled/amoled-5.jpg" },
+  { id: 6, title: "Amoled textured", category: "amoled", src: "/wallpapers/amoled/amoled-6.jpg" },
+  { id: 7, title: "Amoled balls", category: "amoled", src: "/wallpapers/amoled/amoled-7.jpg" },
+  { id: 8, title: "Amoled astronaut", category: "amoled", src: "/wallpapers/amoled/amoled-8.jpg" },
+  { id: 9, title: "AMOLED spiderman", category: "amoled", src: "/wallpapers/amoled/amoled-9.jpg" },
+  { id: 10, title: "Amoled cloud", category: "amoled", src: "/wallpapers/amoled/amoled-10.jpg" },
+  { id: 11, title: "Amoled car", category: "amoled", src: "/wallpapers/amoled/amoled-11.jpg" },
+  { id: 12, title: "Amoled wallpaper", category: "amoled", src: "/wallpapers/amoled/amoled-12.jpg" },
+  { id: 403, title: "Range Rover defender", category: "cars", src: "/wallpapers/cars/cars-403.jpg" },
+  { id: 404, title: "BMW M2", category: "cars", src: "/wallpapers/cars/cars-404.jpg" },
+  { id: 405, title: "Porsche racing", category: "cars", src: "/wallpapers/cars/cars-405.jpg" },
+  { id: 406, title: "Porsche minimal", category: "cars", src: "/wallpapers/cars/cars-406.jpg" },
+  { id: 407, title: "BMW M5", category: "cars", src: "/wallpapers/cars/cars-407.jpg" },
+  { id: 408, title: "Porsche nature", category: "cars", src: "/wallpapers/cars/cars-408.jpg" },
+  { id: 409, title: "Porsche sports", category: "cars", src: "/wallpapers/cars/cars-409.jpg" },
+  { id: 410, title: "Nissan skyline", category: "cars", src: "/wallpapers/cars/cars-410.jpg" },
+  { id: 501, title: "Bears illustration", category: "illustration", src: "/wallpapers/illustration/illustration-501.jpg" },
+  { id: 502, title: "Anime illustration", category: "illustration", src: "/wallpapers/illustration/illustration-502.jpg" },
+  { id: 503, title: "Naruto illustration", category: "illustration", src: "/wallpapers/illustration/illustration-503.jpg" },
+  { id: 101, title: "Angry birds", category: "minimal", src: "/wallpapers/minimal/minimal-101.jpg" },
+  { id: 102, title: "Minimal nature", category: "minimal", src: "/wallpapers/minimal/minimal-102.jpg" },
+  { id: 103, title: "Minimal leaf", category: "minimal", src: "/wallpapers/minimal/minimal-103.jpg" },
+  { id: 104, title: "Minimal fluid", category: "minimal", src: "/wallpapers/minimal/minimal-104.jpg" },
+  { id: 105, title: "Minimal abstract", category: "minimal", src: "/wallpapers/minimal/minimal-105.jpg" },
+  { id: 106, title: "Minimal texture", category: "minimal", src: "/wallpapers/minimal/minimal-106.jpg" },
+  { id: 107, title: "Minimal sky", category: "minimal", src: "/wallpapers/minimal/minimal-107.jpg" },
+  { id: 108, title: "Minimal flowers", category: "minimal", src: "/wallpapers/minimal/minimal-108.jpg" },
+  { id: 109, title: "Illustration painting", category: "illustration", src: "/wallpapers/minimal/minimal-109.jpg" },
+  { id: 110, title: "Minimal basketball", category: "minimal", src: "/wallpapers/minimal/minimal-110.jpg" },
+  { id: 111, title: "Pikachu illustration", category: "illustration", src: "/wallpapers/minimal/minimal-111.jpg" },
+  { id: 112, title: "Goku illustration", category: "illustration", src: "/wallpapers/minimal/minimal-112.jpg" },
+  { id: 113, title: "Goku peeking", category: "illustration", src: "/wallpapers/minimal/minimal-113.jpg" },
+  { id: 114, title: "Shinchan illustration", category: "illustration", src: "/wallpapers/minimal/minimal-114.jpg" },
+  { id: 115, title: "Doraemon illustration", category: "illustration", src: "/wallpapers/minimal/minimal-115.jpg" },
+  { id: 301, title: "Leaf nature", category: "nature", src: "/wallpapers/nature/nature-301.jpg" },
+  { id: 302, title: "Sea stones", category: "nature", src: "/wallpapers/nature/nature-302.jpg" },
+  { id: 303, title: "Greeny Mountain", category: "nature", src: "/wallpapers/nature/nature-303.jpg" },
+  { id: 304, title: "Rocky Mountain", category: "nature", src: "/wallpapers/nature/nature-304.jpg" },
+  { id: 305, title: "Sea boat", category: "nature", src: "/wallpapers/nature/nature-305.jpg" },
+  { id: 306, title: "Yatch mountains", category: "nature", src: "/wallpapers/nature/nature-306.jpg" },
+  { id: 307, title: "Ocean nature", category: "nature", src: "/wallpapers/nature/nature-307.jpg" },
+  { id: 308, title: "Scenery nature", category: "nature", src: "/wallpapers/nature/nature-308.jpg" },
+  { id: 601, title: "Hinata hyuga", category: "anime", src: "/wallpapers/anime/anime-601.jpg" },
+  { id: 602, title: "Hinata hyuga moody", category: "anime", src: "/wallpapers/anime/anime-602.jpg" },
+  { id: 603, title: "Sakura haruno", category: "anime", src: "/wallpapers/anime/anime-603.jpg" },
+  { id: 604, title: "Hinata htuga candle", category: "anime", src: "/wallpapers/anime/anime-604.jpg" },
+  { id: 605, title: "Sakura standing", category: "anime", src: "/wallpapers/anime/anime-605.jpg" },
+  { id: 606, title: "Minimal Sakura haruno", category: "anime", src: "/wallpapers/anime/anime-606.jpg" },
+  { id: 10001, title: "Beautiful Hinata Hyuga", category: "anime", src: "/wallpapers/anime/anime-10001.webp" },
+  { id: 10002, title: "Warrior Hinata Hyuga", category: "anime", src: "/wallpapers/anime/anime-10002.webp" },
+  { id: 10003, title: "Vibrant Anime Girl Portrait", category: "anime", src: "/wallpapers/anime/anime-10003.webp" },
+  { id: 10004, title: "Soft Romantic Anime", category: "anime", src: "/wallpapers/anime/anime-10004.webp" },
+  { id: 10005, title: "Nature-Toned Anime", category: "anime", src: "/wallpapers/anime/anime-10005.webp" },
+  { id: 10006, title: "Romantic Anime Portrait", category: "anime", src: "/wallpapers/anime/anime-10006.webp" },
+  { id: 10007, title: "Elegant Anime Character", category: "anime", src: "/wallpapers/anime/anime-10007.webp" },
+  { id: 10008, title: "Aesthetic Anime Portrait", category: "anime", src: "/wallpapers/anime/anime-10008.webp" },
+  { id: 10009, title: "Dark-Themed Anime", category: "anime", src: "/wallpapers/anime/anime-10009.webp" },
+  { id: 10010, title: "Vibrant Romantic Anime Girl", category: "anime", src: "/wallpapers/anime/anime-10010.webp" },
+  { id: 10011, title: "Soft Aesthetic Anime Portrait", category: "anime", src: "/wallpapers/anime/anime-10011.webp" },
+  { id: 10012, title: "Romantic Anime Art", category: "anime", src: "/wallpapers/anime/anime-10012.webp" },
+  { id: 10013, title: "Dark Aesthetic Anime", category: "anime", src: "/wallpapers/anime/anime-10013.webp" },
+  { id: 10014, title: "Balanced-Tone Anime", category: "anime", src: "/wallpapers/anime/anime-10014.webp" },
+  { id: 10015, title: "Vibrant Anime Portrait", category: "anime", src: "/wallpapers/anime/anime-10015.webp" },
+  { id: 10016, title: "Aesthetic Anime Character", category: "anime", src: "/wallpapers/anime/anime-10016.webp" },
+  { id: 10017, title: "Dark Romantic Anime", category: "anime", src: "/wallpapers/anime/anime-10017.webp" },
+  { id: 10018, title: "Nature-Infused Anime", category: "anime", src: "/wallpapers/anime/anime-10018.webp" },
 ];
-
-// ---- COPY FROM HERE ----
-/*
-{
-  id: 0,
-  title: "",
-  category: "",
-  src: "",
-},
-*/
-// ---- COPY TILL HERE ----
