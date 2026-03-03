@@ -81,18 +81,18 @@ export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
             src={wallpaper.src}
             alt=""
             fill
-            className="object-cover blur-3xl scale-110 opacity-40"
+            className="object-cover blur-3xl scale-110 opacity-40 pointer-events-none"
             priority
           />
         </div>
         
         <Container className="relative z-10 h-full flex items-center justify-center py-10">
-          <div className="relative aspect-[9/16] h-full max-h-[700px] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 overflow-hidden group">
+          <div className="relative aspect-[9/16] h-full max-h-[700px] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 overflow-hidden group select-none">
             <Image
               src={wallpaper.src}
               alt={wallpaper.title}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
               priority
               sizes="(max-width: 768px) 90vw, 40vw"
             />

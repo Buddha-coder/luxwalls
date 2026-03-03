@@ -81,7 +81,8 @@
     @apply border-border;
   }
   html, body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground select-none;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -168,4 +169,9 @@ body {
 
 img {
   -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
