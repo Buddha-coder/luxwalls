@@ -74,8 +74,8 @@ export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      {/* Immersive Hero Section */}
-      <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden">
+      {/* Immersive Hero Section with Rounded Corners */}
+      <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden rounded-b-[2.5rem] md:rounded-b-[5rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)]">
         <div className="absolute inset-0 z-0">
           <Image
             src={wallpaper.src}
