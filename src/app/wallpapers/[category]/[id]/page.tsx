@@ -68,7 +68,7 @@ export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
   };
 
   return (
-    <main className="min-h-screen bg-background pb-20 pt-10">
+    <div className="min-h-screen bg-background pb-20 pt-10">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -106,7 +106,8 @@ export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
         </Container>
       </section>
 
-      <Container className="mt-[-40px] md:mt-[-80px] relative z-20">
+      {/* Increased spacing and removed negative margin to separate the content from the hero preview */}
+      <Container className="mt-16 md:mt-24 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* Main Content (Left) */}
@@ -203,7 +204,7 @@ export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
           <WallpapersGrid wallpapers={related} />
         </section>
       </Container>
-    </main>
+    </div>
   );
 }
 
