@@ -60,7 +60,7 @@ export default function Footer() {
               <ul className="space-y-4 text-sm">
                 <li><Link href="/twitter" className="hover:text-primary transition-colors">X (Twitter)</Link></li>
                 <li><Link href="/github" className="hover:text-primary transition-colors">GitHub</Link></li>
-                <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a></li>
+                <li><a href="https://www.instagram.com/the_buddha_369/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a></li>
               </ul>
             </div>
           </div>
