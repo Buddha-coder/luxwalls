@@ -10,21 +10,22 @@ import SmartDownloadModule from "@/components/wallpaper/SmartDownloadModule";
 import type { Metadata } from "next";
 
 interface WallpaperPageProps {
-  params: {
+  params: Promise<{
     category: string;
     id: string;
-  };
+  }>;
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return wallpapers.map((w) => ({
     category: w.category,
     id: w.id.toString(),
   }));
 }
 
-export function generateMetadata({ params }: WallpaperPageProps): Metadata {
-  const wallpaper = wallpapers.find((w) => w.id.toString() === params.id);
+export async function generateMetadata({ params }: WallpaperPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const wallpaper = wallpapers.find((w) => w.id.toString() === id);
   if (!wallpaper) return { title: "Wallpaper Not Found" };
 
   return {
@@ -36,8 +37,9 @@ export function generateMetadata({ params }: WallpaperPageProps): Metadata {
   };
 }
 
-export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
-  const wallpaper = wallpapers.find((w) => w.id.toString() === params.id);
+export default async function WallpaperDetailPage({ params }: WallpaperPageProps) {
+  const { id } = await params;
+  const wallpaper = wallpapers.find((w) => w.id.toString() === id);
   if (!wallpaper) notFound();
 
   const related = wallpapers
@@ -75,10 +77,10 @@ export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
       />
       
       {/* Immersive Hero Section with Rounded Corners */}
-      <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden rounded-[2.5rem] md:rounded-[5rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)]">
+      <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden rounded-b-[2.5rem] md:rounded-b-[5rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)]">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/blur-placeholder.png"
+            src={`https://picsum.photos/seed/${wallpaper.id}/50/50`}
             alt=""
             fill
             className="object-cover blur-3xl scale-110 opacity-40 pointer-events-none"
@@ -106,8 +108,8 @@ export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
         </Container>
       </section>
 
-      {/* Increased spacing and removed negative margin to separate the content from the hero preview */}
-      <Container className="mt-16 md:mt-24 relative z-20">
+      {/* Spacing to separate content from hero preview */}
+      <Container className="mt-24 md:mt-32 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* Main Content (Left) */}

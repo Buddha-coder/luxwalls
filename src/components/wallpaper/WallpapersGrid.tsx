@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Wallpaper } from "@/data/wallpapers";
 import { EmptyState } from "@/components/ui/empty-state";
-import { AnimateIn } from "@/components/ui/animate-in";
 
 interface WallpapersGridProps {
   wallpapers: Wallpaper[];
@@ -27,7 +26,7 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
     >
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
         {wallpapers.map((wallpaper, index) => (
-          <AnimateIn key={wallpaper.id}>
+          <div key={wallpaper.id} className="animate-fade-in" style={{ animationDelay: `${index * 50}ms` }}>
             <Link 
               href={`/wallpapers/${wallpaper.category}/${wallpaper.id}`}
               className="group relative block aspect-[9/16] rounded-2xl overflow-hidden bg-muted border border-white/5 hover:border-primary/40 transition-all duration-500 shadow-xl hover:shadow-primary/5"
@@ -37,10 +36,9 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
                 alt={wallpaper.title}
                 fill
                 className="object-cover pointer-events-none transition-transform duration-[1.5s] ease-out group-hover:scale-110"
-                // Optimized sizes for grid performance
                 sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 22vw"
                 quality={80}
-                priority={index < 4} // Priority for the first row
+                priority={index < 4}
                 draggable={false}
               />
               
@@ -56,7 +54,7 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
                 </div>
               </div>
             </Link>
-          </AnimateIn>
+          </div>
         ))}
       </div>
     </div>

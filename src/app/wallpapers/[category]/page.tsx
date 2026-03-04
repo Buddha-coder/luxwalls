@@ -7,18 +7,19 @@ import { categoryIntros } from "@/lib/category-intros";
 import { Container } from "@/components/layout/container";
 
 interface CategoryPageProps {
-  params: {
+  params: Promise<{
     category: string;
-  };
+  }>;
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   const categories = [...new Set(wallpapers.map((w) => w.category))];
   return categories.map((category) => ({ category }));
 }
 
-export function generateMetadata({ params }: CategoryPageProps): Metadata {
-  const category = decodeURIComponent(params.category);
+export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
+  const { category: rawCategory } = await params;
+  const category = decodeURIComponent(rawCategory);
   const capitalizedCategory =
     category.charAt(0).toUpperCase() + category.slice(1);
 
@@ -42,8 +43,9 @@ export function generateMetadata({ params }: CategoryPageProps): Metadata {
   };
 }
 
-export default function CategoryPage({ params }: CategoryPageProps) {
-  const category = decodeURIComponent(params.category);
+export default async function CategoryPage({ params }: CategoryPageProps) {
+  const { category: rawCategory } = await params;
+  const category = decodeURIComponent(rawCategory);
   
   const allCategories = [...new Set(wallpapers.map((w) => w.category))];
   if (!allCategories.includes(category)) {

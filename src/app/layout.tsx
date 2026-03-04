@@ -78,7 +78,6 @@ export default function RootLayout({
         />
         <div className="relative flex min-h-screen flex-col">
           <Header />
-          {/* Main content area without redundant layout constraints to fix 404/Hydration issues */}
           <div className="flex-1">
             {children}
           </div>

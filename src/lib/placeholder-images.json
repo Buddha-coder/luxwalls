@@ -3,55 +3,55 @@
     {
       "id": "hero",
       "description": "A luxurious living room with elegant, abstract gold and black wallpaper.",
-      "imageUrl": "/wallpapers/minimal/minimal-115.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1618642624018-a370cbf3cd80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB3YWxscGFwZXJ8ZW58MHx8fHwxNzcyNTE4MDA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "luxury wallpaper"
     },
     {
       "id": "product-1",
       "description": "Close-up of a gilded marble-patterned wallpaper.",
-      "imageUrl": "/wallpapers/minimal/minimal-114.jpg",
+      "imageUrl": "https://picsum.photos/seed/p1/1080/1920",
       "imageHint": "abstract wallpaper"
     },
     {
       "id": "product-2",
       "description": "A classic emerald green damask wallpaper in a well-lit room.",
-      "imageUrl": "/wallpapers/minimal/minimal-113.jpg",
+      "imageUrl": "https://picsum.photos/seed/p2/1080/1920",
       "imageHint": "damask wallpaper"
     },
     {
       "id": "product-3",
       "description": "Dramatic dark wallpaper with large floral blooms.",
-      "imageUrl": "/wallpapers/minimal/minimal-112.jpg",
+      "imageUrl": "https://picsum.photos/seed/p3/1080/1920",
       "imageHint": "floral wallpaper"
     },
     {
       "id": "product-4",
       "description": "Geometric art deco style wallpaper with golden arches.",
-      "imageUrl": "/wallpapers/minimal/minimal-111.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1486551937199-baf066858de7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnZW9tZXRyaWMlMjB3YWxscGFwZXJ8ZW58MHx8fHwxNzcyNTE4MDA2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "geometric wallpaper"
     },
     {
       "id": "product-5",
       "description": "A textured wallpaper that looks like woven silk.",
-      "imageUrl": "/wallpapers/minimal/minimal-110.jpg",
+      "imageUrl": "https://picsum.photos/seed/p5/1080/1920",
       "imageHint": "textured wallpaper"
     },
     {
       "id": "product-6",
       "description": "A whimsical wallpaper depicting a celestial map of stars and constellations.",
-      "imageUrl": "/wallpapers/minimal/minimal-109.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1661601339532-ba01cbb2daf8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjZWxlc3RpYWwlMjB3YWxscGFwZXJ8ZW58MHx8fHwxNzcyNTE4MDA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "celestial wallpaper"
     },
     {
       "id": "hero-bg",
       "description": "Luxury Abstract Background",
-      "imageUrl": "/wallpapers/minimal/minimal-108.jpg",
+      "imageUrl": "https://picsum.photos/seed/herobg/1920/1080",
       "imageHint": "abstract background"
     },
     {
       "id": "hero-preview",
       "description": "Wallpaper Preview",
-      "imageUrl": "/wallpapers/minimal/minimal-107.jpg",
+      "imageUrl": "https://picsum.photos/seed/heroprev/1080/1920",
       "imageHint": "wallpaper preview"
     }
   ]
