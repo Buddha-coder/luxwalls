@@ -21,128 +21,122 @@ export interface Wallpaper {
   bestFor?: string[];
 }
 
-// Using remote high-res placeholders to ensure previews show up immediately
-// Hostname "picsum.photos" is configured in next.config.ts
 export const wallpapers: Wallpaper[] = [
   {
-    id: 0,
-    title: "Amoled Deep Void",
-    category: "amoled",
-    src: "https://picsum.photos/seed/amoled0/1080/1920",
-    orientation: "portrait",
-    tags: ["amoled", "dark", "mobile", "minimal"],
-    createdAt: "2025-01-28",
-    resolution: "4K UHD",
-    fileSize: "2.4 MB"
-  },
-  {
     id: 1,
-    title: "Neon Petals",
+    title: "Deep Midnight Flow",
     category: "amoled",
-    src: "https://picsum.photos/seed/amoled1/1080/1920",
+    src: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1080",
     orientation: "portrait",
-    tags: ["amoled", "dark", "flowers", "lockscreen"],
+    tags: ["amoled", "dark", "minimal"],
     createdAt: "2025-01-28",
     resolution: "4K UHD",
-    fileSize: "3.1 MB"
+    fileSize: "2.4 MB",
+    views: 1240,
+    downloads: 850
   },
   {
     id: 2,
-    title: "Ethereal Bloom",
+    title: "Neon Petals",
     category: "amoled",
-    src: "https://picsum.photos/seed/amoled2/1080/1920",
+    src: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1080",
     orientation: "portrait",
-    tags: ["amoled", "dark", "flowers", "mobile"],
+    tags: ["amoled", "dark", "neon"],
     createdAt: "2025-01-28",
     resolution: "4K UHD",
-    fileSize: "2.8 MB"
+    fileSize: "3.1 MB",
+    views: 980,
+    downloads: 620
   },
   {
     id: 3,
-    title: "Midnight Peak",
-    category: "amoled",
-    src: "https://picsum.photos/seed/amoled3/1080/1920",
-    orientation: "portrait",
-    tags: ["amoled", "rocks", "dark", "mobile"],
-    createdAt: "2025-01-28",
-    resolution: "4K UHD",
-    fileSize: "3.5 MB"
-  },
-  {
-    id: 401,
-    title: "Carbon Stealth",
+    title: "Classic Silver Speed",
     category: "cars",
-    src: "https://picsum.photos/seed/car401/1080/1920",
+    src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1080",
     orientation: "portrait",
-    tags: ["cars", "lockscreen", "sports car"],
+    tags: ["cars", "porsche", "silver"],
     createdAt: "2025-01-28",
     resolution: "4K UHD",
-    fileSize: "4.2 MB"
+    fileSize: "4.2 MB",
+    views: 2100,
+    downloads: 1400
   },
   {
-    id: 402,
+    id: 4,
     title: "Urban Racer",
     category: "cars",
-    src: "https://picsum.photos/seed/car402/1080/1920",
+    src: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=1080",
     orientation: "portrait",
-    tags: ["cars", "lockscreen", "sports car"],
+    tags: ["cars", "ferrari", "red"],
     createdAt: "2025-01-28",
     resolution: "4K UHD",
-    fileSize: "3.9 MB"
+    fileSize: "3.9 MB",
+    views: 1850,
+    downloads: 1100
   },
   {
-    id: 101,
-    title: "Simple Horizon",
+    id: 5,
+    title: "Silent Horizon",
     category: "minimal",
-    src: "https://picsum.photos/seed/min101/1080/1920",
+    src: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=1080",
     orientation: "portrait",
-    tags: ["minimal", "birds", "nature", "colorful"],
+    tags: ["minimal", "nature", "calm"],
     createdAt: "2025-01-28",
     resolution: "4K UHD",
-    fileSize: "1.2 MB"
+    fileSize: "1.2 MB",
+    views: 3200,
+    downloads: 2400
   },
   {
-    id: 102,
-    title: "Quiet Morning",
+    id: 6,
+    title: "Abstract Zenith",
     category: "minimal",
-    src: "https://picsum.photos/seed/min102/1080/1920",
+    src: "https://images.unsplash.com/photo-1550684847-75bdda21ce95?q=80&w=1080",
     orientation: "portrait",
-    tags: ["minimal", "nature"],
+    tags: ["minimal", "abstract", "white"],
     createdAt: "2025-01-28",
     resolution: "4K UHD",
-    fileSize: "1.5 MB"
+    fileSize: "1.5 MB",
+    views: 1100,
+    downloads: 750
   },
   {
-    id: 301,
-    title: "Verdent Whisper",
+    id: 7,
+    title: "Verdant Whisper",
     category: "nature",
-    src: "https://picsum.photos/seed/nat301/1080/1920",
+    src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1080",
     orientation: "portrait",
-    tags: ["nature", "leaf", "woods"],
+    tags: ["nature", "mountains", "fog"],
     createdAt: "2025-01-28",
     resolution: "4K UHD",
-    fileSize: "2.9 MB"
+    fileSize: "2.9 MB",
+    views: 4500,
+    downloads: 3100
   },
   {
-    id: 302,
+    id: 8,
     title: "Coastal Calm",
     category: "nature",
-    src: "https://picsum.photos/seed/nat302/1080/1920",
+    src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1080",
     orientation: "portrait",
-    tags: ["nature", "sea", "stones"],
+    tags: ["nature", "ocean", "beach"],
     createdAt: "2025-01-28",
     resolution: "4K UHD",
-    fileSize: "3.2 MB"
+    fileSize: "3.2 MB",
+    views: 2800,
+    downloads: 1900
   },
   {
-    id: 10001,
-    title: "Starlight Guardian",
+    id: 9,
+    title: "Ethereal Spirit",
     category: "anime",
-    src: "https://picsum.photos/seed/anime10001/1080/1920",
+    src: "https://images.unsplash.com/photo-1578632738988-4888d946147d?q=80&w=1080",
     orientation: "portrait",
-    tags: ["anime", "girl", "character", "high-res"],
+    tags: ["anime", "fantasy", "art"],
     createdAt: "2025-02-27",
     resolution: "4K UHD",
-    fileSize: "4.1 MB"
+    fileSize: "4.1 MB",
+    views: 1500,
+    downloads: 950
   }
 ];
