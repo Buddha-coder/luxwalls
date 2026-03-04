@@ -70,7 +70,7 @@ export default async function WallpaperDetailPage({ params }: WallpaperPageProps
   };
 
   return (
-    <div className="min-h-screen bg-background pb-20 pt-32 md:pt-40">
+    <div className="min-h-screen bg-background pb-20 pt-32 md:pt-44">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -114,12 +114,16 @@ export default async function WallpaperDetailPage({ params }: WallpaperPageProps
                   <ChevronLeft className="w-4 h-4 mr-1" />
                   {wallpaper.category.toUpperCase()} COLLECTION
                 </Link>
-                <h1 className="text-2xl md:text-4xl font-headline font-bold leading-tight">
+                <h1 className="text-2xl md:text-4xl font-headline font-bold leading-tight text-white">
                   {wallpaper.title}
                 </h1>
                 <div className="flex flex-wrap gap-2 pt-2">
                   {wallpaper.tags?.map(tag => (
-                    <Badge key={tag} className="glass text-[10px] md:text-xs font-normal px-3 py-1 rounded-full border-white/10">
+                    <Badge 
+                      key={tag} 
+                      variant="outline" 
+                      className="bg-white/5 text-soft-ivory/90 border-white/10 text-[10px] md:text-xs font-normal px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-white transition-colors"
+                    >
                       #{tag}
                     </Badge>
                   ))}
@@ -131,7 +135,7 @@ export default async function WallpaperDetailPage({ params }: WallpaperPageProps
 
               {/* Description Block */}
               <div className="space-y-4 pt-4 border-t border-white/5">
-                <h2 className="text-lg md:text-xl font-headline font-semibold">Atmosphere & Style</h2>
+                <h2 className="text-lg md:text-xl font-headline font-semibold text-white">Atmosphere & Style</h2>
                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {wallpaper.description || `Enhance your digital environment with this premium ${wallpaper.category} wallpaper. Selected for its exceptional clarity and atmospheric balance, this asset is optimized for modern displays to provide a seamless visual experience.`}
                 </p>
@@ -151,7 +155,7 @@ export default async function WallpaperDetailPage({ params }: WallpaperPageProps
           <aside className="lg:col-span-4 space-y-6">
             {/* Color Palette */}
             <div className="glass rounded-3xl p-6 border border-white/5 space-y-4">
-              <h3 className="text-sm font-semibold flex items-center">
+              <h3 className="text-sm font-semibold flex items-center text-white">
                 <Palette className="w-4 h-4 mr-2 text-primary" /> Design Palette
               </h3>
               <div className="flex gap-3">
@@ -194,7 +198,7 @@ export default async function WallpaperDetailPage({ params }: WallpaperPageProps
         {/* Related Wallpapers */}
         <section className="mt-20 space-y-8">
           <div className="flex items-center justify-between border-b border-white/5 pb-4">
-            <h2 className="text-xl md:text-3xl font-headline font-semibold">Similar Aesthetics</h2>
+            <h2 className="text-xl md:text-3xl font-headline font-semibold text-white">Similar Aesthetics</h2>
             <Link href="/wallpapers" className="text-xs md:text-sm text-muted-foreground hover:text-primary transition">View All</Link>
           </div>
           <WallpapersGrid wallpapers={related} />
@@ -209,7 +213,7 @@ function InfoCard({ icon, label, value }: { icon: React.ReactNode, label: string
     <div className="glass rounded-2xl p-4 border border-white/5 flex flex-col items-center text-center space-y-1">
       <div className="text-primary mb-1">{icon}</div>
       <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">{label}</p>
-      <p className="text-xs md:text-sm font-medium">{value}</p>
+      <p className="text-xs md:text-sm font-medium text-white">{value}</p>
     </div>
   );
 }
