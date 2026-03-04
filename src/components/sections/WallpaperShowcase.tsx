@@ -1,8 +1,11 @@
 import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/hero-images";
+import { wallpapers } from "@/data/wallpapers";
 import { Container } from "@/components/layout/container";
 
 export default function WallpaperShowcase() {
+  const featuredWallpaperIds = [10001, 603, 10004, 10009, 10016, 501, 410, 11];
+  const featuredWallpapers = wallpapers.filter(wallpaper => featuredWallpaperIds.includes(wallpaper.id));
+
   return (
     <section className="w-full bg-executive-black py-16 md:py-24 border-t border-border">
       <Container>
@@ -16,19 +19,18 @@ export default function WallpaperShowcase() {
         </div>
 
         <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {PlaceHolderImages.slice(1, 7).map((image, index) => (
+          {featuredWallpapers.map((wallpaper, index) => (
             <div
-              key={image.id}
+              key={wallpaper.id}
               className="group relative aspect-[9/16] overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-primary/20 hover:shadow-2xl animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <Image
-                src={image.imageUrl}
-                alt={`${image.description} - LuxWalls Wallpaper Sample`}
+                src={wallpaper.src}
+                alt={`${wallpaper.title} - LuxWalls Wallpaper Sample`}
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
-                data-ai-hint={image.imageHint}
+                sizes="(max-width: 640px) 50vw, (max-w: 1024px) 33vw, 16vw"
               />
                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             </div>
