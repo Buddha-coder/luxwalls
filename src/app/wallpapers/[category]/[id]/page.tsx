@@ -98,12 +98,6 @@ export default async function WallpaperDetailPage({ params }: WallpaperPageProps
               priority
               sizes="(max-width: 768px) 90vw, 40vw"
             />
-            {/* Resolution Badge Overlay */}
-            <div className="absolute top-4 right-4 z-20">
-              <Badge variant="secondary" className="bg-black/60 backdrop-blur-md text-white border-white/20 px-3 py-1 font-medium">
-                {wallpaper.resolution || "4K UHD"}
-              </Badge>
-            </div>
           </div>
         </Container>
       </section>
