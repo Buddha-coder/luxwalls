@@ -78,7 +78,7 @@ export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
       <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden rounded-[2.5rem] md:rounded-[5rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)]">
         <div className="absolute inset-0 z-0">
           <Image
-            src={wallpaper.src}
+            src="/blur-placeholder.png"
             alt=""
             fill
             className="object-cover blur-3xl scale-110 opacity-40 pointer-events-none"

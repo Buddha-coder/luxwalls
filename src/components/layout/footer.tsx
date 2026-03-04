@@ -58,16 +58,19 @@ export default function Footer() {
             <div>
               <h3 className="text-white font-medium mb-6 uppercase text-xs tracking-widest">Connect</h3>
               <ul className="space-y-4 text-sm">
+                <li><Link href="/twitter" className="hover:text-primary transition-colors">X (Twitter)</Link></li>
+                <li><Link href="/github" className="hover:text-primary transition-colors">GitHub</Link></li>
                 <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a></li>
-                <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">X (Twitter)</a></li>
-                <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a></li>
               </ul>
             </div>
           </div>
 
           {/* Copyright Bar */}
           <div className="mt-16 pt-8 border-t border-white/5 text-center text-xs tracking-widest text-gray-600">
-            © {year || '2025'} LUXWALLS. ALL RIGHTS RESERVED.
+            <div className="space-y-2">
+              <p>© {year || '2025'} LUXWALLS. ALL RIGHTS RESERVED.</p>
+              <p className="text-[10px] text-gray-500 font-headline uppercase tracking-widest">Created by Buddha Ratna Gautam</p>
+            </div>
           </div>
         </Container>
       </div>
