@@ -76,14 +76,14 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   }));
 
   return (
-    <main className="w-full py-16 md:py-24">
+    <main className="w-full pt-32 pb-16 md:pt-44 md:pb-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(imageObjectLd) }}
       />
       <Container>
-        <div className="mb-8 space-y-4">
-          <h1 className="text-3xl sm:text-4xl font-headline font-semibold capitalize leading-tight">
+        <div className="mb-12 space-y-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-headline font-semibold capitalize leading-tight">
             {category} Wallpapers
           </h1>
 
