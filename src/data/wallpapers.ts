@@ -22,6 +22,7 @@ export interface Wallpaper {
 }
 
 // Using remote high-res placeholders to ensure previews show up immediately
+// Hostname "picsum.photos" is configured in next.config.ts
 export const wallpapers: Wallpaper[] = [
   {
     id: 0,

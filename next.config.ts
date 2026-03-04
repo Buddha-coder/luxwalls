@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    // Ensuring all possible placeholder subdomains are allowed
+    // Authorizing high-resolution placeholder domains for wallpaper previews
     remotePatterns: [
       {
         protocol: "https",
