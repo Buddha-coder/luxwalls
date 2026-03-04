@@ -64,7 +64,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const imageObjectLd = filteredWallpapers.map((wallpaper) => ({
     "@context": "https://schema.org",
     "@type": "ImageObject",
-    contentUrl: `${baseUrl}${wallpaper.src}`,
+    contentUrl: wallpaper.src.startsWith('http') ? wallpaper.src : `${baseUrl}${wallpaper.src}`,
     license: `${baseUrl}/terms`,
     acquireLicensePage: `${baseUrl}/terms`,
     creditText: "LuxWalls",
@@ -78,7 +78,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   }));
 
   return (
-    <main className="w-full pt-32 pb-16 md:pt-44 md:pb-24">
+    <main className="w-full pt-40 pb-16 md:pt-56 md:pb-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(imageObjectLd) }}
