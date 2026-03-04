@@ -42,8 +42,13 @@ export default async function WallpaperDetailPage({ params }: WallpaperPageProps
   const wallpaper = wallpapers.find((w) => w.id.toString() === id);
   if (!wallpaper) notFound();
 
-  const related = wallpapers
-    .filter((w) => w.category === wallpaper.category && w.id !== wallpaper.id)
+  // Engagement logic: Shuffle related wallpapers to show new ones on every visit
+  const relatedPool = wallpapers.filter(
+    (w) => w.category === wallpaper.category && w.id !== wallpaper.id
+  );
+  
+  const related = [...relatedPool]
+    .sort(() => Math.random() - 0.5)
     .slice(0, 4);
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://luxwalls.vercel.app";
@@ -51,7 +56,7 @@ export default async function WallpaperDetailPage({ params }: WallpaperPageProps
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ImageObject",
-    contentUrl: `${baseUrl}${wallpaper.src}`,
+    contentUrl: wallpaper.src.startsWith('http') ? wallpaper.src : `${baseUrl}${wallpaper.src}`,
     name: wallpaper.title,
     description: wallpaper.description || wallpaper.title,
     datePublished: wallpaper.createdAt,
@@ -76,7 +81,7 @@ export default async function WallpaperDetailPage({ params }: WallpaperPageProps
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      {/* Immersive Hero Section with Rounded Corners */}
+      {/* Immersive Hero Section */}
       <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden rounded-[2.5rem] md:rounded-[5rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)]">
         <div className="absolute inset-0 z-0">
           <Image
@@ -122,7 +127,7 @@ export default async function WallpaperDetailPage({ params }: WallpaperPageProps
                     <Badge 
                       key={tag} 
                       variant="outline" 
-                      className="bg-white/5 text-soft-ivory/90 border-white/10 text-[10px] md:text-xs font-normal px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-white transition-colors"
+                      className="bg-white/5 text-foreground/90 border-white/10 text-[10px] md:text-xs font-normal px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-white transition-colors"
                     >
                       #{tag}
                     </Badge>
