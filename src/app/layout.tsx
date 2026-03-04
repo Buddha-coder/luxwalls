@@ -28,32 +28,24 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://luxwalls.vercel.app"),
-
+  metadataBase: new URL(baseUrl),
   title: {
-    default: "LuxWalls",
+    default: "LuxWalls | Premium Luxury Wallpapers",
     template: "%s | LuxWalls"
   },
-
-  description:
-    "Discover exclusive luxury wallpapers for mobile and desktop. High-resolution, premium aesthetic backgrounds. 100% free download.",
-
+  description: "Exclusive luxury wallpapers for mobile and desktop. High-resolution, AMOLED-optimized, premium aesthetic backgrounds. 100% free download.",
   applicationName: "LuxWalls",
-
   openGraph: {
     type: "website",
-    url: "https://luxwalls.vercel.app",
+    url: baseUrl,
     siteName: "LuxWalls",
     title: "LuxWalls",
-    description:
-      "Discover exclusive luxury wallpapers for mobile and desktop. High-resolution, premium aesthetic backgrounds. 100% free download.",
+    description: "Discover exclusive luxury wallpapers for high-end displays. 4K, 8K, and AMOLED curated backgrounds.",
   },
-
   twitter: {
     card: "summary_large_image",
     title: "LuxWalls",
-    description:
-      "Discover exclusive luxury wallpapers for mobile and desktop. High-resolution, premium aesthetic backgrounds. 100% free download.",
+    description: "Premium luxury wallpapers for elite setups.",
   }
 };
 
@@ -70,36 +62,40 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "LuxWalls",
-    alternateName: "LuxWalls Primium Wallpaers",
+    alternateName: "LuxWalls Premium Wallpapers",
     url: baseUrl,
   };
 
   return (
     <html
       lang="en"
-      className={`${ptSans.variable} ${playfairDisplay.variable}`}
+      className={`${ptSans.variable} ${playfairDisplay.variable} dark`}
     >
-      <body className="font-body antialiased bg-background text-foreground">
+      <body className="font-body antialiased bg-background text-foreground selection:bg-primary/30">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-          key="website-jsonld"
         />
-          <div className="relative flex min-h-screen flex-col">
-            <Header />
-            <main className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 pb-24 pt-20">
+        <div className="relative flex min-h-screen flex-col">
+          <Header />
+          {/* Main content area without redundant layout constraints to fix 404/Hydration issues */}
+          <div className="flex-1">
             {children}
-            </main>
-            <Footer />
           </div>
-          <Toaster />
-          <PwaInstallPrompt />
-          <IosInstallHint />
-          <RegisterSW />
-          <InstallSuccess />
-          <PostInstallWelcome />
-          <Analytics />
-          <SpeedInsights />
+          <Footer />
+        </div>
+        
+        {/* UI Feedback & PWA Layer */}
+        <Toaster />
+        <PwaInstallPrompt />
+        <IosInstallHint />
+        <RegisterSW />
+        <InstallSuccess />
+        <PostInstallWelcome />
+        
+        {/* Performance Layer */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

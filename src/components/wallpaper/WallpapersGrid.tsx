@@ -15,37 +15,45 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
     return (
       <EmptyState
         title="No Wallpapers Found"
-        desc="It seems there are no wallpapers to display right now."
+        desc="Our curators are currently preparing new additions."
       />
     );
   }
 
   return (
     <div
-      className="relative select-none"
+      className="relative select-none pb-20"
       onContextMenu={(e) => e.preventDefault()}
-      onDragStart={(e) => e.preventDefault()}
     >
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-        {wallpapers.map((wallpaper) => (
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        {wallpapers.map((wallpaper, index) => (
           <AnimateIn key={wallpaper.id}>
             <Link 
               href={`/wallpapers/${wallpaper.category}/${wallpaper.id}`}
-              className="group relative block aspect-[9/16] rounded-2xl overflow-hidden bg-muted border border-white/5 hover:border-primary/50 transition-colors"
+              className="group relative block aspect-[9/16] rounded-2xl overflow-hidden bg-muted border border-white/5 hover:border-primary/40 transition-all duration-500 shadow-xl hover:shadow-primary/5"
             >
               <Image
                 src={wallpaper.src}
                 alt={wallpaper.title}
                 fill
-                className="object-cover pointer-events-none transition-transform duration-700 group-hover:scale-110"
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                quality={85}
+                className="object-cover pointer-events-none transition-transform duration-[1.5s] ease-out group-hover:scale-110"
+                // Optimized sizes for grid performance
+                sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 22vw"
+                quality={80}
+                priority={index < 4} // Priority for the first row
                 draggable={false}
               />
-              {/* Overlay with subtle info */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                <p className="text-white text-sm font-medium truncate">{wallpaper.title}</p>
-                <p className="text-primary text-xs font-semibold">View Details</p>
+              
+              {/* Premium Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-5">
+                <div className="space-y-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <p className="text-white text-sm font-semibold truncate leading-none">
+                    {wallpaper.title}
+                  </p>
+                  <p className="text-primary text-[10px] font-bold tracking-widest uppercase">
+                    View Asset
+                  </p>
+                </div>
               </div>
             </Link>
           </AnimateIn>
