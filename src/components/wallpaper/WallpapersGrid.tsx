@@ -24,35 +24,47 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
       className="relative select-none pb-20"
       onContextMenu={(e) => e.preventDefault()}
     >
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
         {wallpapers.map((wallpaper, index) => (
-          <div key={wallpaper.id} className="animate-fade-in" style={{ animationDelay: `${index * 50}ms` }}>
+          <div 
+            key={wallpaper.id} 
+            className="animate-fade-in" 
+            style={{ animationDelay: `${index * 40}ms` }}
+          >
             <Link 
               href={`/wallpapers/${wallpaper.category}/${wallpaper.id}`}
-              className="group relative block aspect-[9/16] rounded-2xl overflow-hidden bg-muted border border-white/5 hover:border-primary/40 transition-all duration-500 shadow-xl hover:shadow-primary/5"
+              className="group relative block aspect-[9/16] rounded-[2rem] overflow-hidden bg-muted border border-white/5 hover:border-primary/30 transition-all duration-700 shadow-2xl hover:shadow-primary/10"
             >
               <Image
                 src={wallpaper.src}
                 alt={wallpaper.title}
                 fill
-                className="object-cover pointer-events-none transition-transform duration-[1.5s] ease-out group-hover:scale-110"
+                className="object-cover pointer-events-none transition-transform duration-[1.2s] ease-out group-hover:scale-110"
                 sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 22vw"
-                quality={80}
+                quality={85}
                 priority={index < 4}
                 draggable={false}
               />
               
-              {/* Premium Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-5">
-                <div className="space-y-1 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <p className="text-white text-sm font-semibold truncate leading-none">
-                    {wallpaper.title}
-                  </p>
-                  <p className="text-primary text-[10px] font-bold tracking-widest uppercase">
-                    View Asset
-                  </p>
+              {/* Premium Frosted Glass Overlay */}
+              <div className="absolute inset-x-3 bottom-3 translate-y-2 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="glass rounded-2xl p-4 shadow-2xl ring-1 ring-white/10">
+                  <div className="space-y-1">
+                    <p className="text-white text-xs font-semibold truncate leading-tight tracking-tight">
+                      {wallpaper.title}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <p className="text-primary text-[10px] font-bold tracking-[0.15em] uppercase">
+                        View Details
+                      </p>
+                      <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              {/* Edge highlight for luxury feel */}
+              <div className="absolute inset-0 border border-white/10 rounded-[2rem] pointer-events-none group-hover:border-white/20 transition-colors duration-700" />
             </Link>
           </div>
         ))}

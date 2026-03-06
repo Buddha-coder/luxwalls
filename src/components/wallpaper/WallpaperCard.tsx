@@ -13,21 +13,22 @@ interface WallpaperCardProps {
 export default function WallpaperCard({ wallpaper }: WallpaperCardProps) {
   return (
     <AnimateIn>
-      <div className="glass rounded-2xl overflow-hidden">
-        <div className="group relative aspect-[9/16] overflow-hidden rounded-2xl border border-border bg-muted transition-transform duration-300 hover:-translate-y-1">
+      <div className="glass rounded-[2rem] overflow-hidden p-1 bg-white/[0.02]">
+        <div className="group relative aspect-[9/16] overflow-hidden rounded-[1.8rem] border border-white/5 bg-muted transition-all duration-700 hover:shadow-2xl">
           <Image
             src={wallpaper.src}
             alt={`${wallpaper.title} - ${wallpaper.category} wallpaper by LuxWalls`}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-110"
+            className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-110"
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             priority={false}
           />
 
-          <div className="absolute inset-0 flex items-end justify-center bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <div className="mb-5 translate-y-4 transition-transform duration-300 group-hover:translate-y-0">
+          <div className="absolute inset-0 flex items-end justify-center bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+            <div className="mb-6 translate-y-4 transition-all duration-500 group-hover:translate-y-0">
               <LuxuryButton
                 size="sm"
+                className="glass border-white/20 px-8 py-2.5 rounded-full hover:bg-white/10"
                 onClick={() =>
                   downloadImage(
                     wallpaper.src,
