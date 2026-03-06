@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Download, CheckCircle2, ChevronDown, Monitor, Smartphone, Tablet } from "lucide-react";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { downloadImage } from "@/lib/download-image";
@@ -17,8 +17,14 @@ interface SmartDownloadModuleProps {
 }
 
 export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProps) {
+  const [mounted, setMounted] = useState(false);
   const [resolution, setResolution] = useState("Mobile Portrait (Native)");
   const [fileSize, setFileSize] = useState("2.8 MB");
+
+  // Defer rendering of interactive parts to prevent hydration mismatches with dynamic IDs
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const resolutions = [
     { label: "Mobile Portrait (Native)", size: "2.8 MB", value: "mobile", icon: <Smartphone className="w-4 h-4" /> },
@@ -39,33 +45,37 @@ export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProp
           </p>
         </div>
 
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <button className="flex items-center justify-center gap-2 px-3 py-2.5 md:px-4 md:py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-[10px] md:text-xs font-bold uppercase tracking-widest">
-              Resolution <ChevronDown className="w-4 h-4" />
-            </button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="bg-black/95 border-white/10 backdrop-blur-2xl z-50 p-2 rounded-2xl min-w-[220px]">
-            {resolutions.map((res) => (
-              <DropdownMenuItem 
-                key={res.value} 
-                className="text-white focus:bg-primary/20 cursor-pointer py-3 px-4 rounded-xl flex items-center justify-between"
-                onClick={() => {
-                  setResolution(res.label);
-                  setFileSize(res.size);
-                }}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-white/5 rounded-lg text-primary">{res.icon}</div>
-                  <div className="flex flex-col">
-                    <span className="text-sm font-bold">{res.label}</span>
-                    <span className="text-[10px] text-white/40">{res.size}</span>
+        {mounted ? (
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="flex items-center justify-center gap-2 px-3 py-2.5 md:px-4 md:py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-[10px] md:text-xs font-bold uppercase tracking-widest">
+                Resolution <ChevronDown className="w-4 h-4" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="bg-black/95 border-white/10 backdrop-blur-2xl z-50 p-2 rounded-2xl min-w-[220px]">
+              {resolutions.map((res) => (
+                <DropdownMenuItem 
+                  key={res.value} 
+                  className="text-white focus:bg-primary/20 cursor-pointer py-3 px-4 rounded-xl flex items-center justify-between"
+                  onClick={() => {
+                    setResolution(res.label);
+                    setFileSize(res.size);
+                  }}
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-white/5 rounded-lg text-primary">{res.icon}</div>
+                    <div className="flex flex-col">
+                      <span className="text-sm font-bold">{res.label}</span>
+                      <span className="text-[10px] text-white/40">{res.size}</span>
+                    </div>
                   </div>
-                </div>
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        ) : (
+          <div className="h-10 w-32 animate-pulse rounded-xl bg-white/5" />
+        )}
       </div>
 
       <LuxuryButton 
