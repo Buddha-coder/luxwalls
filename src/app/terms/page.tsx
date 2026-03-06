@@ -12,15 +12,15 @@ export default function TermsPage() {
       {/* Ambient glow */}
       <div className="absolute -top-40 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
 
-      <div className="relative max-w-4xl mx-auto px-6 py-32 md:py-44">
-        <div className="glass-container">
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 py-28 md:py-44">
+        <div className="glass-container !rounded-[2rem] md:!rounded-[2.5rem]">
           <div className="glass-filter" />
           <div className="glass-overlay" />
           <div className="glass-specular" />
           
-          <div className="glass-content p-8 md:p-16 space-y-12">
+          <div className="glass-content p-6 sm:p-10 md:p-16 space-y-10 md:space-y-12">
             <div className="space-y-4">
-              <h1 className="text-3xl md:text-5xl font-headline text-white leading-tight">
+              <h1 className="text-2xl md:text-5xl font-headline text-white leading-tight">
                 Terms & Conditions
               </h1>
               <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-prose">
@@ -30,7 +30,7 @@ export default function TermsPage() {
             </div>
 
             <section className="space-y-4 pt-4">
-              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight font-headline">
+              <h2 className="text-xl md:text-3xl text-white font-medium leading-tight font-headline">
                 Use of Content
               </h2>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
@@ -41,7 +41,7 @@ export default function TermsPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight font-headline">
+              <h2 className="text-xl md:text-3xl text-white font-medium leading-tight font-headline">
                 Intellectual Property
               </h2>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
@@ -52,7 +52,7 @@ export default function TermsPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight font-headline">
+              <h2 className="text-xl md:text-3xl text-white font-medium leading-tight font-headline">
                 Disclaimer of Warranties
               </h2>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
@@ -63,7 +63,7 @@ export default function TermsPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight font-headline">
+              <h2 className="text-xl md:text-3xl text-white font-medium leading-tight font-headline">
                 Changes to Terms
               </h2>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
@@ -72,7 +72,7 @@ export default function TermsPage() {
               </p>
             </section>
 
-            <div className="border-t border-white/10 pt-8 mt-16">
+            <div className="border-t border-white/10 pt-8 mt-12 md:mt-16">
               <p className="text-xs text-gray-500 uppercase tracking-widest">
                 Last updated: January 2024
               </p>

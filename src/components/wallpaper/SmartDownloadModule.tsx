@@ -27,25 +27,25 @@ export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProp
   ];
 
   return (
-    <div className="glass rounded-[2rem] p-6 md:p-8 border border-white/10 space-y-6">
+    <div className="glass rounded-[1.5rem] md:rounded-[2rem] p-5 md:p-8 border border-white/10 space-y-5 md:space-y-6">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="space-y-1">
-          <p className="text-[10px] text-primary font-black uppercase tracking-[0.2em]">Smart Recognition</p>
+          <p className="text-[9px] md:text-[10px] text-primary font-black uppercase tracking-[0.2em]">Smart Recognition</p>
           <div className="flex items-center gap-2">
-            <h3 className="text-xl font-bold text-white">{resolution}</h3>
+            <h3 className="text-lg md:text-xl font-bold text-white">{resolution}</h3>
           </div>
-          <p className="text-xs text-white/50 flex items-center">
+          <p className="text-[10px] md:text-xs text-white/50 flex items-center">
             <CheckCircle2 className="w-3 h-3 mr-1 text-green-500" /> Verified Safe • {fileSize}
           </p>
         </div>
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <button className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-xs font-bold uppercase tracking-widest">
+            <button className="flex items-center justify-center gap-2 px-3 py-2.5 md:px-4 md:py-3 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-[10px] md:text-xs font-bold uppercase tracking-widest">
               Resolution <ChevronDown className="w-4 h-4" />
             </button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="bg-black/95 border-white/10 backdrop-blur-2xl z-50 p-2 rounded-2xl min-w-[240px]">
+          <DropdownMenuContent align="end" className="bg-black/95 border-white/10 backdrop-blur-2xl z-50 p-2 rounded-2xl min-w-[220px]">
             {resolutions.map((res) => (
               <DropdownMenuItem 
                 key={res.value} 
@@ -69,7 +69,7 @@ export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProp
       </div>
 
       <LuxuryButton 
-        className="w-full h-16 rounded-[1.5rem] flex items-center justify-center text-base font-bold uppercase tracking-[0.1em]"
+        className="w-full h-14 md:h-16 rounded-[1.2rem] md:rounded-[1.5rem] flex items-center justify-center text-sm md:text-base font-bold uppercase tracking-[0.1em]"
         onClick={() => downloadImage(src, `luxwalls-${id}.jpg`)}
       >
         <Download className="w-5 h-5 mr-3" />
