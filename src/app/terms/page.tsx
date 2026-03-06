@@ -13,19 +13,23 @@ export default function TermsPage() {
       <div className="absolute -top-40 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
 
       <div className="relative max-w-4xl mx-auto px-6 py-32 md:py-44">
-        <div className="glass rounded-[2.5rem] p-8 md:p-16 shadow-2xl border border-white/5">
-          <div className="space-y-4">
-            <h1 className="text-3xl md:text-5xl font-headline text-white leading-tight">
-              Terms & Conditions
-            </h1>
-            <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-prose">
-              By accessing or using LuxWalls, you agree to the following terms and
-              conditions. Please read them carefully.
-            </p>
-          </div>
+        <div className="glass-container">
+          <div className="glass-filter" />
+          <div className="glass-overlay" />
+          <div className="glass-specular" />
+          
+          <div className="glass-content p-8 md:p-16 space-y-12">
+            <div className="space-y-4">
+              <h1 className="text-3xl md:text-5xl font-headline text-white leading-tight">
+                Terms & Conditions
+              </h1>
+              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-prose">
+                By accessing or using LuxWalls, you agree to the following terms and
+                conditions. Please read them carefully.
+              </p>
+            </div>
 
-          <div className="mt-16 space-y-12">
-            <section className="space-y-4">
+            <section className="space-y-4 pt-4">
               <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight font-headline">
                 Use of Content
               </h2>
@@ -67,12 +71,12 @@ export default function TermsPage() {
                 constitutes acceptance of the revised terms.
               </p>
             </section>
-          </div>
 
-          <div className="border-t border-white/10 pt-8 mt-16">
-            <p className="text-xs text-gray-500 uppercase tracking-widest">
-              Last updated: January 2024
-            </p>
+            <div className="border-t border-white/10 pt-8 mt-16">
+              <p className="text-xs text-gray-500 uppercase tracking-widest">
+                Last updated: January 2024
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -23,24 +23,11 @@
     --border: 225 10% 15%;
     --input: 225 10% 15%;
     --ring: 44 58% 55%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
     --radius: 0.5rem;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-
-    /* Advanced Glassmorphism Variables */
+    
+    /* Ultra-Glass Variables */
     --lg-bg-color: rgba(255, 255, 255, 0.08);
-    --lg-highlight: rgba(255, 255, 255, 0.15);
+    --lg-highlight: rgba(255, 255, 255, 0.18);
     --lg-text: #ffffff;
     --lg-hover-glow: rgba(255, 255, 255, 0.2);
   }
@@ -56,79 +43,44 @@
   }
 }
 
-/* ========== ULTRA-GLASS ARCHITECTURE ========== */
+@layer utilities {
+  .glass-container {
+    @apply relative flex overflow-hidden rounded-[2.5rem] transition-all duration-500;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.1);
+  }
 
-.glass-container {
-  @apply relative flex overflow-hidden rounded-[2.5rem] transition-all duration-500;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.2);
-}
+  .glass-filter {
+    @apply absolute inset-0 z-0 pointer-events-none;
+    backdrop-filter: blur(24px);
+    filter: url(#lg-dist);
+    isolation: isolate;
+  }
 
-.glass-filter {
-  @apply absolute inset-0 z-0 pointer-events-none;
-  backdrop-filter: blur(24px);
-  filter: url(#lg-dist);
-  isolation: isolate;
-}
+  .glass-overlay {
+    @apply absolute inset-0 z-[1] pointer-events-none;
+    background: var(--lg-bg-color);
+  }
 
-.glass-overlay {
-  @apply absolute inset-0 z-[1] pointer-events-none;
-  background: var(--lg-bg-color);
-}
+  .glass-specular {
+    @apply absolute inset-0 z-[2] pointer-events-none;
+    box-shadow: inset 1px 1px 0 var(--lg-highlight), inset 0 0 5px rgba(255, 255, 255, 0.05);
+    border-radius: inherit;
+  }
 
-.glass-specular {
-  @apply absolute inset-0 z-[2] pointer-events-none border-t border-l border-white/20;
-  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.1), inset 0 0 5px rgba(255, 255, 255, 0.05);
-  border-radius: inherit;
-}
+  .glass-content {
+    @apply relative z-[3] w-full;
+  }
 
-.glass-content {
-  @apply relative z-[3] w-full;
-}
-
-/* Utility for legacy support */
-.glass {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px) saturate(150%);
-  -webkit-backdrop-filter: blur(14px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.gold-glow:hover {
-  box-shadow: 0 0 15px rgba(201, 162, 77, 0.4);
-  transition: all 0.3s ease;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  /* Legacy utility */
+  .glass {
+    @apply glass-container;
+  }
 }
 
 @keyframes gradientBorder {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
-
-@keyframes successIn {
-  0% { opacity: 0; transform: scale(0.96); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-.animate-success-in {
-  animation: successIn 0.9s ease-out;
-}
-
-@keyframes welcomeIn {
-  0% { opacity: 0; transform: scale(0.95); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-.animate-welcome-in {
-  animation: welcomeIn 1s ease-out;
 }
 
 html {
@@ -141,9 +93,5 @@ body {
 
 img {
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
