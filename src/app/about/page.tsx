@@ -14,112 +14,118 @@ export default function AboutPage() {
       <div className="absolute -top-40 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
 
       <div className="relative max-w-4xl mx-auto px-6 py-32 md:py-44">
-        {/* Frosted Glass Container */}
-        <div className="glass rounded-[2.5rem] p-8 md:p-16 shadow-2xl border border-white/5">
-          {/* Page Header */}
-          <div className="space-y-4">
-            <h1 className="text-3xl md:text-5xl font-headline text-white leading-tight">
-              About LuxWalls
-            </h1>
-            <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-prose">
-              LuxWalls is a premium wallpaper platform created for individuals who
-              appreciate refined aesthetics, clarity, and visual balance. Our
-              collection is carefully curated to deliver high-resolution visuals
-              that complement modern mobile displays, including AMOLED and
-              high-density screens.
-            </p>
-          </div>
-
-          <div className="mt-16 space-y-12">
-            {/* Vision */}
-            <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight font-headline">
-                Our Vision
-              </h2>
-              <div className="space-y-4 text-sm md:text-base text-muted-foreground">
-                <p className="leading-relaxed max-w-prose">
-                  We believe a screen is not merely a utility, but a personal visual
-                  environment experienced throughout the day. LuxWalls exists to
-                  elevate that experience through{" "}
-                  <Link href="/wallpapers" className="text-primary hover:underline">
-                    wallpapers that are minimal, elegant, and intentional.
-                  </Link>
-                </p>
-                <p className="leading-relaxed max-w-prose">
-                  Our focus is on calm, consistency, and visual quality — without
-                  distraction.
-                </p>
-              </div>
-            </section>
-
-            {/* Differentiation */}
-            <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight font-headline">
-                What Defines LuxWalls
-              </h2>
-              <ul className="space-y-3 text-sm md:text-base text-muted-foreground list-disc list-inside max-w-prose">
-                <li>Curated premium wallpapers with a focus on quality</li>
-                <li>Mobile-first experience optimized for modern devices</li>
-                <li>High-resolution assets with precise detail and clarity</li>
-                <li>A minimal, luxury-oriented visual language</li>
-              </ul>
-            </section>
-
-            {/* Purpose */}
-            <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight font-headline">
-                Designed With Purpose
-              </h2>
-              <div className="space-y-4 text-sm md:text-base text-muted-foreground">
-                <p className="leading-relaxed max-w-prose">
-                  LuxWalls is intentionally lightweight and fast. From discovery to
-                  download, the experience is designed to be seamless, intuitive,
-                  and free of unnecessary steps.
-                </p>
-                <p className="leading-relaxed max-w-prose">
-                  There are no accounts, no intrusive monetization, and no friction
-                  between users and content.
-                </p>
-              </div>
-            </section>
-
-            {/* Respect */}
-            <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight font-headline">
-                Respect for Users
-              </h2>
-              <div className="space-y-4 text-sm md:text-base text-muted-foreground">
-                <p className="leading-relaxed max-w-prose">
-                  LuxWalls prioritizes user privacy and attention. We avoid
-                  aggressive tracking, forced registrations, and manipulative
-                  design practices.
-                </p>
-                <p className="leading-relaxed max-w-prose">
-                  The platform is transparent by design — focused solely on
-                  delivering value through content.
-                </p>
-              </div>
-            </section>
-
-            {/* Future */}
-            <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight font-headline">
-                Looking Ahead
-              </h2>
-              <p className="leading-relaxed text-sm md:text-base text-muted-foreground max-w-prose">
-                LuxWalls continues to evolve with thoughtful improvements,
-                refined curation, and performance enhancements. Our objective is
-                to become a trusted destination for premium wallpapers.
+        {/* Ultra-Glass Container */}
+        <div className="glass-container">
+          <div className="glass-filter" />
+          <div className="glass-overlay" />
+          <div className="glass-specular" />
+          
+          <div className="glass-content p-8 md:p-16 shadow-2xl border border-white/5">
+            {/* Page Header */}
+            <div className="space-y-4">
+              <h1 className="text-3xl md:text-5xl font-headline text-white leading-tight">
+                About LuxWalls
+              </h1>
+              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-prose">
+                LuxWalls is a premium wallpaper platform created for individuals who
+                appreciate refined aesthetics, clarity, and visual balance. Our
+                collection is carefully curated to deliver high-resolution visuals
+                that complement modern mobile displays, including AMOLED and
+                high-density screens.
               </p>
-            </section>
-          </div>
+            </div>
 
-          {/* Closing */}
-          <div className="border-t border-white/10 pt-10 mt-16">
-            <p className="text-base md:text-lg text-white font-medium max-w-prose italic font-headline">
-              LuxWalls represents the intersection of minimal design and
-              luxury-grade visuals.
-            </p>
+            <div className="mt-16 space-y-12">
+              {/* Vision */}
+              <section className="space-y-4">
+                <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight font-headline">
+                  Our Vision
+                </h2>
+                <div className="space-y-4 text-sm md:text-base text-muted-foreground">
+                  <p className="leading-relaxed max-w-prose">
+                    We believe a screen is not merely a utility, but a personal visual
+                    environment experienced throughout the day. LuxWalls exists to
+                    elevate that experience through{" "}
+                    <Link href="/wallpapers" className="text-primary hover:underline">
+                      wallpapers that are minimal, elegant, and intentional.
+                    </Link>
+                  </p>
+                  <p className="leading-relaxed max-w-prose">
+                    Our focus is on calm, consistency, and visual quality — without
+                    distraction.
+                  </p>
+                </div>
+              </section>
+
+              {/* Differentiation */}
+              <section className="space-y-4">
+                <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight font-headline">
+                  What Defines LuxWalls
+                </h2>
+                <ul className="space-y-3 text-sm md:text-base text-muted-foreground list-disc list-inside max-w-prose">
+                  <li>Curated premium wallpapers with a focus on quality</li>
+                  <li>Mobile-first experience optimized for modern devices</li>
+                  <li>High-resolution assets with precise detail and clarity</li>
+                  <li>A minimal, luxury-oriented visual language</li>
+                </ul>
+              </section>
+
+              {/* Purpose */}
+              <section className="space-y-4">
+                <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight font-headline">
+                  Designed With Purpose
+                </h2>
+                <div className="space-y-4 text-sm md:text-base text-muted-foreground">
+                  <p className="leading-relaxed max-w-prose">
+                    LuxWalls is intentionally lightweight and fast. From discovery to
+                    download, the experience is designed to be seamless, intuitive,
+                    and free of unnecessary steps.
+                  </p>
+                  <p className="leading-relaxed max-w-prose">
+                    There are no accounts, no intrusive monetization, and no friction
+                    between users and content.
+                  </p>
+                </div>
+              </section>
+
+              {/* Respect */}
+              <section className="space-y-4">
+                <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight font-headline">
+                  Respect for Users
+                </h2>
+                <div className="space-y-4 text-sm md:text-base text-muted-foreground">
+                  <p className="leading-relaxed max-w-prose">
+                    LuxWalls prioritizes user privacy and attention. We avoid
+                    aggressive tracking, forced registrations, and manipulative
+                    design practices.
+                  </p>
+                  <p className="leading-relaxed max-w-prose">
+                    The platform is transparent by design — focused solely on
+                    delivering value through content.
+                  </p>
+                </div>
+              </section>
+
+              {/* Future */}
+              <section className="space-y-4">
+                <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight font-headline">
+                  Looking Ahead
+                </h2>
+                <p className="leading-relaxed text-sm md:text-base text-muted-foreground max-w-prose">
+                  LuxWalls continues to evolve with thoughtful improvements,
+                  refined curation, and performance enhancements. Our objective is
+                  to become a trusted destination for premium wallpapers.
+                </p>
+              </section>
+            </div>
+
+            {/* Closing */}
+            <div className="border-t border-white/10 pt-10 mt-16">
+              <p className="text-base md:text-lg text-white font-medium max-w-prose italic font-headline">
+                LuxWalls represents the intersection of minimal design and
+                luxury-grade visuals.
+              </p>
+            </div>
           </div>
         </div>
       </div>
