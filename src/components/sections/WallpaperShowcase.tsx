@@ -35,17 +35,15 @@ export default function WallpaperShowcase() {
                 sizes="(max-width: 640px) 50vw, (max-w: 1024px) 33vw, 16vw"
               />
               
-              {/* Premium Frosted Glass Label (Showcase Version) */}
-              <div className="absolute inset-x-2 bottom-2 translate-y-1 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                <div className="glass rounded-[1.2rem] p-3 text-center ring-1 ring-white/10">
-                  <p className="text-[10px] text-white font-bold tracking-widest uppercase truncate">
-                    {wallpaper.category}
-                  </p>
-                </div>
+              {/* Premium Text-Only Label (Showcase Version) */}
+              <div className="absolute inset-x-0 bottom-6 translate-y-1 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 text-center px-4">
+                <p className="text-[10px] text-white font-bold tracking-widest uppercase truncate drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                  {wallpaper.category}
+                </p>
               </div>
               
               {/* Subtle glass vignette */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               
               {/* Frosted edge highlight */}
               <div className="absolute inset-0 border border-white/10 rounded-[2rem] group-hover:border-white/20 transition-colors duration-700" />

@@ -46,28 +46,21 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
                 draggable={false}
               />
               
-              {/* Premium Frosted Glass Overlay (Dynamic Visibility) */}
-              <div className="absolute inset-x-3 bottom-3 translate-y-2 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                <div className="relative overflow-hidden rounded-[1.8rem] p-4 shadow-[0_20px_50px_rgba(0,0,0,0.4)] border border-white/10">
-                  {/* Internal blur layer for maximum glass effect */}
-                  <div className="absolute inset-0 backdrop-blur-2xl bg-black/40" />
-                  
-                  <div className="relative z-10 space-y-1">
-                    <p className="text-white text-xs font-bold truncate leading-tight tracking-tight">
-                      {wallpaper.title}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <p className="text-primary text-[10px] font-black tracking-[0.2em] uppercase">
-                        View
-                      </p>
-                      <div className="h-1 w-1 rounded-full bg-primary animate-pulse" />
-                    </div>
-                  </div>
+              {/* Premium Text-Only Overlay (Clean Discovery) */}
+              <div className="absolute inset-x-0 bottom-6 translate-y-2 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 flex flex-col items-center justify-center text-center px-4">
+                <p className="text-white text-xs font-bold tracking-tight mb-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                  {wallpaper.title}
+                </p>
+                <div className="flex items-center gap-2">
+                  <p className="text-primary text-[10px] font-black tracking-[0.2em] uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                    View Asset
+                  </p>
+                  <div className="h-1 w-1 rounded-full bg-primary animate-pulse" />
                 </div>
               </div>
 
               {/* Luxury Vignette and Edge Highlight */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-80 transition-opacity duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="absolute inset-0 border border-white/5 rounded-[2rem] md:rounded-[2.5rem] group-hover:border-white/10 transition-colors duration-700" />
             </Link>
           </div>
