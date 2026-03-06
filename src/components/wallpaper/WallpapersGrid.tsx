@@ -33,7 +33,7 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
           >
             <Link 
               href={`/wallpapers/${wallpaper.category}/${wallpaper.id}`}
-              className="group relative block aspect-[9/16] rounded-[2rem] overflow-hidden bg-muted border border-white/5 hover:border-primary/30 transition-all duration-700 shadow-2xl hover:shadow-primary/10"
+              className="group relative block aspect-[9/16] rounded-[2.5rem] overflow-hidden bg-neutral-900 border border-white/5 hover:border-primary/30 transition-all duration-700 shadow-2xl hover:shadow-primary/10"
             >
               <Image
                 src={wallpaper.src}
@@ -48,7 +48,7 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
               
               {/* Premium Frosted Glass Overlay */}
               <div className="absolute inset-x-3 bottom-3 translate-y-2 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-                <div className="glass rounded-2xl p-4 shadow-2xl ring-1 ring-white/10">
+                <div className="glass rounded-[1.5rem] p-4 shadow-[0_20px_50px_rgba(0,0,0,0.3)] ring-1 ring-white/10">
                   <div className="space-y-1">
                     <p className="text-white text-xs font-semibold truncate leading-tight tracking-tight">
                       {wallpaper.title}
@@ -57,14 +57,17 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
                       <p className="text-primary text-[10px] font-bold tracking-[0.15em] uppercase">
                         View Details
                       </p>
-                      <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+                      <div className="h-1 w-1 rounded-full bg-primary animate-pulse" />
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Edge highlight for luxury feel */}
-              <div className="absolute inset-0 border border-white/10 rounded-[2rem] pointer-events-none group-hover:border-white/20 transition-colors duration-700" />
+              <div className="absolute inset-0 border border-white/5 rounded-[2.5rem] pointer-events-none group-hover:border-white/20 transition-colors duration-700" />
+              
+              {/* Subtle glass vignette */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-700" />
             </Link>
           </div>
         ))}
