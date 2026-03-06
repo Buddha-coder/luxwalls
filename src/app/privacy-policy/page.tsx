@@ -12,22 +12,22 @@ export default function PrivacyPolicyPage() {
       {/* Ambient glow */}
       <div className="absolute -top-40 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
 
-      <div className="relative max-w-4xl mx-auto px-6 py-16 md:py-24">
-        <div className="rounded-2xl border border-white/10 bg-black/50 backdrop-blur-xl shadow-[0_0_60px_rgba(0,0,0,0.6)] p-5 md:p-6">
+      <div className="relative max-w-4xl mx-auto px-6 py-32 md:py-44">
+        <div className="glass rounded-[2.5rem] p-8 md:p-16 shadow-2xl border border-white/5">
           <div className="space-y-4">
-            <h1 className="text-3xl md:text-4xl font-headline text-white leading-tight">
+            <h1 className="text-3xl md:text-5xl font-headline text-white leading-tight">
               Privacy Policy
             </h1>
-            <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
+            <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-prose">
               LuxWalls respects your privacy and is committed to protecting it.
               This policy outlines how information is handled when you use our
               platform.
             </p>
           </div>
 
-          <div className="mt-12 space-y-8">
+          <div className="mt-16 space-y-12">
             <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight">
+              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight font-headline">
                 Information We Collect
               </h2>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight">
+              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight font-headline">
                 Cookies & Analytics
               </h2>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
@@ -49,7 +49,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight">
+              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight font-headline">
                 Third-Party Services
               </h2>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
@@ -59,7 +59,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight">
+              <h2 className="text-2xl md:text-3xl text-white font-medium leading-tight font-headline">
                 Policy Updates
               </h2>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
@@ -69,8 +69,8 @@ export default function PrivacyPolicyPage() {
             </section>
           </div>
 
-          <div className="border-t border-white/10 pt-6 mt-12">
-            <p className="text-sm text-gray-500">
+          <div className="border-t border-white/10 pt-8 mt-16">
+            <p className="text-xs text-gray-500 uppercase tracking-widest">
               Last updated: January 2024
             </p>
           </div>

@@ -13,15 +13,15 @@ export default function AboutPage() {
       {/* Subtle background glow */}
       <div className="absolute -top-40 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
 
-      <div className="relative max-w-4xl mx-auto px-6 py-16 md:py-24">
-        {/* Glass container */}
-        <div className="rounded-2xl border border-white/10 bg-black/50 backdrop-blur-xl shadow-[0_0_60px_rgba(0,0,0,0.6)] p-5 md:p-6">
+      <div className="relative max-w-4xl mx-auto px-6 py-32 md:py-44">
+        {/* Frosted Glass Container */}
+        <div className="glass rounded-[2.5rem] p-8 md:p-16 shadow-2xl border border-white/5">
           {/* Page Header */}
           <div className="space-y-4">
-            <h1 className="text-3xl md:text-4xl font-headline text-white leading-tight">
+            <h1 className="text-3xl md:text-5xl font-headline text-white leading-tight">
               About LuxWalls
             </h1>
-            <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-prose">
+            <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-prose">
               LuxWalls is a premium wallpaper platform created for individuals who
               appreciate refined aesthetics, clarity, and visual balance. Our
               collection is carefully curated to deliver high-resolution visuals
@@ -30,10 +30,10 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="mt-12 space-y-10">
+          <div className="mt-16 space-y-12">
             {/* Vision */}
             <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight">
+              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight font-headline">
                 Our Vision
               </h2>
               <div className="space-y-4 text-sm md:text-base text-muted-foreground">
@@ -54,7 +54,7 @@ export default function AboutPage() {
 
             {/* Differentiation */}
             <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight">
+              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight font-headline">
                 What Defines LuxWalls
               </h2>
               <ul className="space-y-3 text-sm md:text-base text-muted-foreground list-disc list-inside max-w-prose">
@@ -67,7 +67,7 @@ export default function AboutPage() {
 
             {/* Purpose */}
             <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight">
+              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight font-headline">
                 Designed With Purpose
               </h2>
               <div className="space-y-4 text-sm md:text-base text-muted-foreground">
@@ -85,7 +85,7 @@ export default function AboutPage() {
 
             {/* Respect */}
             <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight">
+              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight font-headline">
                 Respect for Users
               </h2>
               <div className="space-y-4 text-sm md:text-base text-muted-foreground">
@@ -103,7 +103,7 @@ export default function AboutPage() {
 
             {/* Future */}
             <section className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight">
+              <h2 className="text-2xl md:text-3xl font-medium text-white leading-tight font-headline">
                 Looking Ahead
               </h2>
               <p className="leading-relaxed text-sm md:text-base text-muted-foreground max-w-prose">
@@ -115,8 +115,8 @@ export default function AboutPage() {
           </div>
 
           {/* Closing */}
-          <div className="border-t border-white/10 pt-8 mt-14">
-            <p className="text-sm md:text-base text-white font-medium max-w-prose">
+          <div className="border-t border-white/10 pt-10 mt-16">
+            <p className="text-base md:text-lg text-white font-medium max-w-prose italic font-headline">
               LuxWalls represents the intersection of minimal design and
               luxury-grade visuals.
             </p>
