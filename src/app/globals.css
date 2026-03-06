@@ -71,9 +71,18 @@
     @apply relative z-[3] w-full;
   }
 
-  /* Legacy utility */
+  /* Legacy utility for fast application */
   .glass {
-    @apply glass-container;
+    @apply relative flex overflow-hidden backdrop-blur-xl border border-white/10;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 
