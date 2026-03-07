@@ -34,24 +34,33 @@ export default function WallpapersPage() {
   }));
 
   return (
-    <main className="w-full pt-48 pb-16 md:pt-64 md:pb-24">
+    <main className="relative w-full pt-48 pb-16 md:pt-64 md:pb-24 overflow-hidden">
+      {/* Immersive Background Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[600px] w-full max-w-[1400px] rounded-full bg-primary/5 blur-[120px] pointer-events-none -z-10" />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(imageObjectLd) }}
       />
+      
       <Container>
-        <div className="mb-12 space-y-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-headline font-semibold leading-tight">
-            All Premium Wallpapers
-          </h1>
+        <div className="mb-16 space-y-6 text-center md:text-left">
+          <div className="space-y-2">
+            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-primary">The Archive</span>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-headline font-bold leading-tight tracking-tighter text-white">
+              All Premium <br className="hidden md:block" /> Assets
+            </h1>
+          </div>
 
-          <p className="max-w-prose text-muted-foreground text-sm md:text-base leading-relaxed">
-            Discover the perfect backdrop for your device from our complete
-            collection. Browse all categories to find a high-resolution
-            wallpaper that matches your style.
+          <p className="max-w-2xl text-muted-foreground text-sm md:text-lg leading-relaxed font-medium opacity-80">
+            A curated master collection of high-resolution digital atmosphere. 
+            Filtered for excellence, designed for your elite displays.
           </p>
         </div>
-        <CategoryTabs />
+
+        <div className="mb-12">
+          <CategoryTabs />
+        </div>
 
         <WallpapersGrid wallpapers={wallpapers} />
       </Container>
