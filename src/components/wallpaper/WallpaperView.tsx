@@ -1,6 +1,6 @@
 'use client';
 
-import { wallpapers, Wallpaper } from "@/data/wallpapers";
+import { Wallpaper } from "@/data/wallpapers";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, Download, Eye, Palette } from "lucide-react";
@@ -12,20 +12,12 @@ import { LikeButton } from "@/components/wallpaper/LikeButton";
 
 interface WallpaperViewProps {
   wallpaper: Wallpaper;
+  related: Wallpaper[];
 }
 
-export default function WallpaperView({ wallpaper }: WallpaperViewProps) {
-  // Engagement logic: Shuffle related wallpapers within the same category
-  const relatedPool = wallpapers.filter(
-    (w) => w.category === wallpaper.category && w.id !== wallpaper.id
-  );
-  
-  const related = [...relatedPool]
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 4);
-
+export default function WallpaperView({ wallpaper, related }: WallpaperViewProps) {
   return (
-    <div className="min-h-screen bg-background pb-20 pt-28 md:pt-44">
+    <div className="min-h-screen bg-background pb-20 pt-28 md:pt-44 overflow-x-hidden">
       {/* Immersive Background Atmosphere */}
       <div className="fixed inset-0 z-0 h-screen w-full overflow-hidden opacity-30 blur-[120px] pointer-events-none scale-150">
         <Image

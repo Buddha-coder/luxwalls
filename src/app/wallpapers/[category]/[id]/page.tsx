@@ -4,21 +4,26 @@ import type { Metadata } from "next";
 import WallpaperView from "@/components/wallpaper/WallpaperView";
 
 interface WallpaperPageProps {
-  params: {
+  params: Promise<{
     category: string;
     id: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
-  return wallpapers.map((w) => ({
-    category: w.category,
-    id: w.id.toString(),
-  }));
+  const params = [];
+  
+  for (const wallpaper of wallpapers) {
+    params.push({
+      category: wallpaper.category,
+      id: wallpaper.id.toString(),
+    });
+  }
+  return params;
 }
 
-export function generateMetadata({ params }: WallpaperPageProps): Metadata {
-  const { id } = params;
+export async function generateMetadata({ params }: WallpaperPageProps): Promise<Metadata> {
+  const { id } = await params;
   const wallpaper = wallpapers.find((w) => w.id.toString() === id);
   if (!wallpaper) return { title: "Wallpaper Not Found" };
 
@@ -31,10 +36,19 @@ export function generateMetadata({ params }: WallpaperPageProps): Metadata {
   };
 }
 
-export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
-  const { id } = params;
+export default async function WallpaperDetailPage({ params }: WallpaperPageProps) {
+  const { id, category } = await params;
   const wallpaper = wallpapers.find((w) => w.id.toString() === id);
   if (!wallpaper) notFound();
 
-  return <WallpaperView wallpaper={wallpaper} />;
+  // Pre-shuffle related wallpapers on the server to prevent hydration mismatches
+  const relatedPool = wallpapers.filter(
+    (w) => w.category === category && w.id.toString() !== id
+  );
+  
+  const related = [...relatedPool]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 4);
+
+  return <WallpaperView wallpaper={wallpaper} related={related} />;
 }
