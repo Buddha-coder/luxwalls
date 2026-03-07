@@ -42,7 +42,7 @@ export function LikeButton({ wallpaperId }: LikeButtonProps) {
   return (
     <button 
       onClick={handleLike} 
-      className="relative glass-container !rounded-2xl border border-white/5 overflow-hidden flex-1 group/like transition-all duration-300 active:scale-95 py-3 min-h-[70px]"
+      className="relative glass-container !rounded-[2.5rem] border border-white/5 overflow-hidden flex-1 group/like transition-all duration-300 active:scale-95 py-4 min-h-[70px]"
     >
       <div className="glass-filter opacity-40" />
       <div className={cn(
@@ -61,7 +61,7 @@ export function LikeButton({ wallpaperId }: LikeButtonProps) {
         </div>
       </div>
 
-      {/* Burst Effect (Visual only) */}
+      {/* Burst Effect */}
       {isLiked && (
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-red-500/20 blur-xl animate-pulse" />

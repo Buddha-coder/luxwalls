@@ -54,7 +54,7 @@ export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProp
   ];
 
   return (
-    <div className="relative glass-container !rounded-[2.5rem] p-8 md:p-10 border border-white/10 overflow-hidden group">
+    <div className="relative glass-container !rounded-[3rem] p-8 md:p-10 border border-white/10 overflow-hidden group">
       {/* Background Ambience */}
       <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] pointer-events-none group-hover:bg-primary/20 transition-all duration-[2s]" />
       
@@ -75,7 +75,7 @@ export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProp
             
             <div className="flex items-center gap-4">
               <div className={cn(
-                "p-3 rounded-2xl bg-white/[0.04] border border-white/10 text-primary transition-all duration-700",
+                "p-3 rounded-full bg-white/[0.04] border border-white/10 text-primary transition-all duration-700",
                 isDetecting ? "animate-pulse scale-90" : "scale-100"
               )}>
                 {selectedRes.icon}
@@ -97,24 +97,24 @@ export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProp
           {mounted && (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="group/trigger flex items-center justify-center gap-3 px-6 py-4 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-primary/40 transition-all text-[10px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white">
+                <button className="group/trigger flex items-center justify-center gap-3 px-6 py-4 rounded-full border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-primary/40 transition-all text-[10px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white">
                   All Formats <ChevronDown className="w-4 h-4 transition-transform group-hover/trigger:rotate-180" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="bg-black/90 border-white/10 backdrop-blur-3xl z-50 p-2 rounded-[2rem] min-w-[280px] shadow-[0_30px_60px_rgba(0,0,0,0.9)]">
-                <div className="px-5 py-4 mb-2 border-b border-white/5">
+              <DropdownMenuContent align="end" className="bg-black/90 border-white/10 backdrop-blur-3xl z-50 p-2 rounded-[2.5rem] min-w-[280px] shadow-[0_30px_60px_rgba(0,0,0,0.9)]">
+                <div className="px-6 py-5 mb-2 border-b border-white/5">
                   <p className="text-[9px] font-black uppercase tracking-[0.3em] text-primary/60">Select Architecture</p>
                 </div>
                 {resolutions.map((res) => (
                   <DropdownMenuItem 
                     key={res.value} 
-                    className="text-white focus:bg-white/[0.05] cursor-pointer py-4 px-5 rounded-2xl flex items-center justify-between transition-all group/item mb-1"
+                    className="text-white focus:bg-white/[0.05] cursor-pointer py-4 px-6 rounded-full flex items-center justify-between transition-all group/item mb-1"
                     onClick={() => {
                       setSelectedRes(res);
                     }}
                   >
                     <div className="flex items-center gap-4">
-                      <div className="p-3 bg-white/[0.04] rounded-xl text-primary/40 group-hover/item:text-primary transition-colors">
+                      <div className="p-3 bg-white/[0.04] rounded-full text-primary/40 group-hover/item:text-primary transition-colors">
                         {res.icon}
                       </div>
                       <div className="flex flex-col">
@@ -134,12 +134,10 @@ export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProp
 
         {/* Action Button */}
         <LuxuryButton 
-          className="group/btn w-full h-20 md:h-24 rounded-[2rem] md:rounded-[2.5rem] flex items-center justify-center text-sm md:text-base font-black uppercase tracking-[0.3em] relative overflow-hidden"
+          className="group/btn w-full h-20 md:h-24 rounded-full flex items-center justify-center text-sm md:text-base font-black uppercase tracking-[0.3em] relative overflow-hidden"
           onClick={() => downloadImage(src, `luxwalls-${id}.jpg`)}
         >
-          {/* Shimmer Effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-[1.2s] ease-in-out" />
-          
           <Download className="w-6 h-6 mr-4 transition-all duration-500 group-hover/btn:-translate-y-1 group-hover/btn:scale-110" />
           Download Luxury Asset
         </LuxuryButton>
