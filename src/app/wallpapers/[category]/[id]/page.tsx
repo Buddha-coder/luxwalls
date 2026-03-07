@@ -1,19 +1,21 @@
+'use client'
 import { wallpapers } from "@/data/wallpapers";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, Download, Eye, Palette } from "lucide-react";
+import { ChevronLeft, Download, Eye, Palette, Heart } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Badge } from "@/components/ui/badge";
 import WallpapersGrid from "@/components/wallpaper/WallpapersGrid";
 import SmartDownloadModule from "@/components/wallpaper/SmartDownloadModule";
+import { LikeButton } from "@/components/wallpaper/LikeButton";
 import type { Metadata } from "next";
 
 interface WallpaperPageProps {
-  params: Promise<{
+  params: {
     category: string;
     id: string;
-  }>;
+  };
 }
 
 export async function generateStaticParams() {
@@ -23,8 +25,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: WallpaperPageProps): Promise<Metadata> {
-  const { id } = await params;
+export function generateMetadata({ params }: WallpaperPageProps): Metadata {
+  const { id } = params;
   const wallpaper = wallpapers.find((w) => w.id.toString() === id);
   if (!wallpaper) return { title: "Wallpaper Not Found" };
 
@@ -37,8 +39,8 @@ export async function generateMetadata({ params }: WallpaperPageProps): Promise<
   };
 }
 
-export default async function WallpaperDetailPage({ params }: WallpaperPageProps) {
-  const { id } = await params;
+export default function WallpaperDetailPage({ params }: WallpaperPageProps) {
+  const { id } = params;
   const wallpaper = wallpapers.find((w) => w.id.toString() === id);
   if (!wallpaper) notFound();
 
@@ -110,7 +112,7 @@ export default async function WallpaperDetailPage({ params }: WallpaperPageProps
               <div className="grid grid-cols-3 gap-2 md:gap-3">
                 <InfoCard icon={<Eye className="w-4 h-4" />} label="Views" value={wallpaper.views?.toLocaleString() || "1.2K"} />
                 <InfoCard icon={<Download className="w-4 h-4" />} label="Saved" value={wallpaper.downloads?.toLocaleString() || "850"} />
-                <InfoCard icon={<Palette className="w-4 h-4" />} label="Ref" value={wallpaper.id.toString()} />
+                <LikeButton wallpaperId={wallpaper.id} />
               </div>
 
               {/* Smart Download Module */}
