@@ -39,7 +39,7 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
                 src={wallpaper.src}
                 alt={wallpaper.title}
                 fill
-                className="object-cover transition-all duration-[2s] ease-out group-hover:scale-105 group-hover:grayscale group-active:grayscale"
+                className="object-cover transition-all duration-[2s] ease-out group-hover:scale-105"
                 priority
                 sizes="(max-width: 768px) 100vw, 60vw"
               />
