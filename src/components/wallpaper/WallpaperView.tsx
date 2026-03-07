@@ -3,7 +3,7 @@
 import { Wallpaper } from "@/data/wallpapers";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, Download, Eye, Palette, Sparkles, Smartphone, Wand2, Maximize2 } from "lucide-react";
+import { ChevronLeft, Download, Eye, Palette, Sparkles, Smartphone, Maximize2 } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Badge } from "@/components/ui/badge";
 import WallpapersGrid from "@/components/wallpaper/WallpapersGrid";
@@ -11,7 +11,6 @@ import SmartDownloadModule from "@/components/wallpaper/SmartDownloadModule";
 import { LikeButton } from "@/components/wallpaper/LikeButton";
 import { useState } from "react";
 import MockupPreview from "./MockupPreview";
-import { motion } from "framer-motion";
 
 interface WallpaperViewProps {
   wallpaper: Wallpaper;
@@ -20,13 +19,6 @@ interface WallpaperViewProps {
 
 export default function WallpaperView({ wallpaper, related }: WallpaperViewProps) {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
-  const [isAiLoading, setIsAiLoading] = useState(false);
-
-  const handleAiInsight = () => {
-    setIsAiLoading(true);
-    // Simulated AI trigger
-    setTimeout(() => setIsAiLoading(false), 2000);
-  };
 
   return (
     <div className="min-h-screen bg-background pb-20 pt-28 md:pt-44 overflow-x-hidden">
@@ -47,8 +39,7 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
           {/* Main Visual (Left) */}
           <div className="lg:col-span-7 xl:col-span-8 space-y-6">
             <div 
-              className="relative aspect-[9/16] w-full max-h-[85vh] rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.9)] border border-white/10 group cursor-zoom-in" 
-              onClick={() => setIsPreviewOpen(true)}
+              className="relative aspect-[9/16] w-full max-h-[85vh] rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.9)] border border-white/10 group"
             >
               <Image
                 src={wallpaper.src}
@@ -60,21 +51,11 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               
-              {/* Interactive Preview Overlay (Hover State) */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20 backdrop-blur-sm">
-                 <div className="flex flex-col items-center gap-4 text-white">
-                    <div className="p-5 rounded-full bg-white/10 border border-white/20 animate-bounce">
-                       <Smartphone className="w-8 h-8" />
-                    </div>
-                    <span className="text-[10px] font-black uppercase tracking-[0.4em]">Launch Interactive Preview</span>
-                 </div>
-              </div>
-              
               {/* Specular Rim Highlight */}
               <div className="absolute inset-0 border border-white/20 rounded-[inherit] pointer-events-none" />
             </div>
 
-            {/* RELOCATED LIVE PREVIEW TRIGGER (Below Wallpaper) */}
+            {/* LIVE PREVIEW TRIGGER (Exclusive Action) */}
             <div className="flex justify-center">
               <button 
                 onClick={() => setIsPreviewOpen(true)}
@@ -125,21 +106,6 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
                 <StatTile icon={<Download className="w-3.5 h-3.5" />} label="Saved" value={wallpaper.downloads?.toLocaleString() || "850"} />
                 <LikeButton wallpaperId={wallpaper.id.toString()} />
               </div>
-
-              {/* AI Curator Insight Button */}
-              <button 
-                onClick={handleAiInsight}
-                className="relative w-full glass-container !rounded-2xl border border-primary/20 overflow-hidden group/ai py-4 flex items-center justify-center gap-3 transition-all active:scale-[0.98]"
-              >
-                <div className="glass-filter opacity-30" />
-                <div className="glass-overlay !bg-primary/5 group-hover/ai:!bg-primary/10 transition-colors" />
-                <div className="glass-content flex items-center gap-3 text-primary">
-                  <Wand2 className={`w-4 h-4 ${isAiLoading ? 'animate-spin' : ''}`} />
-                  <span className="text-[10px] font-black uppercase tracking-[0.3em]">
-                    {isAiLoading ? "Analyzing Atmosphere..." : "Get AI Curator Insight"}
-                  </span>
-                </div>
-              </button>
 
               {/* Smart Download Module */}
               <SmartDownloadModule src={wallpaper.src} id={wallpaper.id} />
