@@ -20,7 +20,7 @@ export default function Footer() {
   // MINIMAL FOOTER for Detail Pages
   if (isDetailPage) {
     return (
-      <footer className="relative mt-20 pb-12 opacity-40 hover:opacity-100 transition-opacity duration-500">
+      <footer className="relative mt-8 pb-12 opacity-40 hover:opacity-100 transition-opacity duration-500">
         <Container>
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-t border-white/5 pt-8 text-[10px] uppercase tracking-[0.3em] font-bold text-muted-foreground">
             <div className="flex gap-8">

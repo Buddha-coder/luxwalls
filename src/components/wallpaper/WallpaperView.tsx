@@ -21,7 +21,7 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background pb-20 pt-28 md:pt-44 overflow-x-hidden">
+    <div className="min-h-screen bg-background pb-8 pt-28 md:pt-44 overflow-x-hidden">
       {/* Immersive Background Atmosphere */}
       <div className="fixed inset-0 z-0 h-screen w-full overflow-hidden opacity-30 blur-[120px] pointer-events-none scale-150">
         <Image
@@ -154,7 +154,7 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
         </div>
 
         {/* Similar Aesthetics Section */}
-        <section className="mt-32 md:mt-44 space-y-12">
+        <section className="mt-20 md:mt-32 space-y-12">
           <div className="flex items-end justify-between border-b border-white/5 pb-8">
             <div className="space-y-2">
               <span className="text-[10px] font-black text-primary uppercase tracking-[0.4em]">Refined Selection</span>
