@@ -3,12 +3,14 @@
 import { Wallpaper } from "@/data/wallpapers";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, Download, Eye, Palette, Sparkles } from "lucide-react";
+import { ChevronLeft, Download, Eye, Palette, Sparkles, Smartphone, Wand2 } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Badge } from "@/components/ui/badge";
 import WallpapersGrid from "@/components/wallpaper/WallpapersGrid";
 import SmartDownloadModule from "@/components/wallpaper/SmartDownloadModule";
 import { LikeButton } from "@/components/wallpaper/LikeButton";
+import { useState } from "react";
+import MockupPreview from "./MockupPreview";
 
 interface WallpaperViewProps {
   wallpaper: Wallpaper;
@@ -16,6 +18,15 @@ interface WallpaperViewProps {
 }
 
 export default function WallpaperView({ wallpaper, related }: WallpaperViewProps) {
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const [isAiLoading, setIsAiLoading] = useState(false);
+
+  const handleAiInsight = () => {
+    setIsAiLoading(true);
+    // Simulated AI trigger
+    setTimeout(() => setIsAiLoading(false), 2000);
+  };
+
   return (
     <div className="min-h-screen bg-background pb-20 pt-28 md:pt-44 overflow-x-hidden">
       {/* Immersive Background Atmosphere */}
@@ -34,7 +45,7 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
           
           {/* Main Visual (Left) */}
           <div className="lg:col-span-7 xl:col-span-8">
-            <div className="relative aspect-[9/16] w-full max-h-[85vh] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.9)] border border-white/10 group">
+            <div className="relative aspect-[9/16] w-full max-h-[85vh] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.9)] border border-white/10 group cursor-zoom-in" onClick={() => setIsPreviewOpen(true)}>
               <Image
                 src={wallpaper.src}
                 alt={wallpaper.title}
@@ -45,16 +56,26 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               
+              {/* Interactive Preview Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20 backdrop-blur-sm">
+                 <div className="flex flex-col items-center gap-4 text-white">
+                    <div className="p-5 rounded-full bg-white/10 border border-white/20">
+                       <Smartphone className="w-8 h-8" />
+                    </div>
+                    <span className="text-[10px] font-black uppercase tracking-[0.4em]">Live iPhone Preview</span>
+                 </div>
+              </div>
+              
               {/* Specular Rim Highlight */}
               <div className="absolute inset-0 border border-white/20 rounded-[inherit] pointer-events-none" />
             </div>
           </div>
 
           {/* Metadata & Actions (Right) */}
-          <div className="lg:col-span-5 xl:col-span-4 space-y-8 md:space-y-10">
-            <div className="space-y-8">
+          <div className="lg:col-span-5 xl:col-span-4 space-y-6 md:space-y-8">
+            <div className="space-y-6">
               {/* Header Info */}
-              <div className="space-y-5">
+              <div className="space-y-4">
                 <Link href={`/wallpapers/${wallpaper.category}`} className="inline-flex items-center text-primary text-[10px] md:text-xs font-black uppercase tracking-[0.3em] hover:text-white transition-colors">
                   <ChevronLeft className="w-4 h-4 mr-2" />
                   {wallpaper.category} Collection
@@ -62,12 +83,12 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
                 <h1 className="text-3xl md:text-5xl font-headline font-bold leading-[1.1] text-white tracking-tight">
                   {wallpaper.title}
                 </h1>
-                <div className="flex flex-wrap gap-2 pt-2">
+                <div className="flex flex-wrap gap-2 pt-1">
                   {wallpaper.tags?.map(tag => (
                     <Badge 
                       key={tag} 
                       variant="outline" 
-                      className="bg-white/[0.03] backdrop-blur-3xl text-foreground/70 border-white/5 text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-black px-3 py-1.5 rounded-full"
+                      className="bg-white/[0.03] backdrop-blur-3xl text-foreground/70 border-white/5 text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-black px-3 py-1 rounded-full"
                     >
                       {tag}
                     </Badge>
@@ -75,12 +96,27 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
                 </div>
               </div>
 
-              {/* Engagement Stats Grid - Slimmed down */}
+              {/* Engagement Stats Grid */}
               <div className="grid grid-cols-3 gap-2">
                 <StatTile icon={<Eye className="w-3.5 h-3.5" />} label="Views" value={wallpaper.views?.toLocaleString() || "1.2K"} />
                 <StatTile icon={<Download className="w-3.5 h-3.5" />} label="Saved" value={wallpaper.downloads?.toLocaleString() || "850"} />
                 <LikeButton wallpaperId={wallpaper.id.toString()} />
               </div>
+
+              {/* AI Curator Insight Button */}
+              <button 
+                onClick={handleAiInsight}
+                className="relative w-full glass-container !rounded-2xl border border-primary/20 overflow-hidden group/ai py-4 flex items-center justify-center gap-3 transition-all active:scale-[0.98]"
+              >
+                <div className="glass-filter opacity-30" />
+                <div className="glass-overlay !bg-primary/5 group-hover/ai:!bg-primary/10 transition-colors" />
+                <div className="glass-content flex items-center gap-3 text-primary">
+                  <Wand2 className={`w-4 h-4 ${isAiLoading ? 'animate-spin' : ''}`} />
+                  <span className="text-[10px] font-black uppercase tracking-[0.3em]">
+                    {isAiLoading ? "Analyzing Atmosphere..." : "Get AI Curator Insight"}
+                  </span>
+                </div>
+              </button>
 
               {/* Smart Download Module */}
               <SmartDownloadModule src={wallpaper.src} id={wallpaper.id} />
@@ -89,44 +125,40 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
               <div className="relative glass-container !rounded-[2rem] border border-white/5 overflow-hidden group">
                 <div className="glass-filter opacity-50" />
                 <div className="glass-overlay !bg-white/[0.02]" />
-                <div className="glass-content p-6 space-y-5">
+                <div className="glass-content p-5 space-y-4">
                   <div className="flex items-center justify-between">
                     <h3 className="text-[10px] font-black uppercase tracking-[0.3em] flex items-center text-white/50">
                       <Palette className="w-4 h-4 mr-2 text-primary/70" /> Visual DNA
                     </h3>
-                    <div className="h-px flex-1 bg-white/5 mx-4" />
                   </div>
-                  <div className="flex gap-4">
+                  <div className="flex gap-3">
                     {(wallpaper.colors || ["#0F0F12", "#222222", "#C9A24D", "#FFFFFF"]).map(color => (
                       <div 
                         key={color} 
-                        className="relative h-11 w-11 rounded-2xl border border-white/10 transition-all duration-500 hover:scale-110 hover:-translate-y-1 shadow-2xl cursor-pointer group/color" 
+                        className="relative h-10 w-10 rounded-xl border border-white/10 transition-all duration-500 hover:scale-110 hover:-translate-y-1 shadow-2xl cursor-pointer group/color" 
                         style={{ backgroundColor: color }}
                         title={color}
                       >
                         <div className="absolute inset-0 rounded-[inherit] shadow-[inset_0_2px_4px_rgba(255,255,255,0.2)]" />
-                        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover/color:opacity-100 transition-opacity text-[8px] font-bold text-white/40 uppercase tracking-tighter">
-                          {color}
-                        </div>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
 
-              {/* Perfect For / Recommended */}
+              {/* Best Performance */}
               <div className="relative glass-container !rounded-[2rem] border border-white/5 overflow-hidden">
                 <div className="glass-filter opacity-30" />
                 <div className="glass-overlay !bg-white/[0.01]" />
-                <div className="glass-content p-6 space-y-5">
+                <div className="glass-content p-5 space-y-4">
                   <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 flex items-center">
-                    <Sparkles className="w-4 h-4 mr-2 text-primary/50" /> Best Performance On
+                    <Sparkles className="w-4 h-4 mr-2 text-primary/50" /> Performance Profile
                   </h3>
-                  <div className="grid grid-cols-1 gap-3">
-                    {(wallpaper.bestFor || ["AMOLED Displays", "Minimalist Setups", "Lock Screen"]).map(use => (
-                      <div key={use} className="flex items-center gap-4 text-xs font-bold text-muted-foreground group/item">
+                  <div className="grid grid-cols-1 gap-2">
+                    {(wallpaper.bestFor || ["AMOLED Displays", "Lock Screen"]).map(use => (
+                      <div key={use} className="flex items-center gap-3 text-xs font-bold text-muted-foreground group/item">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover/item:bg-primary transition-colors" />
-                        <span className="tracking-wide uppercase text-[11px] group-hover/item:text-white transition-colors">{use}</span>
+                        <span className="tracking-wide uppercase text-[10px] group-hover/item:text-white transition-colors">{use}</span>
                       </div>
                     ))}
                   </div>
@@ -150,16 +182,23 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
           <WallpapersGrid wallpapers={related} />
         </section>
       </Container>
+
+      {/* Live iPhone Mockup Modal */}
+      <MockupPreview 
+        isOpen={isPreviewOpen} 
+        onClose={() => setIsPreviewOpen(false)} 
+        src={wallpaper.src} 
+      />
     </div>
   );
 }
 
 function StatTile({ icon, label, value }: { icon: React.ReactNode, label: string, value: string }) {
   return (
-    <div className="relative glass-container !rounded-2xl border border-white/5 overflow-hidden flex-1 py-3 min-h-[70px]">
+    <div className="relative glass-container !rounded-2xl border border-white/5 overflow-hidden flex-1 py-2.5 min-h-[60px]">
       <div className="glass-filter opacity-40" />
       <div className="glass-overlay !bg-white/[0.02]" />
-      <div className="glass-content flex flex-col items-center justify-center text-center p-2 space-y-1.5">
+      <div className="glass-content flex flex-col items-center justify-center text-center p-1.5 space-y-1">
         <div className="text-primary/70">{icon}</div>
         <div className="space-y-0.5">
           <p className="text-[10px] font-black text-white leading-none">{value}</p>
