@@ -45,8 +45,11 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
           
           {/* Main Visual (Left) */}
-          <div className="lg:col-span-7 xl:col-span-8">
-            <div className="relative aspect-[9/16] w-full max-h-[85vh] rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.9)] border border-white/10 group cursor-zoom-in" onClick={() => setIsPreviewOpen(true)}>
+          <div className="lg:col-span-7 xl:col-span-8 space-y-6">
+            <div 
+              className="relative aspect-[9/16] w-full max-h-[85vh] rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.9)] border border-white/10 group cursor-zoom-in" 
+              onClick={() => setIsPreviewOpen(true)}
+            >
               <Image
                 src={wallpaper.src}
                 alt={wallpaper.title}
@@ -57,45 +60,37 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
               
-              {/* Animated Live Preview Trigger */}
-              <motion.div 
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                className="absolute top-8 right-8 z-20"
-              >
-                <button 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setIsPreviewOpen(true);
-                  }}
-                  className="group relative flex items-center gap-3 p-1.5 pr-6 rounded-full bg-black/40 backdrop-blur-2xl border border-white/20 text-white overflow-hidden transition-all hover:bg-black/60 hover:scale-105 active:scale-95 shadow-2xl"
-                >
-                  <div className="p-3 rounded-full bg-primary text-primary-foreground shadow-lg">
-                    <Maximize2 className="w-4 h-4" />
-                  </div>
-                  <div className="flex flex-col items-start">
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] leading-none mb-1">Live Experience</span>
-                    <span className="text-[8px] text-white/50 uppercase tracking-widest font-bold">Interactive Preview</span>
-                  </div>
-                  
-                  {/* Subtle pulsing background glow */}
-                  <div className="absolute inset-0 bg-primary/20 animate-pulse opacity-0 group-hover:opacity-100 transition-opacity" />
-                </button>
-              </motion.div>
-
               {/* Interactive Preview Overlay (Hover State) */}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20 backdrop-blur-sm">
                  <div className="flex flex-col items-center gap-4 text-white">
                     <div className="p-5 rounded-full bg-white/10 border border-white/20 animate-bounce">
                        <Smartphone className="w-8 h-8" />
                     </div>
-                    <span className="text-[10px] font-black uppercase tracking-[0.4em]">Live Device Mockup</span>
+                    <span className="text-[10px] font-black uppercase tracking-[0.4em]">Launch Interactive Preview</span>
                  </div>
               </div>
               
               {/* Specular Rim Highlight */}
               <div className="absolute inset-0 border border-white/20 rounded-[inherit] pointer-events-none" />
+            </div>
+
+            {/* RELOCATED LIVE PREVIEW TRIGGER (Below Wallpaper) */}
+            <div className="flex justify-center">
+              <button 
+                onClick={() => setIsPreviewOpen(true)}
+                className="group relative flex items-center gap-3 p-1.5 pr-6 rounded-full bg-white/[0.03] backdrop-blur-3xl border border-white/10 text-white transition-all hover:bg-white/[0.08] hover:scale-105 active:scale-95 shadow-xl"
+              >
+                <div className="p-2.5 rounded-full bg-primary text-primary-foreground shadow-lg">
+                  <Maximize2 className="w-4 h-4" />
+                </div>
+                <div className="flex flex-col items-start">
+                  <span className="text-[9px] font-black uppercase tracking-[0.2em] leading-none mb-1 text-primary">Device Preview</span>
+                  <span className="text-[8px] text-white/40 uppercase tracking-widest font-bold">Interactive Experience</span>
+                </div>
+                
+                {/* Subtle pulsing background glow */}
+                <div className="absolute inset-0 bg-primary/10 rounded-full animate-pulse opacity-0 group-hover:opacity-100 transition-opacity" />
+              </button>
             </div>
           </div>
 
