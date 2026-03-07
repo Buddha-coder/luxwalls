@@ -179,7 +179,7 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
 
 function StatTile({ icon, label, value }: { icon: React.ReactNode, label: string, value: string }) {
   return (
-    <div className="relative glass-container !rounded-[2.5rem] border border-white/5 overflow-hidden flex-1 py-4 min-h-[70px]">
+    <div className="relative glass-container !rounded-full border border-white/5 overflow-hidden flex-1 py-3 min-h-[60px]">
       <div className="glass-filter opacity-40" />
       <div className="glass-overlay !bg-white/[0.02]" />
       <div className="glass-content flex flex-col items-center justify-center text-center p-1.5 space-y-1">

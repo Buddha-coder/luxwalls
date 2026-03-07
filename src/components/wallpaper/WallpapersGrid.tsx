@@ -41,7 +41,6 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
                 fill
                 className="object-cover pointer-events-none transition-all duration-[1.5s] ease-out group-hover:scale-110 group-hover:grayscale group-active:grayscale"
                 sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 22vw"
-                quality={85}
                 priority={index < 4}
                 draggable={false}
               />

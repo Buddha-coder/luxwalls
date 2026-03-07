@@ -42,7 +42,7 @@ export function LikeButton({ wallpaperId }: LikeButtonProps) {
   return (
     <button 
       onClick={handleLike} 
-      className="relative glass-container !rounded-[2.5rem] border border-white/5 overflow-hidden flex-1 group/like transition-all duration-300 active:scale-95 py-4 min-h-[70px]"
+      className="relative glass-container !rounded-full border border-white/5 overflow-hidden flex-1 group/like transition-all duration-300 active:scale-95 py-3 min-h-[60px]"
     >
       <div className="glass-filter opacity-40" />
       <div className={cn(
@@ -50,9 +50,9 @@ export function LikeButton({ wallpaperId }: LikeButtonProps) {
         isLiked ? "bg-red-500/10" : "bg-white/[0.02]"
       )} />
       
-      <div className="glass-content flex flex-col items-center justify-center text-center p-2 space-y-1.5">
+      <div className="glass-content flex flex-col items-center justify-center text-center p-2 space-y-1">
         <Heart className={cn(
-          "h-4 w-4 transition-all duration-500",
+          "h-3.5 w-3.5 transition-all duration-500",
           isLiked ? "fill-red-500 text-red-500 scale-110" : "text-white/40 group-hover/like:text-white"
         )} />
         <div className="space-y-0.5">
