@@ -31,7 +31,7 @@ export default function WallpaperShowcase() {
                 src={wallpaper.src}
                 alt={`${wallpaper.title} - LuxWalls Wallpaper Sample`}
                 fill
-                className="object-cover transition-transform duration-[1.5s] ease-in-out group-hover:scale-110"
+                className="object-cover transition-all duration-[1.5s] ease-in-out group-hover:scale-110 group-hover:grayscale group-active:grayscale"
                 sizes="(max-width: 640px) 50vw, (max-w: 1024px) 33vw, 16vw"
               />
               
