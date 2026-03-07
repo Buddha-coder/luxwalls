@@ -75,10 +75,10 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
                 </div>
               </div>
 
-              {/* Engagement Stats Grid */}
-              <div className="grid grid-cols-3 gap-3">
-                <StatTile icon={<Eye className="w-4 h-4" />} label="Views" value={wallpaper.views?.toLocaleString() || "1.2K"} />
-                <StatTile icon={<Download className="w-4 h-4" />} label="Saved" value={wallpaper.downloads?.toLocaleString() || "850"} />
+              {/* Engagement Stats Grid - Slimmed down */}
+              <div className="grid grid-cols-3 gap-2">
+                <StatTile icon={<Eye className="w-3.5 h-3.5" />} label="Views" value={wallpaper.views?.toLocaleString() || "1.2K"} />
+                <StatTile icon={<Download className="w-3.5 h-3.5" />} label="Saved" value={wallpaper.downloads?.toLocaleString() || "850"} />
                 <LikeButton wallpaperId={wallpaper.id.toString()} />
               </div>
 
@@ -156,14 +156,14 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
 
 function StatTile({ icon, label, value }: { icon: React.ReactNode, label: string, value: string }) {
   return (
-    <div className="relative glass-container !rounded-2xl border border-white/5 overflow-hidden flex-1 aspect-square">
+    <div className="relative glass-container !rounded-2xl border border-white/5 overflow-hidden flex-1 py-3 min-h-[70px]">
       <div className="glass-filter opacity-40" />
       <div className="glass-overlay !bg-white/[0.02]" />
-      <div className="glass-content flex flex-col items-center justify-center text-center p-4 space-y-2">
+      <div className="glass-content flex flex-col items-center justify-center text-center p-2 space-y-1.5">
         <div className="text-primary/70">{icon}</div>
         <div className="space-y-0.5">
           <p className="text-[10px] font-black text-white leading-none">{value}</p>
-          <p className="text-[8px] uppercase tracking-[0.2em] text-white/30 font-black">{label}</p>
+          <p className="text-[7px] uppercase tracking-[0.2em] text-white/30 font-black">{label}</p>
         </div>
       </div>
     </div>
