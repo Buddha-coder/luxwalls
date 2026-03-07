@@ -1,8 +1,7 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
-import { Download, CheckCircle2, ChevronDown, Monitor, Smartphone, Tablet, Zap } from "lucide-react";
+import { Download, CheckCircle2, ChevronDown, Monitor, Smartphone, Tablet, Zap, ShieldCheck } from "lucide-react";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { downloadImage } from "@/lib/download-image";
 import { 
@@ -21,7 +20,7 @@ interface SmartDownloadModuleProps {
 export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProps) {
   const [mounted, setMounted] = useState(false);
   const [selectedRes, setSelectedRes] = useState({ 
-    label: "Mobile Portrait (Native)", 
+    label: "Mobile Portrait", 
     size: "2.8 MB", 
     value: "mobile", 
     icon: <Smartphone className="w-4 h-4" /> 
@@ -35,110 +34,127 @@ export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProp
     const timer = setTimeout(() => {
       const width = window.innerWidth;
       if (width >= 1024) {
-        setSelectedRes({ label: "Ultra HD Desktop 4K", size: "4.2 MB", value: "4k", icon: <Monitor className="w-4 h-4" /> });
+        setSelectedRes({ label: "Ultra HD Desktop", size: "4.2 MB", value: "4k", icon: <Monitor className="w-4 h-4" /> });
       } else if (width >= 768) {
         setSelectedRes({ label: "iPad & Tablet Pro", size: "1.9 MB", value: "tablet", icon: <Tablet className="w-4 h-4" /> });
       } else {
-        setSelectedRes({ label: "Mobile Portrait (Native)", size: "2.8 MB", value: "mobile", icon: <Smartphone className="w-4 h-4" /> });
+        setSelectedRes({ label: "Mobile Portrait", size: "2.8 MB", value: "mobile", icon: <Smartphone className="w-4 h-4" /> });
       }
       setIsDetecting(false);
-    }, 800);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
 
   const resolutions = [
-    { label: "Mobile Portrait (Native)", size: "2.8 MB", value: "mobile", icon: <Smartphone className="w-4 h-4" /> },
-    { label: "Ultra HD Desktop 4K", size: "4.2 MB", value: "4k", icon: <Monitor className="w-4 h-4" /> },
+    { label: "Mobile Portrait", size: "2.8 MB", value: "mobile", icon: <Smartphone className="w-4 h-4" /> },
+    { label: "Ultra HD Desktop", size: "4.2 MB", value: "4k", icon: <Monitor className="w-4 h-4" /> },
     { label: "iPad & Tablet Pro", size: "1.9 MB", value: "tablet", icon: <Tablet className="w-4 h-4" /> },
-    { label: "Original Metadata (Raw)", size: "12.4 MB", value: "raw", icon: <Zap className="w-4 h-4" /> },
+    { label: "Original RAW Asset", size: "12.4 MB", value: "raw", icon: <Zap className="w-4 h-4" /> },
   ];
 
   return (
-    <div className="glass rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-10 border border-white/10 space-y-6 md:space-y-8 relative overflow-hidden group">
-      {/* Dynamic Background Glow */}
-      <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 blur-[80px] pointer-events-none group-hover:bg-primary/20 transition-colors duration-700" />
+    <div className="relative glass-container !rounded-[2.5rem] p-8 md:p-10 border border-white/10 overflow-hidden group">
+      {/* Background Ambience */}
+      <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] pointer-events-none group-hover:bg-primary/20 transition-all duration-[2s]" />
       
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
-        <div className="space-y-2">
-          <div className="flex items-center gap-2">
-            <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-            <p className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.3em] bg-gold-gradient bg-clip-text text-transparent">
-              {isDetecting ? "Detecting Device..." : "Smart Selection"}
-            </p>
-          </div>
-          
-          <div className="flex items-center gap-3">
-            <div className={cn(
-              "p-2.5 rounded-xl bg-white/5 border border-white/10 text-primary transition-all duration-500",
-              isDetecting ? "animate-pulse scale-95" : "scale-100"
-            )}>
-              {selectedRes.icon}
+      <div className="flex flex-col gap-8 relative z-10">
+        
+        {/* Detection & Resolution Header */}
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="space-y-3">
+            <div className="flex items-center gap-2.5">
+              <span className={cn(
+                "flex h-1.5 w-1.5 rounded-full",
+                isDetecting ? "bg-primary animate-pulse" : "bg-green-500"
+              )} />
+              <p className="text-[10px] font-black uppercase tracking-[0.4em] bg-gold-gradient bg-clip-text text-transparent">
+                {isDetecting ? "Analyzing Hardware..." : "Intelligent Recommendation"}
+              </p>
             </div>
-            <h3 className={cn(
-              "text-xl md:text-2xl font-bold text-white leading-none transition-all duration-500",
-              isDetecting ? "opacity-40 blur-sm" : "opacity-100 blur-0"
-            )}>
-              {selectedRes.label}
-            </h3>
+            
+            <div className="flex items-center gap-4">
+              <div className={cn(
+                "p-3 rounded-2xl bg-white/[0.04] border border-white/10 text-primary transition-all duration-700",
+                isDetecting ? "animate-pulse scale-90" : "scale-100"
+              )}>
+                {selectedRes.icon}
+              </div>
+              <div className="space-y-0.5">
+                <h3 className={cn(
+                  "text-xl md:text-2xl font-bold text-white tracking-tight leading-none transition-all duration-700",
+                  isDetecting ? "opacity-30 blur-sm" : "opacity-100 blur-0"
+                )}>
+                  {selectedRes.label}
+                </h3>
+                <p className="text-[10px] text-white/30 uppercase tracking-[0.2em] font-black">
+                  {selectedRes.size} • Verified High Definition
+                </p>
+              </div>
+            </div>
           </div>
 
-          <p className="text-[10px] md:text-xs text-white/40 flex items-center font-medium">
-            <CheckCircle2 className="w-3.5 h-3.5 mr-1.5 text-primary/80" /> 
-            Verified Safe Assets • {selectedRes.size}
-          </p>
+          {mounted && (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="group/trigger flex items-center justify-center gap-3 px-6 py-4 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-primary/40 transition-all text-[10px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white">
+                  All Formats <ChevronDown className="w-4 h-4 transition-transform group-hover/trigger:rotate-180" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="bg-black/90 border-white/10 backdrop-blur-3xl z-50 p-2 rounded-[2rem] min-w-[280px] shadow-[0_30px_60px_rgba(0,0,0,0.9)]">
+                <div className="px-5 py-4 mb-2 border-b border-white/5">
+                  <p className="text-[9px] font-black uppercase tracking-[0.3em] text-primary/60">Select Architecture</p>
+                </div>
+                {resolutions.map((res) => (
+                  <DropdownMenuItem 
+                    key={res.value} 
+                    className="text-white focus:bg-white/[0.05] cursor-pointer py-4 px-5 rounded-2xl flex items-center justify-between transition-all group/item mb-1"
+                    onClick={() => {
+                      setSelectedRes(res);
+                    }}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="p-3 bg-white/[0.04] rounded-xl text-primary/40 group-hover/item:text-primary transition-colors">
+                        {res.icon}
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm font-bold tracking-tight group-hover/item:translate-x-1 transition-transform">{res.label}</span>
+                        <span className="text-[9px] text-white/20 uppercase tracking-widest font-black">{res.size}</span>
+                      </div>
+                    </div>
+                    {selectedRes.value === res.value && (
+                      <CheckCircle2 className="w-4 h-4 text-primary" />
+                    )}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          )}
         </div>
 
-        {mounted ? (
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <button className="group/trigger flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-primary/30 transition-all text-[11px] font-black uppercase tracking-[0.15em] text-white/70 hover:text-white">
-                All Sizes <ChevronDown className="w-4 h-4 transition-transform group-hover/trigger:rotate-180" />
-              </button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="bg-black/95 border-white/10 backdrop-blur-3xl z-50 p-2 rounded-[1.5rem] min-w-[240px] shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
-              <div className="px-3 py-2 mb-1 border-b border-white/5">
-                <p className="text-[9px] font-black uppercase tracking-widest text-primary/60">Available Resolutions</p>
-              </div>
-              {resolutions.map((res) => (
-                <DropdownMenuItem 
-                  key={res.value} 
-                  className="text-white focus:bg-primary/10 cursor-pointer py-3.5 px-4 rounded-xl flex items-center justify-between transition-colors group/item"
-                  onClick={() => {
-                    setSelectedRes(res);
-                  }}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="p-2.5 bg-white/5 rounded-xl text-primary/60 group-hover/item:text-primary transition-colors">
-                      {res.icon}
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-sm font-bold tracking-tight">{res.label}</span>
-                      <span className="text-[10px] text-white/30 uppercase tracking-widest font-bold">{res.size}</span>
-                    </div>
-                  </div>
-                  {selectedRes.value === res.value && (
-                    <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  )}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        ) : (
-          <div className="h-12 w-32 animate-pulse rounded-2xl bg-white/5" />
-        )}
-      </div>
+        {/* Action Button */}
+        <LuxuryButton 
+          className="group/btn w-full h-20 md:h-24 rounded-[2rem] md:rounded-[2.5rem] flex items-center justify-center text-sm md:text-base font-black uppercase tracking-[0.3em] relative overflow-hidden"
+          onClick={() => downloadImage(src, `luxwalls-${id}.jpg`)}
+        >
+          {/* Shimmer Effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-[1.2s] ease-in-out" />
+          
+          <Download className="w-6 h-6 mr-4 transition-all duration-500 group-hover/btn:-translate-y-1 group-hover/btn:scale-110" />
+          Download Luxury Asset
+        </LuxuryButton>
 
-      <LuxuryButton 
-        className="group/btn w-full h-16 md:h-20 rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center text-sm md:text-base font-black uppercase tracking-[0.2em] relative overflow-hidden"
-        onClick={() => downloadImage(src, `luxwalls-${id}.jpg`)}
-      >
-        {/* Button Glass Shine Effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-[1.5s] ease-in-out" />
-        
-        <Download className="w-5 h-5 mr-3 transition-transform group-hover/btn:-translate-y-1 group-hover/btn:scale-110" />
-        Download Asset Free
-      </LuxuryButton>
+        {/* Security Trust Bar */}
+        <div className="pt-2 flex items-center justify-center gap-6 opacity-30 group-hover:opacity-60 transition-opacity duration-700">
+           <div className="flex items-center gap-2 text-[9px] font-black uppercase tracking-widest">
+             <ShieldCheck className="w-3.5 h-3.5" /> Secure SSL 256-bit
+           </div>
+           <div className="h-1 w-1 rounded-full bg-white/40" />
+           <div className="flex items-center gap-2 text-[9px] font-black uppercase tracking-widest">
+             No Registration Required
+           </div>
+        </div>
+      </div>
     </div>
   );
 }
