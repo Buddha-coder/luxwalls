@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { X, Smartphone, Clock, battery as BatteryIcon, Wifi, Signal } from "lucide-react";
+import { X, Smartphone, Clock, Battery as BatteryIcon, Wifi, Signal } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface MockupPreviewProps {
