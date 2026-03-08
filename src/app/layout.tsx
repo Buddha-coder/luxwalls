@@ -1,6 +1,4 @@
 import { Toaster } from "@/components/ui/toaster";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { PT_Sans, Playfair_Display } from "next/font/google";
 import Footer from "@/components/layout/footer";
@@ -11,6 +9,7 @@ import PostInstallWelcome from "@/components/PostInstallWelcome";
 import PwaInstallPrompt from "@/components/PwaInstallPrompt";
 import RegisterSW from "@/components/RegisterSW";
 import "./globals.css";
+import { Providers } from "./providers";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://luxwalls.vercel.app";
 
@@ -70,6 +69,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${ptSans.variable} ${playfairDisplay.variable} dark`}
+      suppressHydrationWarning
     >
       <body className="font-body antialiased bg-background text-foreground selection:bg-primary/30">
         <script
@@ -86,23 +86,22 @@ export default function RootLayout({
           </filter>
         </svg>
 
-        <div className="relative flex min-h-screen flex-col">
-          <Header />
-          <div className="flex-1">
-            {children}
+        <Providers>
+          <div className="relative flex min-h-screen flex-col">
+            <Header />
+            <div className="flex-1">
+              {children}
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
-        
-        <Toaster />
-        <PwaInstallPrompt />
-        <IosInstallHint />
-        <RegisterSW />
-        <InstallSuccess />
-        <PostInstallWelcome />
-        
-        <Analytics />
-        <SpeedInsights />
+          
+          <Toaster />
+          <PwaInstallPrompt />
+          <IosInstallHint />
+          <RegisterSW />
+          <InstallSuccess />
+          <PostInstallWelcome />
+        </Providers>
       </body>
     </html>
   );

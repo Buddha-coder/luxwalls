@@ -3,14 +3,14 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
-const variants = {
+const variants: any = {
   hidden: { opacity: 0, y: 15 },
   enter: { 
     opacity: 1, 
     y: 0, 
     transition: { 
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1], // Dreamy, smooth ease
+      ease: [0.22, 1, 0.36, 1],
       staggerChildren: 0.1
     } 
   },

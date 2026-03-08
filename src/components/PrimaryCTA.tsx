@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
+import { LuxuryButton } from '@/components/ui/LuxuryButton';
 
 export default function PrimaryCTA() {
   return (
@@ -14,11 +15,11 @@ export default function PrimaryCTA() {
           </p>
         </div>
         <div className="mt-8">
-          <Link
-            href="/wallpapers"
-            className="group glass w-full sm:w-auto min-h-12 px-8 rounded-2xl text-base inline-flex items-center justify-center transition-all duration-300 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]">
-            Start Exploring
-            <ChevronRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+          <Link href="/wallpapers">
+            <LuxuryButton size="lg" className="group">
+              Start Exploring
+              <ChevronRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+            </LuxuryButton>
           </Link>
         </div>
       </div>
