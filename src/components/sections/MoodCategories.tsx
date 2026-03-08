@@ -37,13 +37,13 @@ export default function MoodCategories() {
             <Link 
               key={mood.name} 
               href={mood.href}
-              className="group relative h-[320px] md:h-[420px] rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:scale-[0.98]"
+              className="group relative h-[320px] md:h-[420px] rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] hover:scale-[0.98]"
             >
               <Image
                 src={mood.src}
                 alt={mood.name}
                 fill
-                className="object-cover brightness-[0.4] group-hover:brightness-[0.6] transition-all duration-[1s] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
+                className="object-cover brightness-[0.4] group-hover:brightness-[0.6] transition-all duration-[1.2s] ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
               
@@ -51,13 +51,13 @@ export default function MoodCategories() {
                 <h3 className="text-xl md:text-2xl font-headline font-bold text-white leading-tight">
                   {mood.name}
                 </h3>
-                <p className="text-[9px] text-white/50 uppercase tracking-[0.2em] font-black group-hover:text-primary transition-colors">
+                <p className="text-[9px] text-white/50 uppercase tracking-[0.2em] font-black group-hover:text-primary transition-colors duration-700">
                   {mood.description}
                 </p>
-                <div className="h-px w-0 bg-primary group-hover:w-16 transition-all duration-500 ease-out" />
+                <div className="h-px w-0 bg-primary group-hover:w-16 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]" />
               </div>
 
-              <div className="absolute inset-0 border border-white/10 rounded-[inherit] pointer-events-none z-20 group-hover:border-primary/20 transition-colors" />
+              <div className="absolute inset-0 border border-white/10 rounded-[inherit] pointer-events-none z-20 group-hover:border-primary/20 transition-colors duration-700" />
             </Link>
           ))}
         </div>
