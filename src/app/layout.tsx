@@ -94,7 +94,6 @@ export default function RootLayout({
           <Footer />
         </div>
         
-        {/* UI Feedback & PWA Layer */}
         <Toaster />
         <PwaInstallPrompt />
         <IosInstallHint />
@@ -102,7 +101,6 @@ export default function RootLayout({
         <InstallSuccess />
         <PostInstallWelcome />
         
-        {/* Performance Layer */}
         <Analytics />
         <SpeedInsights />
       </body>

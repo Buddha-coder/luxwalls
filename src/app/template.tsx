@@ -4,22 +4,22 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
 const variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 10 },
   enter: { 
     opacity: 1, 
     y: 0, 
     transition: { 
-      staggerChildren: 0.1, 
-      duration: 0.4 
+      duration: 0.3,
+      ease: [0.23, 1, 0.32, 1],
+      staggerChildren: 0.05
     } 
   },
   exit: { 
     opacity: 0, 
-    y: -20, 
+    y: -10, 
     transition: { 
-      staggerChildren: 0.1, 
-      staggerDirection: -1, 
-      duration: 0.4 
+      duration: 0.25,
+      ease: [0.23, 1, 0.32, 1]
     } 
   },
 };
