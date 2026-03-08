@@ -46,22 +46,20 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
               />
               
               {/* Premium Label Overlay */}
-              <div className="absolute inset-x-0 bottom-8 translate-y-2 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 flex flex-col items-center justify-center text-center px-6">
-                <p className="text-white text-[11px] font-bold tracking-tight mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] line-clamp-1">
+              <div className="absolute inset-x-0 bottom-10 translate-y-4 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 flex flex-col items-center justify-center text-center px-6 z-20">
+                <p className="text-white text-[11px] font-bold tracking-tight mb-3 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] line-clamp-1">
                   {wallpaper.title}
                 </p>
-                <div className="flex items-center gap-2">
-                  <div className="h-px w-4 bg-primary/60" />
-                  <p className="text-primary text-[9px] font-black tracking-[0.3em] uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                <div className="glass-container !rounded-full px-5 py-2 border border-white/10 backdrop-blur-xl">
+                  <p className="relative text-primary text-[9px] font-black tracking-[0.4em] uppercase">
                     Explore
                   </p>
-                  <div className="h-px w-4 bg-primary/60" />
                 </div>
               </div>
 
               {/* Luxury Vignette and Edge Highlight */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              <div className="absolute inset-0 border border-white/5 rounded-[inherit] group-hover:border-white/10 transition-colors duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10" />
+              <div className="absolute inset-0 border border-white/5 rounded-[inherit] group-hover:border-white/10 transition-colors duration-700 z-20" />
             </Link>
           </div>
         ))}
