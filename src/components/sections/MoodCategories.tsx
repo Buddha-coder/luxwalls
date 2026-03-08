@@ -25,22 +25,22 @@ const moods = [
 
 export default function MoodCategories() {
   return (
-    <section className="w-full py-24 bg-black border-t border-white/5 overflow-hidden">
+    <section className="w-full py-16 md:py-20 bg-black border-t border-white/5 overflow-hidden">
       <Container>
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-12 space-y-3">
           <span className="text-[10px] font-black uppercase tracking-[0.5em] text-primary">Discover By Atmosphere</span>
-          <h2 className="text-4xl md:text-6xl font-headline font-bold text-white tracking-tighter">Choose Your Vibe</h2>
-          <p className="max-w-md mx-auto text-[10px] text-white/30 uppercase tracking-[0.2em] font-black">
+          <h2 className="text-3xl md:text-5xl font-headline font-bold text-white tracking-tighter">Choose Your Vibe</h2>
+          <p className="max-w-md mx-auto text-[9px] text-white/30 uppercase tracking-[0.2em] font-black">
             Filtered collections tailored for your digital environment
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {moods.map((mood) => (
             <Link 
               key={mood.name} 
               href={mood.href}
-              className="group relative h-[450px] md:h-[550px] rounded-[3.5rem] overflow-hidden border border-white/5 shadow-2xl transition-all duration-700 hover:scale-[0.98]"
+              className="group relative h-[380px] md:h-[480px] rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl transition-all duration-700 hover:scale-[0.98]"
             >
               <Image
                 src={mood.src}
@@ -51,10 +51,10 @@ export default function MoodCategories() {
               />
               
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center space-y-4 z-10">
-                <h3 className="text-2xl md:text-3xl font-headline font-bold text-white leading-tight">
+                <h3 className="text-xl md:text-2xl font-headline font-bold text-white leading-tight">
                   {mood.name}
                 </h3>
-                <p className="text-[10px] text-white/50 uppercase tracking-[0.2em] font-black group-hover:text-primary transition-colors">
+                <p className="text-[9px] text-white/50 uppercase tracking-[0.2em] font-black group-hover:text-primary transition-colors">
                   {mood.description}
                 </p>
                 <div className="h-px w-0 bg-primary group-hover:w-16 transition-all duration-700" />
