@@ -54,7 +54,7 @@ export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProp
   ];
 
   return (
-    <div className="relative glass-container !rounded-[3rem] p-8 md:p-10 border border-white/10 overflow-hidden group">
+    <div className="relative glass-container !rounded-[3rem] p-8 md:p-10 border border-white/10 overflow-hidden group select-none">
       {/* Background Ambience */}
       <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] pointer-events-none group-hover:bg-primary/20 transition-all duration-[2s]" />
       
@@ -97,7 +97,7 @@ export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProp
           {mounted && (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className="group/trigger flex items-center justify-center gap-3 px-6 py-4 rounded-full border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-primary/40 transition-all text-[10px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white">
+                <button className="group/trigger flex items-center justify-center gap-3 px-6 py-4 rounded-full border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-primary/40 transition-all text-[10px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white active:scale-95">
                   All Formats <ChevronDown className="w-4 h-4 transition-transform group-hover/trigger:rotate-180" />
                 </button>
               </DropdownMenuTrigger>
@@ -134,7 +134,7 @@ export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProp
 
         {/* Action Button */}
         <LuxuryButton 
-          className="group/btn w-full h-20 md:h-24 rounded-full flex items-center justify-center text-sm md:text-base font-black uppercase tracking-[0.3em] relative overflow-hidden"
+          className="group/btn w-full h-20 md:h-24 rounded-full flex items-center justify-center text-sm md:text-base font-black uppercase tracking-[0.3em] relative overflow-hidden active:scale-[0.97]"
           onClick={() => downloadImage(src, `luxwalls-${id}.jpg`)}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-[1.2s] ease-in-out" />

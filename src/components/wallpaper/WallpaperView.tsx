@@ -39,17 +39,19 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
           {/* Main Visual (Left) */}
           <div className="lg:col-span-7 xl:col-span-8 space-y-6">
             <div 
-              className="relative aspect-[9/16] w-full max-h-[85vh] rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.9)] border border-white/10 group"
+              className="relative aspect-[9/16] w-full max-h-[85vh] rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.9)] border border-white/10 group select-none"
+              onContextMenu={(e) => e.preventDefault()}
             >
               <Image
                 src={wallpaper.src}
                 alt={wallpaper.title}
                 fill
-                className="object-cover transition-all duration-[2s] ease-out"
+                className="object-cover transition-all duration-[2s] ease-out pointer-events-none"
                 priority
                 sizes="(max-width: 768px) 100vw, 60vw"
+                draggable={false}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
               
               {/* Specular Rim Highlight */}
               <div className="absolute inset-0 border border-white/20 rounded-[inherit] pointer-events-none" />
@@ -98,7 +100,7 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
                 </div>
               </div>
 
-              {/* Engagement Stats Grid (Fully Rounded) */}
+              {/* Engagement Stats Grid */}
               <div className="grid grid-cols-3 gap-3">
                 <StatTile icon={<Eye className="w-3.5 h-3.5" />} label="Views" value={wallpaper.views?.toLocaleString() || "1.2K"} />
                 <StatTile icon={<Download className="w-3.5 h-3.5" />} label="Saved" value={wallpaper.downloads?.toLocaleString() || "850"} />
@@ -108,7 +110,7 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
               {/* Smart Download Module */}
               <SmartDownloadModule src={wallpaper.src} id={wallpaper.id} />
 
-              {/* Visual DNA (Fully Rounded) */}
+              {/* Visual DNA */}
               <div className="relative glass-container !rounded-[3rem] border border-white/5 overflow-hidden group">
                 <div className="glass-filter opacity-50" />
                 <div className="glass-overlay !bg-white/[0.02]" />
@@ -120,7 +122,7 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
                     {(wallpaper.colors || ["#0F0F12", "#222222", "#C9A24D", "#FFFFFF"]).map(color => (
                       <div 
                         key={color} 
-                        className="relative h-12 w-12 rounded-full border border-white/10 transition-all duration-500 hover:scale-110 hover:-translate-y-1 shadow-2xl cursor-pointer" 
+                        className="relative h-12 w-12 rounded-full border border-white/10 transition-all duration-500 hover:scale-110 hover:-translate-y-1 shadow-2xl cursor-pointer active:scale-95" 
                         style={{ backgroundColor: color }}
                         title={color}
                       >
@@ -140,7 +142,7 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
                     <Sparkles className="w-4 h-4 mr-2 text-primary/50" /> Performance Profile
                   </h3>
                   <div className="grid grid-cols-1 gap-3">
-                    {(wallpaper.bestFor || ["AMOLED Displays", "Lock Screen"]).map(use => (
+                    {(wallpaper.bestFor || ["AMOLED Displays", "Lock Screen", "True Black Optimization"]).map(use => (
                       <div key={use} className="flex items-center gap-4 text-xs font-bold text-muted-foreground group/item">
                         <div className="w-2 h-2 rounded-full bg-primary/40 group-hover/item:bg-primary transition-colors" />
                         <span className="tracking-wide uppercase text-[10px] group-hover/item:text-white transition-colors">{use}</span>
@@ -179,7 +181,7 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
 
 function StatTile({ icon, label, value }: { icon: React.ReactNode, label: string, value: string }) {
   return (
-    <div className="relative glass-container !rounded-full border border-white/5 overflow-hidden flex-1 py-3 min-h-[60px]">
+    <div className="relative glass-container !rounded-full border border-white/5 overflow-hidden flex-1 py-3 min-h-[60px] active:scale-95 transition-transform duration-300">
       <div className="glass-filter opacity-40" />
       <div className="glass-overlay !bg-white/[0.02]" />
       <div className="glass-content flex flex-col items-center justify-center text-center p-1.5 space-y-1">

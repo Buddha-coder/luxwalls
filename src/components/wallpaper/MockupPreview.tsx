@@ -55,7 +55,7 @@ export default function MockupPreview({ isOpen, onClose, src }: MockupPreviewPro
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-3xl p-4 md:p-8 overflow-hidden"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-3xl p-4 md:p-8 overflow-hidden select-none"
         >
           {/* Controls Overlay */}
           <div className="absolute top-8 left-8 right-8 flex items-center justify-between z-[110]">
@@ -63,7 +63,7 @@ export default function MockupPreview({ isOpen, onClose, src }: MockupPreviewPro
               <button
                 onClick={() => setDevice("mobile")}
                 className={cn(
-                  "p-3 rounded-xl transition-all duration-500 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest",
+                  "p-3 rounded-xl transition-all duration-500 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest active:scale-95",
                   device === "mobile" ? "bg-primary text-primary-foreground shadow-lg" : "text-white/40 hover:text-white"
                 )}
               >
@@ -73,7 +73,7 @@ export default function MockupPreview({ isOpen, onClose, src }: MockupPreviewPro
               <button
                 onClick={() => setDevice("tablet")}
                 className={cn(
-                  "p-3 rounded-xl transition-all duration-500 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest",
+                  "p-3 rounded-xl transition-all duration-500 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest active:scale-95",
                   device === "tablet" ? "bg-primary text-primary-foreground shadow-lg" : "text-white/40 hover:text-white"
                 )}
               >
@@ -84,7 +84,7 @@ export default function MockupPreview({ isOpen, onClose, src }: MockupPreviewPro
 
             <button 
               onClick={onClose}
-              className="p-4 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors duration-500 shadow-2xl"
+              className="p-4 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors duration-500 shadow-2xl active:scale-90"
             >
               <X className="w-6 h-6" />
             </button>
@@ -147,13 +147,14 @@ export default function MockupPreview({ isOpen, onClose, src }: MockupPreviewPro
                 src={src}
                 alt="Atmosphere Preview"
                 fill
-                className="object-cover"
+                className="object-cover pointer-events-none"
                 priority
+                draggable={false}
               />
             </motion.div>
 
             {/* UI Overlay (Lock Screen Simulation) */}
-            <div className="absolute inset-0 flex flex-col items-center justify-between py-24 z-10">
+            <div className="absolute inset-0 flex flex-col items-center justify-between py-24 z-10 pointer-events-none">
               <div className="text-center space-y-3 mt-12">
                  <motion.h2 
                    initial={{ opacity: 0, y: -20 }}
@@ -178,10 +179,10 @@ export default function MockupPreview({ isOpen, onClose, src }: MockupPreviewPro
 
               {/* Bottom Quick Actions */}
               <div className="flex w-full justify-between px-10">
-                <div className="h-14 w-14 rounded-full bg-black/30 backdrop-blur-2xl border border-white/10 flex items-center justify-center transition-transform hover:scale-110 duration-500">
+                <div className="h-14 w-14 rounded-full bg-black/30 backdrop-blur-2xl border border-white/10 flex items-center justify-center">
                   <div className="w-6 h-6 bg-white/90 rounded-full" />
                 </div>
-                <div className="h-14 w-14 rounded-full bg-black/30 backdrop-blur-2xl border border-white/10 flex items-center justify-center text-white transition-transform hover:scale-110 duration-500">
+                <div className="h-14 w-14 rounded-full bg-black/30 backdrop-blur-2xl border border-white/10 flex items-center justify-center text-white">
                    <BatteryIcon className="w-6 h-6 fill-white" />
                 </div>
               </div>

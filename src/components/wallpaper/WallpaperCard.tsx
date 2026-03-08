@@ -14,7 +14,7 @@ export default function WallpaperCard({ wallpaper }: WallpaperCardProps) {
     <AnimateIn>
       <Link 
         href={`/wallpapers/${wallpaper.category}/${wallpaper.id}`}
-        className="group relative block aspect-[9/16] rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden bg-neutral-900 border border-white/5 hover:border-primary/30 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-2xl hover:shadow-primary/20"
+        className="group relative block aspect-[9/16] rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden bg-neutral-900 border border-white/5 hover:border-primary/30 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-2xl hover:shadow-primary/20 active:scale-[0.98]"
       >
         <Image
           src={wallpaper.src}
