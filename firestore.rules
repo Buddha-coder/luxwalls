@@ -4,78 +4,26 @@ service cloud.firestore {
 
     /**
      * LuxWalls Security Rules Architecture
-     *
-     * Core Philosophy: 
-     * This ruleset implements a Public-Read, Admin-Write model designed for a high-end product 
-     * showcase. The primary goal is to ensure that catalog data (Wallpapers and Hero Images) is 
-     * accessible to all potential customers (including anonymous and unauthenticated visitors) 
-     * while restricting all modifications to verified administrative accounts.
-     *
-     * Data Structure:
-     * - /wallpapers/{wallpaperId}: Flat collection of luxury products.
-     * - /hero_images/{heroImageId}: Flat collection of homepage promotional assets.
-     * - /roles_admin/{uid}: A dedicated collection used to verify administrative privileges.
-     *
-     * Key Security Decisions:
-     * 1. Public Accessibility: Since LuxWalls is a catalog-driven application, read access (get and list) 
-     *    is granted globally.
-     * 2. Role-Based Access Control (RBAC): Write operations are gated by a look-up to the /roles_admin 
-     *    collection. This avoids hardcoding UIDs and allows for dynamic admin management.
-     * 3. Prototyping Flexibility: Rules focus on authorization (who can write) rather than 
-     *    strict schema validation (what is written) to allow for rapid product iteration.
-     * 4. State Safety: All update and delete operations require the resource to exist, 
-     *    preventing orphaned or accidental operations.
      */
 
-    // --- HELPER FUNCTIONS ---
-
-    /**
-     * @description Checks if the current request is from an authenticated user.
-     */
     function isSignedIn() {
       return request.auth != null;
     }
 
-    /**
-     * @description Determines if the authenticated user has administrative privileges 
-     * by checking for their UID in the roles_admin collection.
-     */
     function isAdmin() {
       return isSignedIn() && exists(/databases/$(database)/documents/roles_admin/$(request.auth.uid));
     }
 
-    /**
-     * @description Ensures the user is an admin AND the document being targeted exists.
-     * Used for update and delete operations to prevent errors on non-existent documents.
-     */
     function isExistingAdmin() {
       return isAdmin() && resource != null;
     }
 
-    // --- COLLECTION RULES ---
-
-    /**
-     * @description Rules for the Wallpaper collection. Supports public browsing with admin-only management.
-     * @path /wallpapers/{wallpaperId}
-     * @allow (get) Any user requesting a specific wallpaper.
-     * @allow (create) An authenticated user whose UID exists in the 'roles_admin' collection.
-     * @deny (update) Any user who is not a verified administrator.
-     * @principle Role-Based Access Control for writes; Global access for reads.
-     */
     match /wallpapers/{wallpaperId} {
       allow get, list: if true;
       allow create: if isAdmin();
       allow update, delete: if isExistingAdmin();
     }
 
-    /**
-     * @description Rules for Hero Images used in homepage carousels or banners.
-     * @path /hero_images/{heroImageId}
-     * @allow (list) An unauthenticated visitor viewing the homepage.
-     * @allow (delete) An admin removing an outdated promotional image.
-     * @deny (create) An anonymous user attempting to inject images.
-     * @principle Decoupled authorization where read rights are independent of document content.
-     */
     match /hero_images/{heroImageId} {
       allow get, list: if true;
       allow create: if isAdmin();
@@ -83,14 +31,14 @@ service cloud.firestore {
     }
 
     /**
-     * @description Rules for the administrative roles collection. 
-     * Access to this collection is the anchor for all write permissions in the system.
-     * @path /roles_admin/{uid}
-     * @allow (get) A user checking their own administrative status.
-     * @deny (list) Users attempting to discover the list of all administrators.
-     * @deny (write) Any user attempting to grant themselves admin rights via the client SDK.
-     * @principle Lock-down of the authorization source of truth.
+     * @description Publicly accessible appreciation metrics.
+     * Allows anyone to view and increment/decrement likes.
      */
+    match /likes/{wallpaperId} {
+      allow get: if true;
+      allow write: if true;
+    }
+
     match /roles_admin/{uid} {
       allow get: if isSignedIn() && request.auth.uid == uid;
       allow list: if false;
