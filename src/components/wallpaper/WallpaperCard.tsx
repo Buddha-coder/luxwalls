@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { LuxuryButton } from "@/components/ui/LuxuryButton";
-import { downloadImage } from "@/lib/download-image";
+import Link from "next/link";
 import { Wallpaper } from "@/data/wallpapers";
 import { AnimateIn } from "@/components/ui/animate-in";
+import { LuxuryButton } from "@/components/ui/LuxuryButton";
 
 interface WallpaperCardProps {
   wallpaper: Wallpaper;
@@ -13,35 +13,30 @@ interface WallpaperCardProps {
 export default function WallpaperCard({ wallpaper }: WallpaperCardProps) {
   return (
     <AnimateIn>
-      <div className="glass rounded-[2rem] overflow-hidden p-1 bg-white/[0.02]">
-        <div className="group relative aspect-[9/16] overflow-hidden rounded-[1.8rem] border border-white/5 bg-muted transition-all duration-700 hover:shadow-2xl">
-          <Image
-            src={wallpaper.src}
-            alt={`${wallpaper.title} - ${wallpaper.category} wallpaper by LuxWalls`}
-            fill
-            className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-110"
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-            priority={false}
-          />
-
-          <div className="absolute inset-0 flex items-end justify-center bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-            <div className="mb-6 translate-y-4 transition-all duration-500 group-hover:translate-y-0">
-              <LuxuryButton
-                size="sm"
-                className="glass border-white/20 px-8 py-2.5 rounded-full hover:bg-white/10"
-                onClick={() =>
-                  downloadImage(
-                    wallpaper.src,
-                    `luxwalls-${wallpaper.category}-${wallpaper.id}.jpg`
-                  )
-                }
-              >
-                Download
-              </LuxuryButton>
-            </div>
+      <Link 
+        href={`/wallpapers/${wallpaper.category}/${wallpaper.id}`}
+        className="group relative block aspect-[9/16] rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden bg-neutral-900 border border-white/5 hover:border-primary/30 transition-all duration-700 shadow-2xl hover:shadow-primary/20"
+      >
+        <Image
+          src={wallpaper.src}
+          alt={wallpaper.title}
+          fill
+          className="object-cover pointer-events-none transition-all duration-[1.5s] ease-out group-hover:scale-110"
+          sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 22vw"
+          draggable={false}
+        />
+        
+        {/* Clean Luxury Hover Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-end justify-center pb-10">
+          <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+            <LuxuryButton size="sm" className="rounded-full bg-white text-black hover:bg-white/90 px-8 py-2 font-bold uppercase tracking-widest text-[10px]">
+              Explore
+            </LuxuryButton>
           </div>
         </div>
-      </div>
+        
+        <div className="absolute inset-0 border border-white/5 rounded-[inherit] group-hover:border-white/10 transition-colors duration-700 z-20" />
+      </Link>
     </AnimateIn>
   );
 }
