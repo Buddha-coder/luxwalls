@@ -1,0 +1,187 @@
+{
+  "entities": {
+    "Wallpaper": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Wallpaper",
+      "type": "object",
+      "description": "Represents a luxury wallpaper product available in the LuxWalls application, including its details and visuals.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Wallpaper entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name or title of the luxury wallpaper."
+        },
+        "description": {
+          "type": "string",
+          "description": "A detailed description of the wallpaper, including its design inspiration, features, and suggested applications."
+        },
+        "productCode": {
+          "type": "string",
+          "description": "A unique identifier for the wallpaper product, such as a SKU or model number."
+        },
+        "price": {
+          "type": "number",
+          "description": "The price of one roll of the wallpaper."
+        },
+        "currency": {
+          "type": "string",
+          "description": "The currency in which the price is denominated (e.g., 'USD', 'EUR')."
+        },
+        "mainImageUrl": {
+          "type": "string",
+          "description": "The URL for the primary display image of the wallpaper.",
+          "format": "uri"
+        },
+        "thumbnailImageUrl": {
+          "type": "string",
+          "description": "The URL for a smaller thumbnail image of the wallpaper, used in listings.",
+          "format": "uri"
+        },
+        "galleryImageUrls": {
+          "type": "array",
+          "description": "An array of URLs for additional high-quality images showcasing different angles or details of the wallpaper.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "category": {
+          "type": "string",
+          "description": "The category to which the wallpaper belongs (e.g., 'Modern', 'Classic', 'Textured', 'Floral')."
+        },
+        "material": {
+          "type": "string",
+          "description": "The material composition of the wallpaper (e.g., 'Vinyl', 'Non-woven', 'Silk')."
+        },
+        "patternRepeatCm": {
+          "type": "number",
+          "description": "The vertical distance at which the wallpaper pattern repeats, measured in centimeters."
+        },
+        "rollWidthCm": {
+          "type": "number",
+          "description": "The width of a single wallpaper roll, measured in centimeters."
+        },
+        "rollLengthM": {
+          "type": "number",
+          "description": "The length of a single wallpaper roll, measured in meters."
+        },
+        "availabilityStatus": {
+          "type": "string",
+          "description": "The current stock status of the wallpaper (e.g., 'In Stock', 'Limited Stock', 'Out of Stock', 'Pre-order')."
+        },
+        "careInstructions": {
+          "type": "string",
+          "description": "Instructions for the proper care and maintenance of the wallpaper."
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "The timestamp when the wallpaper record was created.",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "The timestamp when the wallpaper record was last updated.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "productCode",
+        "price",
+        "currency",
+        "mainImageUrl",
+        "category",
+        "material",
+        "rollWidthCm",
+        "rollLengthM",
+        "availabilityStatus",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "HeroImage": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "HeroImage",
+      "type": "object",
+      "description": "Represents an image specifically designated for the hero section display on the homepage, potentially promoting a wallpaper or special offer.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the HeroImage entity."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "The URL of the high-quality image displayed in the hero section.",
+          "format": "uri"
+        },
+        "altText": {
+          "type": "string",
+          "description": "Alternative text for the hero image, crucial for accessibility and SEO."
+        },
+        "caption": {
+          "type": "string",
+          "description": "An optional caption or promotional text displayed with the hero image."
+        },
+        "linkUrl": {
+          "type": "string",
+          "description": "An optional URL that the hero image links to, such as a product page or category.",
+          "format": "uri"
+        },
+        "displayOrder": {
+          "type": "number",
+          "description": "A numerical value indicating the order in which hero images should be displayed, especially in a carousel or slideshow."
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "A flag indicating whether this hero image is currently active and should be displayed."
+        },
+        "wallpaperId": {
+          "type": "string",
+          "description": "Reference to a Wallpaper entity that this hero image might be promoting. (Relationship: Wallpaper 1:N HeroImage)"
+        }
+      },
+      "required": [
+        "id",
+        "imageUrl",
+        "altText",
+        "displayOrder",
+        "isActive"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/wallpapers/{wallpaperId}",
+        "definition": {
+          "entityName": "Wallpaper",
+          "schema": {
+            "$ref": "#/backend/entities/Wallpaper"
+          },
+          "description": "Stores individual luxury wallpaper product details. All documents in this collection are publicly readable. Write access is restricted to administrators only. Each document is independent, ensuring authorization independence for reads."
+        }
+      },
+      {
+        "path": "/hero_images/{heroImageId}",
+        "definition": {
+          "entityName": "HeroImage",
+          "schema": {
+            "$ref": "#/backend/entities/HeroImage"
+          },
+          "description": "Stores individual hero images displayed on the homepage. All documents in this collection are publicly readable. Write access is restricted to administrators only. Each document is independent, ensuring authorization independence for reads."
+        }
+      }
+    ],
+    "reasoning": "The recommended Firestore data structure for LuxWalls prioritizes simplicity, security, and scalability by adhering to the core design principles. The application primarily showcases luxury wallpapers and hero images, both of which are publicly viewable.\n\n**Authorization Independence:** This design achieves Authorization Independence by ensuring that the access rights for any document do not depend on reading attributes from a parent document or another related document. Both the `/wallpapers` and `/hero_images` collections are designed to hold publicly readable data. This means that security rules will not require `get()` calls to determine access, as all documents within these collections share the same authorization posture (public read, admin write).\n\n**QAPs (Rules are not Filters):** The structure inherently supports Query-As-Permissions (QAPs) because all documents within a given collection have a homogeneous security posture. \n- For `/wallpapers/{wallpaperId}`, all wallpaper documents are intended for public display. Therefore, a `list` operation on `/wallpapers` will return only publicly available wallpapers, and security rules can simply grant `read` access to all authenticated and unauthenticated users. There is no mix of public and private wallpaper data in this collection, eliminating the need for complex filtering by security rules.\n- Similarly, for `/hero_images/{heroImageId}`, all hero image documents are for public display. A `list` operation will return public hero images, which can then be client-side filtered by `isActive` or ordered by `displayOrder`. The security rules will grant `read` access to the entire collection for all users without requiring filtering logic.\n\n**Structural Segregation & Access Modeling:**\n- `/wallpapers`: This top-level collection holds all `Wallpaper` entities. Its homogeneous security posture is 'public read / admin write'. This simplifies rules significantly.\n- `/hero_images`: This top-level collection holds all `HeroImage` entities. It also has a 'public read / admin write' posture. \n\nThere are no user-owned or collaborative data structures needed based on the current requirements (no user profiles, favorites, or user-generated content specified). Admin write access would be secured using a DBAC model, likely through a separate `/roles_admin/{uid}` collection for existence checks or direct UID comparisons in rules, rather than relying on custom claims."
+  }
+}
