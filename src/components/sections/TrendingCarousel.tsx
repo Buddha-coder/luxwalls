@@ -45,11 +45,8 @@ export default function TrendingCarousel() {
             
             {/* Glass Overlay Label */}
             <div className="absolute inset-x-0 bottom-0 p-8 translate-y-2 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-              <div className="glass-container !rounded-full overflow-hidden">
-                <div className="glass-filter opacity-80" />
-                <div className="glass-content px-6 py-3 text-center">
-                   <p className="text-[9px] font-black text-white uppercase tracking-[0.3em] whitespace-nowrap">{wallpaper.title}</p>
-                </div>
+              <div className="rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-6 py-3 text-center">
+                 <p className="text-[9px] font-black text-white uppercase tracking-[0.3em] whitespace-nowrap">{wallpaper.title}</p>
               </div>
             </div>
             

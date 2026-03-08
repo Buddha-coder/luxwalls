@@ -38,8 +38,7 @@ export default function WallpaperShowcase() {
               
               {/* Premium Pebble Label */}
               <div className="absolute inset-x-0 bottom-10 translate-y-4 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100 flex justify-center px-4 z-20">
-                <div className="glass-container !rounded-full px-6 py-2.5 overflow-hidden border border-white/10">
-                  <div className="glass-filter opacity-80" />
+                <div className="rounded-full px-6 py-2.5 overflow-hidden border border-white/20 bg-white/10 backdrop-blur-md">
                   <p className="relative text-[9px] text-white font-black tracking-[0.4em] uppercase whitespace-nowrap">
                     Explore
                   </p>

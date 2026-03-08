@@ -50,7 +50,7 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
                 <p className="text-white text-[11px] font-bold tracking-tight mb-3 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] line-clamp-1">
                   {wallpaper.title}
                 </p>
-                <div className="glass-container !rounded-full px-5 py-2 border border-white/10 backdrop-blur-xl">
+                <div className="rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-5 py-2">
                   <p className="relative text-primary text-[9px] font-black tracking-[0.4em] uppercase">
                     Explore
                   </p>
