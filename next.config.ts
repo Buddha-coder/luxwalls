@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    // Standardizing quality to resolve hydration/console mismatches
+    // Synchronizing qualities to resolve hydration and console mismatches
     qualities: [25, 50, 75, 85, 100],
     // Authorizing high-resolution placeholder domains for wallpaper previews
     remotePatterns: [
