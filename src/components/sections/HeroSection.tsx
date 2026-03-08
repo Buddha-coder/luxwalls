@@ -15,12 +15,12 @@ export default function HeroSection() {
           alt={heroImage.description}
           fill
           priority // Critical for LCP performance
-          className="object-cover -z-10 brightness-[0.45]"
+          className="object-cover -z-20 brightness-[0.45]"
           sizes="100vw"
           data-ai-hint={heroImage.imageHint}
         />
       ) : (
-        <div className="absolute inset-0 bg-executive-black -z-10" />
+        <div className="absolute inset-0 bg-executive-black -z-20" />
       )}
       
       {/* Decorative Gradient Overlay */}
@@ -28,20 +28,20 @@ export default function HeroSection() {
 
       <div className="relative max-w-4xl space-y-8 animate-fade-in">
         <div className="space-y-4">
-          <span className="text-primary text-xs font-bold tracking-[0.3em] uppercase block">
+          <span className="text-primary text-[10px] font-black tracking-[0.4em] uppercase block">
             The Elite Gallery
           </span>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight font-headline leading-[1.1]">
-            Elevate Your Atmosphere
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter font-headline leading-[1.05] text-white">
+            Elevate Your <br className="hidden sm:block" /> Atmosphere
           </h1>
-          <p className="mt-4 text-lg md:text-xl font-medium text-soft-ivory/80 leading-relaxed max-w-2xl mx-auto">
-            Experience the intersection of high-resolution digital art and premium luxury aesthetics.
+          <p className="mt-4 text-lg md:text-xl font-medium text-soft-ivory/60 leading-relaxed max-w-2xl mx-auto italic font-headline">
+            The intersection of high-resolution digital art and premium luxury aesthetics.
           </p>
         </div>
         
         <div className="flex justify-center pt-4">
           <Link href="/wallpapers">
-            <LuxuryButton size="lg" className="group">
+            <LuxuryButton size="lg" className="group rounded-full bg-white text-black hover:bg-white/90">
               Explore Collection
               <ChevronRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
             </LuxuryButton>

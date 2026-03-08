@@ -25,11 +25,14 @@ const moods = [
 
 export default function MoodCategories() {
   return (
-    <section className="w-full py-20 bg-black border-t border-white/5">
+    <section className="w-full py-24 bg-black border-t border-white/5 overflow-hidden">
       <Container>
         <div className="text-center mb-16 space-y-4">
           <span className="text-[10px] font-black uppercase tracking-[0.5em] text-primary">Discover By Atmosphere</span>
           <h2 className="text-4xl md:text-6xl font-headline font-bold text-white tracking-tighter">Choose Your Vibe</h2>
+          <p className="max-w-md mx-auto text-[10px] text-white/30 uppercase tracking-[0.2em] font-black">
+            Filtered collections tailored for your digital environment
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -37,27 +40,28 @@ export default function MoodCategories() {
             <Link 
               key={mood.name} 
               href={mood.href}
-              className="group relative h-[400px] md:h-[500px] rounded-[3.5rem] overflow-hidden border border-white/5 shadow-2xl transition-all duration-700 hover:scale-[0.98]"
+              className="group relative h-[450px] md:h-[550px] rounded-[3.5rem] overflow-hidden border border-white/5 shadow-2xl transition-all duration-700 hover:scale-[0.98]"
             >
               <Image
                 src={mood.src}
                 alt={mood.name}
                 fill
                 className="object-cover brightness-[0.4] group-hover:brightness-[0.6] transition-all duration-1000 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
               
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center space-y-4">
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center space-y-4 z-10">
                 <h3 className="text-2xl md:text-3xl font-headline font-bold text-white leading-tight">
                   {mood.name}
                 </h3>
-                <p className="text-xs text-white/50 uppercase tracking-widest font-medium group-hover:text-primary transition-colors">
+                <p className="text-[10px] text-white/50 uppercase tracking-[0.2em] font-black group-hover:text-primary transition-colors">
                   {mood.description}
                 </p>
-                <div className="h-px w-0 bg-primary group-hover:w-12 transition-all duration-700" />
+                <div className="h-px w-0 bg-primary group-hover:w-16 transition-all duration-700" />
               </div>
 
-              {/* Specular Edge */}
-              <div className="absolute inset-0 border border-white/5 rounded-[inherit] pointer-events-none" />
+              {/* Edge Specular Light */}
+              <div className="absolute inset-0 border border-white/10 rounded-[inherit] pointer-events-none z-20 group-hover:border-primary/20 transition-colors" />
             </Link>
           ))}
         </div>
