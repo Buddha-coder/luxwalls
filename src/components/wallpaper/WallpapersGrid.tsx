@@ -39,7 +39,7 @@ export default function WallpapersGrid({ wallpapers }: WallpapersGridProps) {
                 src={wallpaper.src}
                 alt={wallpaper.title}
                 fill
-                className="object-cover pointer-events-none transition-all duration-[1.5s] ease-out grayscale group-hover:grayscale-0 group-hover:scale-110 group-active:grayscale-0"
+                className="object-cover pointer-events-none transition-all duration-[1.5s] ease-out group-hover:scale-110"
                 sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 22vw"
                 priority={index < 4}
                 draggable={false}
