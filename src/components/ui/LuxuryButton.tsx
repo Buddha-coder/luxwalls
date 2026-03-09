@@ -18,7 +18,7 @@ export function LuxuryButton({
     <button
       {...props}
       className={cn(
-        "inline-flex items-center justify-center rounded-full bg-gold-gradient bg-[length:200%_auto] font-medium text-primary-foreground transition-all duration-300 hover:shadow-[0_0_20px_rgba(201,162,77,0.5)] animate-shine",
+        "inline-flex items-center justify-center rounded-full bg-gold-gradient font-medium text-primary-foreground transition-all duration-500 hover:shadow-[0_0_30px_rgba(201,162,77,0.4)] active:scale-95 select-none",
         size === "sm" && "px-4 py-2 text-sm",
         size === "md" && "px-6 py-3 text-sm",
         size === "lg" && "px-8 py-4 text-base",
