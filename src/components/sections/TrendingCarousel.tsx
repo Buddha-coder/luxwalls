@@ -11,7 +11,7 @@ export default function TrendingCarousel() {
   const trendingWallpapers = wallpapers.slice(0, 10);
 
   return (
-    <section className="w-full py-10 md:py-16 bg-black overflow-hidden border-t border-white/5">
+    <section className="w-full pt-20 pb-10 md:pt-32 md:pb-16 bg-black overflow-hidden border-t border-white/5">
       <Container>
         <div className="mb-8 flex items-end justify-between">
           <div className="space-y-1">
