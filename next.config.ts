@@ -1,5 +1,9 @@
 import type { NextConfig } from "next";
 
+/**
+ * LuxWalls High-Performance Configuration
+ * Optimized for React 19 and Three.js architecture.
+ */
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
