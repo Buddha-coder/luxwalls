@@ -31,8 +31,16 @@ service cloud.firestore {
     }
 
     /**
-     * @description Publicly accessible appreciation metrics.
-     * Allows anyone to view and increment/decrement likes.
+     * @description Publicly accessible metrics (Views, Downloads, Likes).
+     * Allows anyone to view and increment stats.
+     */
+    match /stats/{wallpaperId} {
+      allow get: if true;
+      allow write: if true;
+    }
+
+    /**
+     * @description Legacy likes support (to be migrated to /stats).
      */
     match /likes/{wallpaperId} {
       allow get: if true;

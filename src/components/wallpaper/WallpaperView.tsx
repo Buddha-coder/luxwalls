@@ -9,8 +9,10 @@ import { Badge } from "@/components/ui/badge";
 import WallpapersGrid from "@/components/wallpaper/WallpapersGrid";
 import SmartDownloadModule from "@/components/wallpaper/SmartDownloadModule";
 import { LikeButton } from "@/components/wallpaper/LikeButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MockupPreview from "./MockupPreview";
+import { useFirestore, useDoc, useMemoFirebase } from "@/firebase";
+import { doc, runTransaction } from "firebase/firestore";
 
 interface WallpaperViewProps {
   wallpaper: Wallpaper;
@@ -19,6 +21,36 @@ interface WallpaperViewProps {
 
 export default function WallpaperView({ wallpaper, related }: WallpaperViewProps) {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const firestore = useFirestore();
+
+  // Memoize the document reference for real-time stats
+  const statsRef = useMemoFirebase(() => {
+    if (!firestore) return null;
+    return doc(firestore, 'stats', wallpaper.id.toString());
+  }, [firestore, wallpaper.id]);
+
+  const { data: liveStats, isLoading: isStatsLoading } = useDoc(statsRef);
+
+  // Automatic Visit Counter
+  useEffect(() => {
+    if (!firestore || !wallpaper.id) return;
+    
+    const incrementViews = async () => {
+      const docRef = doc(firestore, 'stats', wallpaper.id.toString());
+      try {
+        await runTransaction(firestore, async (transaction) => {
+          const docSnap = await transaction.get(docRef);
+          const currentViews = docSnap.exists() ? (docSnap.data().views || 0) : 0;
+          transaction.set(docRef, { views: currentViews + 1 }, { merge: true });
+        });
+      } catch (error) {
+        // Silently fail for analytics to prevent UI disruption
+        console.warn("View tracking offline");
+      }
+    };
+
+    incrementViews();
+  }, [firestore, wallpaper.id]);
 
   return (
     <div className="min-h-screen bg-background pb-8 pt-24 md:pt-36 overflow-x-hidden">
@@ -93,8 +125,16 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
               </div>
 
               <div className="grid grid-cols-3 gap-2.5">
-                <StatTile icon={<Eye className="w-3 h-3" />} label="Views" value={wallpaper.views?.toLocaleString() || "1.2K"} />
-                <StatTile icon={<Download className="w-3 h-3" />} label="Saved" value={wallpaper.downloads?.toLocaleString() || "850"} />
+                <StatTile 
+                  icon={<Eye className="w-3 h-3" />} 
+                  label="Views" 
+                  value={liveStats?.views?.toLocaleString() || (isStatsLoading ? "..." : "0")} 
+                />
+                <StatTile 
+                  icon={<Download className="w-3 h-3" />} 
+                  label="Saved" 
+                  value={liveStats?.downloads?.toLocaleString() || (isStatsLoading ? "..." : "0")} 
+                />
                 <LikeButton wallpaperId={wallpaper.id.toString()} />
               </div>
 

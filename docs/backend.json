@@ -168,20 +168,24 @@
           "schema": {
             "$ref": "#/backend/entities/Wallpaper"
           },
-          "description": "Stores individual luxury wallpaper product details. All documents in this collection are publicly readable. Write access is restricted to administrators only. Each document is independent, ensuring authorization independence for reads."
+          "description": "Stores individual luxury wallpaper product details. All documents in this collection are publicly readable."
         }
       },
       {
-        "path": "/hero_images/{heroImageId}",
+        "path": "/stats/{wallpaperId}",
         "definition": {
-          "entityName": "HeroImage",
+          "entityName": "Stats",
           "schema": {
-            "$ref": "#/backend/entities/HeroImage"
+            "type": "object",
+            "properties": {
+              "views": { "type": "number" },
+              "downloads": { "type": "number" },
+              "likes": { "type": "number" }
+            }
           },
-          "description": "Stores individual hero images displayed on the homepage. All documents in this collection are publicly readable. Write access is restricted to administrators only. Each document is independent, ensuring authorization independence for reads."
+          "description": "Stores engagement metrics for wallpapers."
         }
       }
-    ],
-    "reasoning": "The recommended Firestore data structure for LuxWalls prioritizes simplicity, security, and scalability by adhering to the core design principles. The application primarily showcases luxury wallpapers and hero images, both of which are publicly viewable.\n\n**Authorization Independence:** This design achieves Authorization Independence by ensuring that the access rights for any document do not depend on reading attributes from a parent document or another related document. Both the `/wallpapers` and `/hero_images` collections are designed to hold publicly readable data. This means that security rules will not require `get()` calls to determine access, as all documents within these collections share the same authorization posture (public read, admin write).\n\n**QAPs (Rules are not Filters):** The structure inherently supports Query-As-Permissions (QAPs) because all documents within a given collection have a homogeneous security posture. \n- For `/wallpapers/{wallpaperId}`, all wallpaper documents are intended for public display. Therefore, a `list` operation on `/wallpapers` will return only publicly available wallpapers, and security rules can simply grant `read` access to all authenticated and unauthenticated users. There is no mix of public and private wallpaper data in this collection, eliminating the need for complex filtering by security rules.\n- Similarly, for `/hero_images/{heroImageId}`, all hero image documents are for public display. A `list` operation will return public hero images, which can then be client-side filtered by `isActive` or ordered by `displayOrder`. The security rules will grant `read` access to the entire collection for all users without requiring filtering logic.\n\n**Structural Segregation & Access Modeling:**\n- `/wallpapers`: This top-level collection holds all `Wallpaper` entities. Its homogeneous security posture is 'public read / admin write'. This simplifies rules significantly.\n- `/hero_images`: This top-level collection holds all `HeroImage` entities. It also has a 'public read / admin write' posture. \n\nThere are no user-owned or collaborative data structures needed based on the current requirements (no user profiles, favorites, or user-generated content specified). Admin write access would be secured using a DBAC model, likely through a separate `/roles_admin/{uid}` collection for existence checks or direct UID comparisons in rules, rather than relying on custom claims."
+    ]
   }
 }

@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { Download, CheckCircle2, ChevronDown, Monitor, Smartphone, Tablet, Zap, ShieldCheck } from "lucide-react";
 import { LuxuryButton } from "@/components/ui/LuxuryButton";
 import { downloadImage } from "@/lib/download-image";
+import { useFirestore } from "@/firebase";
+import { doc, runTransaction } from "firebase/firestore";
 import { 
   DropdownMenu, 
   DropdownMenuContent, 
@@ -26,6 +28,7 @@ export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProp
     icon: <Smartphone className="w-3.5 h-3.5" /> 
   });
   const [isDetecting, setIsDetecting] = useState(true);
+  const firestore = useFirestore();
 
   useEffect(() => {
     setMounted(true);
@@ -42,6 +45,25 @@ export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProp
     }, 1200);
     return () => clearTimeout(timer);
   }, []);
+
+  const handleDownloadAction = async () => {
+    // Initiate physical download
+    downloadImage(src, `luxwalls-${id}.jpg`);
+
+    // Increment global download metrics
+    if (firestore && id) {
+      const statsRef = doc(firestore, 'stats', id.toString());
+      try {
+        await runTransaction(firestore, async (transaction) => {
+          const docSnap = await transaction.get(statsRef);
+          const currentDownloads = docSnap.exists() ? (docSnap.data().downloads || 0) : 0;
+          transaction.set(statsRef, { downloads: currentDownloads + 1 }, { merge: true });
+        });
+      } catch (error) {
+        console.warn("Metric synchronization unavailable");
+      }
+    }
+  };
 
   const resolutions = [
     { label: "Mobile Portrait", size: "2.8 MB", value: "mobile", icon: <Smartphone className="w-3.5 h-3.5" /> },
@@ -124,7 +146,7 @@ export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProp
 
         <LuxuryButton 
           className="group/btn w-full h-16 md:h-20 rounded-full flex items-center justify-center text-[11px] font-black uppercase tracking-[0.3em] relative overflow-hidden active:scale-[0.98]"
-          onClick={() => downloadImage(src, `luxwalls-${id}.jpg`)}
+          onClick={handleDownloadAction}
         >
           <Download className="w-5 h-5 mr-3 transition-all duration-500 group-hover/btn:-translate-y-1" />
           Download Asset
