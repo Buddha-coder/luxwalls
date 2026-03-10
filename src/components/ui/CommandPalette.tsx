@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import { Search } from 'lucide-react';
 import { wallpapers } from '@/data/wallpapers';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
-import { cn } from '@/lib/utils';
 
 interface CommandPaletteProps {
   open: boolean;
@@ -26,7 +25,7 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
         <DialogTitle className="sr-only">Search LuxWalls</DialogTitle>
         
         <Command className="flex h-full w-full flex-col overflow-hidden bg-transparent">
-          <div className="flex items-center border-b border-white/5 px-6 py-5" cmdk-input-wrapper="">
+          <div className="flex items-center border-b border-white/5 px-6 py-5">
             <Search className="mr-3 h-5 w-5 shrink-0 text-primary opacity-70" />
             <Command.Input 
               className="flex h-12 w-full rounded-md bg-transparent py-3 text-base outline-none placeholder:text-white/30 disabled:cursor-not-allowed disabled:opacity-50 font-body"

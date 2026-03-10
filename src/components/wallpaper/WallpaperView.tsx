@@ -43,7 +43,7 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
           const currentViews = docSnap.exists() ? (docSnap.data().views || 0) : 0;
           transaction.set(docRef, { views: currentViews + 1 }, { merge: true });
         });
-      } catch (error) {
+      } catch {
         // Silently fail for analytics to prevent UI disruption
         console.warn("View tracking offline");
       }

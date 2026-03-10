@@ -51,7 +51,7 @@ export function LikeButton({ wallpaperId }: LikeButtonProps) {
         const newLikes = newLikedStatus ? currentLikes + 1 : Math.max(0, currentLikes - 1);
         transaction.set(statsRef, { likes: newLikes }, { merge: true });
       });
-    } catch (error) {
+    } catch {
       console.warn("Synchronization error with Appreciation engine.");
     }
   };

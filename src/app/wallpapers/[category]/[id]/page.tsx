@@ -10,6 +10,27 @@ interface WallpaperPageProps {
   }>;
 }
 
+// Seeded pseudo-random number generator
+function seededRandom(seed: number) {
+    let x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
+}
+
+// Seeded shuffle function
+function seededShuffle(array: any[], seed: number) {
+    let currentIndex = array.length, temporaryValue, randomIndex;
+    const random = () => seededRandom(seed + currentIndex);
+
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+    return array;
+}
+
 export async function generateStaticParams() {
   const params = [];
   
@@ -46,9 +67,8 @@ export default async function WallpaperDetailPage({ params }: WallpaperPageProps
     (w) => w.category === category && w.id.toString() !== id
   );
   
-  const related = [...relatedPool]
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 4);
+  const seed = parseInt(id, 10);
+  const related = seededShuffle([...relatedPool], seed).slice(0, 4);
 
   return <WallpaperView wallpaper={wallpaper} related={related} />;
 }

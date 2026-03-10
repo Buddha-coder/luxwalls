@@ -59,7 +59,7 @@ export default function SmartDownloadModule({ src, id }: SmartDownloadModuleProp
           const currentDownloads = docSnap.exists() ? (docSnap.data().downloads || 0) : 0;
           transaction.set(statsRef, { downloads: currentDownloads + 1 }, { merge: true });
         });
-      } catch (error) {
+      } catch {
         console.warn("Metric synchronization unavailable");
       }
     }
