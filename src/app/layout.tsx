@@ -73,11 +73,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <Script
+        {/* AdSense Integrated with native script to prevent hydration mismatch */}
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4474730757136852"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
       </head>
       <body className="font-body antialiased bg-background text-foreground selection:bg-primary/30">
