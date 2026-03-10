@@ -21,9 +21,8 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-background pb-8 pt-28 md:pt-44 overflow-x-hidden">
-      {/* Immersive Background Atmosphere */}
-      <div className="fixed inset-0 z-0 h-screen w-full overflow-hidden opacity-30 blur-[120px] pointer-events-none scale-150">
+    <div className="min-h-screen bg-background pb-8 pt-24 md:pt-36 overflow-x-hidden">
+      <div className="fixed inset-0 z-0 h-screen w-full overflow-hidden opacity-25 blur-[120px] pointer-events-none scale-150">
         <Image
           src={wallpaper.src}
           alt=""
@@ -34,65 +33,58 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
       </div>
       
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
           
-          {/* Main Visual (Left) */}
-          <div className="lg:col-span-7 xl:col-span-8 space-y-6">
+          <div className="lg:col-span-7 xl:col-span-8 space-y-5">
             <div 
-              className="relative aspect-[9/16] w-full max-h-[85vh] rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.9)] border border-white/10 group select-none"
+              className="relative aspect-[9/16] w-full max-h-[80vh] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.9)] border border-white/10 group select-none"
               onContextMenu={(e) => e.preventDefault()}
             >
               <Image
                 src={wallpaper.src}
                 alt={wallpaper.title}
                 fill
-                className="object-cover transition-all duration-[2s] ease-out pointer-events-none"
+                className="object-cover pointer-events-none"
                 priority
                 sizes="(max-width: 768px) 100vw, 60vw"
                 draggable={false}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
-              
-              {/* Specular Rim Highlight */}
-              <div className="absolute inset-0 border border-white/20 rounded-[inherit] pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 border border-white/10 rounded-[inherit] pointer-events-none" />
             </div>
 
-            {/* LIVE PREVIEW TRIGGER */}
             <div className="flex justify-center">
               <button 
                 onClick={() => setIsPreviewOpen(true)}
-                className="group relative flex items-center gap-3 p-1.5 pr-6 rounded-full bg-white/[0.03] backdrop-blur-3xl border border-white/10 text-white transition-all hover:bg-white/[0.08] hover:scale-105 active:scale-95 shadow-xl"
+                className="group relative flex items-center gap-2 p-1 pr-5 rounded-full bg-white/[0.03] backdrop-blur-3xl border border-white/10 text-white transition-all hover:bg-white/[0.08] hover:scale-105 active:scale-95 shadow-lg"
               >
-                <div className="p-2.5 rounded-full bg-primary text-primary-foreground shadow-lg">
-                  <Maximize2 className="w-4 h-4" />
+                <div className="p-2 rounded-full bg-primary text-primary-foreground shadow-lg">
+                  <Maximize2 className="w-3.5 h-3.5" />
                 </div>
                 <div className="flex flex-col items-start">
-                  <span className="text-[9px] font-black uppercase tracking-[0.2em] leading-none mb-1 text-primary">Device Preview</span>
-                  <span className="text-[8px] text-white/40 uppercase tracking-widest font-bold">Interactive Experience</span>
+                  <span className="text-[8px] font-black uppercase tracking-[0.2em] leading-none mb-0.5 text-primary">Device Preview</span>
+                  <span className="text-[7px] text-white/30 uppercase tracking-widest font-bold">Interactive Experience</span>
                 </div>
-                <div className="absolute inset-0 bg-primary/10 rounded-full animate-pulse opacity-0 group-hover:opacity-100 transition-opacity" />
               </button>
             </div>
           </div>
 
-          {/* Metadata & Actions (Right) */}
-          <div className="lg:col-span-5 xl:col-span-4 space-y-6 md:space-y-8">
-            <div className="space-y-6">
-              {/* Header Info */}
-              <div className="space-y-4">
-                <Link href={`/wallpapers/${wallpaper.category}`} className="inline-flex items-center text-primary text-[10px] md:text-xs font-black uppercase tracking-[0.3em] hover:text-white transition-colors">
-                  <ChevronLeft className="w-4 h-4 mr-2" />
+          <div className="lg:col-span-5 xl:col-span-4 space-y-5 md:space-y-6">
+            <div className="space-y-5">
+              <div className="space-y-3">
+                <Link href={`/wallpapers/${wallpaper.category}`} className="inline-flex items-center text-primary text-[9px] font-black uppercase tracking-[0.3em] hover:text-white transition-colors">
+                  <ChevronLeft className="w-3 h-3 mr-1.5" />
                   {wallpaper.category} Collection
                 </Link>
-                <h1 className="text-3xl md:text-5xl font-headline font-bold leading-[1.1] text-white tracking-tight">
+                <h1 className="text-2xl md:text-4xl font-headline font-bold leading-tight text-white tracking-tight">
                   {wallpaper.title}
                 </h1>
-                <div className="flex flex-wrap gap-2 pt-1">
+                <div className="flex flex-wrap gap-1.5 pt-0.5">
                   {wallpaper.tags?.map(tag => (
                     <Badge 
                       key={tag} 
                       variant="outline" 
-                      className="bg-white/[0.03] backdrop-blur-3xl text-foreground/70 border-white/5 text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-black px-3 py-1 rounded-full"
+                      className="bg-white/[0.02] text-foreground/60 border-white/5 text-[8px] uppercase tracking-[0.2em] font-black px-2.5 py-0.5 rounded-full"
                     >
                       {tag}
                     </Badge>
@@ -100,52 +92,48 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
                 </div>
               </div>
 
-              {/* Engagement Stats Grid */}
-              <div className="grid grid-cols-3 gap-3">
-                <StatTile icon={<Eye className="w-3.5 h-3.5" />} label="Views" value={wallpaper.views?.toLocaleString() || "1.2K"} />
-                <StatTile icon={<Download className="w-3.5 h-3.5" />} label="Saved" value={wallpaper.downloads?.toLocaleString() || "850"} />
+              <div className="grid grid-cols-3 gap-2.5">
+                <StatTile icon={<Eye className="w-3 h-3" />} label="Views" value={wallpaper.views?.toLocaleString() || "1.2K"} />
+                <StatTile icon={<Download className="w-3 h-3" />} label="Saved" value={wallpaper.downloads?.toLocaleString() || "850"} />
                 <LikeButton wallpaperId={wallpaper.id.toString()} />
               </div>
 
-              {/* Smart Download Module */}
               <SmartDownloadModule src={wallpaper.src} id={wallpaper.id} />
 
-              {/* Visual DNA */}
-              <div className="relative glass-container !rounded-[3rem] border border-white/5 overflow-hidden group">
-                <div className="glass-filter opacity-50" />
-                <div className="glass-overlay !bg-white/[0.02]" />
-                <div className="glass-content p-6 space-y-5">
-                  <h3 className="text-[10px] font-black uppercase tracking-[0.3em] flex items-center text-white/50">
-                    <Palette className="w-4 h-4 mr-2 text-primary/70" /> Visual DNA
+              <div className="relative glass-container !rounded-[2.5rem] border border-white/5 overflow-hidden">
+                <div className="glass-filter opacity-40" />
+                <div className="glass-overlay !bg-white/[0.01]" />
+                <div className="glass-content p-5 space-y-4">
+                  <h3 className="text-[9px] font-black uppercase tracking-[0.3em] flex items-center text-white/40">
+                    <Palette className="w-3.5 h-3.5 mr-2 text-primary/60" /> Visual DNA
                   </h3>
-                  <div className="flex gap-4">
+                  <div className="flex gap-3">
                     {(wallpaper.colors || ["#0F0F12", "#222222", "#C9A24D", "#FFFFFF"]).map(color => (
                       <div 
                         key={color} 
-                        className="relative h-12 w-12 rounded-full border border-white/10 transition-all duration-500 hover:scale-110 hover:-translate-y-1 shadow-2xl cursor-pointer active:scale-95" 
+                        className="relative h-10 w-10 rounded-full border border-white/10 transition-all duration-500 hover:scale-110 hover:-translate-y-1 cursor-pointer" 
                         style={{ backgroundColor: color }}
                         title={color}
                       >
-                        <div className="absolute inset-0 rounded-full shadow-[inset_0_2px_4px_rgba(255,255,255,0.2)]" />
+                        <div className="absolute inset-0 rounded-full shadow-[inset_0_1px_2px_rgba(255,255,255,0.2)]" />
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
 
-              {/* Performance Profile */}
-              <div className="relative glass-container !rounded-[3rem] border border-white/5 overflow-hidden">
+              <div className="relative glass-container !rounded-[2.5rem] border border-white/5 overflow-hidden">
                 <div className="glass-filter opacity-30" />
                 <div className="glass-overlay !bg-white/[0.01]" />
-                <div className="glass-content p-6 space-y-4">
-                  <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 flex items-center">
-                    <Sparkles className="w-4 h-4 mr-2 text-primary/50" /> Performance Profile
+                <div className="glass-content p-5 space-y-3">
+                  <h3 className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 flex items-center">
+                    <Sparkles className="w-3.5 h-3.5 mr-2 text-primary/50" /> Performance Profile
                   </h3>
-                  <div className="grid grid-cols-1 gap-3">
+                  <div className="grid grid-cols-1 gap-2">
                     {(wallpaper.bestFor || ["AMOLED Displays", "Lock Screen", "True Black Optimization"]).map(use => (
-                      <div key={use} className="flex items-center gap-4 text-xs font-bold text-muted-foreground group/item">
-                        <div className="w-2 h-2 rounded-full bg-primary/40 group-hover/item:bg-primary transition-colors" />
-                        <span className="tracking-wide uppercase text-[10px] group-hover/item:text-white transition-colors">{use}</span>
+                      <div key={use} className="flex items-center gap-3 text-[9px] font-bold text-muted-foreground group/item">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary/30 group-hover/item:bg-primary transition-colors" />
+                        <span className="tracking-widest uppercase group-hover/item:text-white transition-colors">{use}</span>
                       </div>
                     ))}
                   </div>
@@ -155,15 +143,14 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
           </div>
         </div>
 
-        {/* Similar Aesthetics Section */}
-        <section className="mt-20 md:mt-32 space-y-12">
-          <div className="flex items-end justify-between border-b border-white/5 pb-8">
-            <div className="space-y-2">
-              <span className="text-[10px] font-black text-primary uppercase tracking-[0.4em]">Refined Selection</span>
-              <h2 className="text-2xl md:text-4xl font-headline font-bold text-white">Similar Aesthetics</h2>
+        <section className="mt-16 md:mt-24 space-y-10">
+          <div className="flex items-end justify-between border-b border-white/5 pb-6">
+            <div className="space-y-1.5">
+              <span className="text-[8px] font-black text-primary uppercase tracking-[0.4em]">Refined Selection</span>
+              <h2 className="text-xl md:text-3xl font-headline font-bold text-white">Similar Aesthetics</h2>
             </div>
-            <Link href="/wallpapers" className="text-[10px] md:text-xs font-black text-white/40 hover:text-primary transition-all uppercase tracking-[0.2em] pb-1">
-              Explore All Collection
+            <Link href="/wallpapers" className="text-[8px] font-black text-white/30 hover:text-primary transition-all uppercase tracking-[0.2em] pb-1">
+              Explore All
             </Link>
           </div>
           <WallpapersGrid wallpapers={related} />
@@ -181,14 +168,14 @@ export default function WallpaperView({ wallpaper, related }: WallpaperViewProps
 
 function StatTile({ icon, label, value }: { icon: React.ReactNode, label: string, value: string }) {
   return (
-    <div className="relative glass-container !rounded-full border border-white/5 overflow-hidden flex-1 py-3 min-h-[60px] active:scale-95 transition-transform duration-300">
-      <div className="glass-filter opacity-40" />
-      <div className="glass-overlay !bg-white/[0.02]" />
-      <div className="glass-content flex flex-col items-center justify-center text-center p-1.5 space-y-1">
-        <div className="text-primary/70">{icon}</div>
-        <div className="space-y-0.5">
-          <p className="text-[10px] font-black text-white leading-none">{value}</p>
-          <p className="text-[7px] uppercase tracking-[0.2em] text-white/30 font-black">{label}</p>
+    <div className="relative glass-container !rounded-full border border-white/5 overflow-hidden flex-1 py-2.5 min-h-[50px] active:scale-95 transition-transform duration-300">
+      <div className="glass-filter opacity-30" />
+      <div className="glass-overlay !bg-white/[0.01]" />
+      <div className="glass-content flex flex-col items-center justify-center text-center p-1 space-y-0.5">
+        <div className="text-primary/60">{icon}</div>
+        <div className="space-y-0">
+          <p className="text-[9px] font-black text-white leading-none">{value}</p>
+          <p className="text-[6px] uppercase tracking-[0.2em] text-white/20 font-black">{label}</p>
         </div>
       </div>
     </div>
