@@ -10,6 +10,7 @@ import PwaInstallPrompt from "@/components/PwaInstallPrompt";
 import RegisterSW from "@/components/RegisterSW";
 import "./globals.css";
 import { Providers } from "./providers";
+import Script from "next/script";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://luxwalls.vercel.app";
 
@@ -71,6 +72,14 @@ export default function RootLayout({
       className={`${ptSans.variable} ${playfairDisplay.variable} dark`}
       suppressHydrationWarning
     >
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4474730757136852"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="font-body antialiased bg-background text-foreground selection:bg-primary/30">
         <script
           type="application/ld+json"
