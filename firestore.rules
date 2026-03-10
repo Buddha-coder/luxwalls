@@ -4,6 +4,7 @@ service cloud.firestore {
 
     /**
      * LuxWalls Security Rules Architecture
+     * Updated for high-performance public metrics and anonymous session consistency.
      */
 
     function isSignedIn() {
@@ -18,12 +19,14 @@ service cloud.firestore {
       return isAdmin() && resource != null;
     }
 
+    // Wallpapers: Publicly readable, admin-only writes
     match /wallpapers/{wallpaperId} {
       allow get, list: if true;
       allow create: if isAdmin();
       allow update, delete: if isExistingAdmin();
     }
 
+    // Hero Images: Publicly readable, admin-only writes
     match /hero_images/{heroImageId} {
       allow get, list: if true;
       allow create: if isAdmin();
@@ -35,16 +38,14 @@ service cloud.firestore {
      * Allows anyone to view and increment stats.
      */
     match /stats/{wallpaperId} {
-      allow get: if true;
-      allow write: if true;
+      allow read, write: if true;
     }
 
     /**
-     * @description Legacy likes support (to be migrated to /stats).
+     * @description Legacy likes support.
      */
     match /likes/{wallpaperId} {
-      allow get: if true;
-      allow write: if true;
+      allow read, write: if true;
     }
 
     match /roles_admin/{uid} {
