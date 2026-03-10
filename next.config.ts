@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 /**
  * LuxWalls High-Performance Configuration
  * Optimized for React 19 and Three.js architecture.
+ * Sync Trigger: 2026-03-10T17:23 - Deep Reset
  */
 const nextConfig: NextConfig = {
   reactStrictMode: true,
