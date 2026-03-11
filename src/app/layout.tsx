@@ -10,7 +10,6 @@ import PwaInstallPrompt from "@/components/PwaInstallPrompt";
 import RegisterSW from "@/components/RegisterSW";
 import "./globals.css";
 import { Providers } from "./providers";
-import Script from "next/script";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://luxwalls.vercel.app";
 

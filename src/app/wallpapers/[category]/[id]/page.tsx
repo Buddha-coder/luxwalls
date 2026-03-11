@@ -44,7 +44,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: WallpaperPageProps): Promise<Metadata> {
-  const { id, category } = await params;
+  const { id } = await params;
   const wallpaper = wallpapers.find((w) => w.id.toString() === id);
   if (!wallpaper) return { title: "Wallpaper Not Found" };
 
